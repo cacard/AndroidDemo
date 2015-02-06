@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+        <PreferenceCategory android:title="Category1">
+            
+            <CheckBoxPreference
+                android:summaryOn="summaryOn"
+                android:summaryOff="summaryOff"
+                android:title="title"
+                android:summary="summary"
+                android:defaultValue="true"
+                android:key="key_checkbox"
+                 />
+            
+            
+            <EditTextPreference
+                android:title="EditTextPreference"
+                android:summary="summary"
+                android:key="key_edittext"
+                 />
+            
+            
+            <ListPreference
+                android:title="ListPreference"
+                 />
+        </PreferenceCategory>
+        
+        
+        
+        <PreferenceCategory android:title="Category2">
+            <MultiSelectListPreference
+                android:title="MultiSelectListPreference"
+                 />
+            <RingtonePreference
+                android:title="RingtonePreference"
+                 />
+            <SwitchPreference
+                android:summaryOn="summaryOn"
+                android:summaryOff="summaryOff"
+                android:summary="summary"
+                android:switchTextOn="switchTextOn"
+                android:switchTextOff="switchTextOff"
+                android:title="title"
+                 />
+        </PreferenceCategory>
+    </PreferenceScreen>

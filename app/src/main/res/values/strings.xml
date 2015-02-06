@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">AndroidDemo</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_view_pager_demo">ViewPagerDemo</string>
+    <string name="title_activity_my_surface_view">MySurfaceViewActivity</string>
+    <string name="title_activity_my_glsurface_view">MyGLSurfaceViewActivity</string>
+    <string name="title_activity_activity_instrumentation_test">ActivityInstrumentationTest</string>
+    <string name="title_activity_activity_value_animator">ActivityValueAnimator</string>
+    <string name="title_activity_activity_motion_event">ActivityMotionEvent</string>
+    <string name="title_activity_activity_view_group_event">ActivityViewGroupEvent</string>
+
+</resources>

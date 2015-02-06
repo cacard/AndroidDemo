@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+    <TextView 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="welcom to http://google.com ss"
+        android:autoLink="all"
+        android:autoText="true"
+        android:textSize="50dp"
+        android:padding="10dp"
+        android:shadowColor="#000"
+        android:shadowDx="6"
+        android:shadowDy="6"
+        android:shadowRadius="0.01"
+        android:singleLine="true"
+        android:scrollHorizontally="true"
+        android:textIsSelectable="true"
+        />
+
+</LinearLayout>
