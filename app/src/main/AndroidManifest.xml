@@ -6,7 +6,7 @@
 
     <uses-sdk
         android:minSdkVersion="10"
-        android:targetSdkVersion="16" />
+        android:targetSdkVersion="21" />
 
     <instrumentation
         android:name=".MyInstrumentation"
@@ -40,6 +40,7 @@
 
     <application
         android:name=".MyApplication"
+        android:debuggable="true"
         android:allowBackup="true"
         android:hardwareAccelerated="true"
         android:icon="@drawable/ic_launcher"
@@ -148,24 +149,42 @@
             android:label="@string/title_activity_my_glsurface_view" />
         <activity
             android:name=".activity.ActivityInstrumentationTest"
-            android:label="@string/title_activity_activity_instrumentation_test"></activity>
+            android:label="@string/title_activity_activity_instrumentation_test" />
         <activity
             android:name=".Animator.ActivityValueAnimator"
-            android:label="@string/title_activity_activity_value_animator"></activity>
+            android:label="@string/title_activity_activity_value_animator" />
         <activity
             android:name=".event.ActivityMotionEvent"
-            android:label="@string/title_activity_activity_motion_event"></activity>
+            android:label="@string/title_activity_activity_motion_event" />
         <activity
             android:name=".event.ActivityViewGroupEvent"
-            android:label="@string/title_activity_activity_view_group_event"></activity>
+            android:label="@string/title_activity_activity_view_group_event" />
 
         <receiver android:name=".broadcast.PackageAddRemoveReceiver">
             <intent-filter>
                 <action android:name="android.intent.action.PACKAGE_ADDED" />
                 <action android:name="android.intent.action.PACKAGE_REMOVED" />
+
                 <data android:scheme="package" />
             </intent-filter>
         </receiver>
+
+        <activity
+            android:name=".activity.ui.DialogContextTest"
+            android:label="@string/title_activity_dialog_context_test"></activity>
+        <activity
+            android:name=".activity.ActivityInflaterVSdirectCreate"
+            android:label="@string/title_activity_activity_inflater_vsdirect_create"></activity>
+        <activity
+            android:name=".activity.ui.TestAttachToRootActivity"
+            android:label="@string/title_activity_test_attach_to_root"></activity>
+
+        <activity
+            android:name=".activity.singleinstance.Activity1"
+            android:launchMode="singleInstance" />
+        <activity android:name=".activity.singleinstance.Activity2" />
+
+        <activity android:name=".activity.ActivityPageableHorizonalScrollView" />
 
     </application>
 

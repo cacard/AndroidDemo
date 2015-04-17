@@ -14,7 +14,21 @@ public class ActivityC extends Activity {
         super.onCreate(savedInstanceState);
         Log.i("test", "ActivityC.onCreate()");
         this.setTitle("C");
+    }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        try {
+            Thread.sleep(3000);
+        } catch (Exception e) {
+
+        }
     }
 
 

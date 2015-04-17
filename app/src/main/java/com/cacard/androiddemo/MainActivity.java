@@ -3,21 +3,14 @@ package com.cacard.androiddemo;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
-import android.view.View.OnClickListener;
-import android.widget.Button;
-import android.widget.EditText;
+import android.view.ViewTreeObserver;
 
-import com.cacard.androiddemo.Animator.ActivityValueAnimator;
-import com.cacard.androiddemo.activity.ActivityA;
-import com.cacard.androiddemo.activity.ActivityInstrumentationTest;
+import com.cacard.androiddemo.activity.ActivityPageableHorizonalScrollView;
+import com.cacard.androiddemo.activity.singleinstance.Activity1;
 import com.cacard.androiddemo.event.ActivityMotionEvent;
-import com.cacard.androiddemo.event.ActivityViewGroupEvent;
-import com.cacard.androiddemo.graphic.MyGLSurfaceView;
-import com.cacard.androiddemo.graphic.MyGLSurfaceViewActivity;
-import com.cacard.androiddemo.graphic.MySurfaceViewActivity;
-
-import java.util.ArrayList;
 
 public class MainActivity extends Activity {
 
@@ -27,11 +20,46 @@ public class MainActivity extends Activity {
         super.setContentView(R.layout.main_activity); // 使用super而不是this，可减少方法数
         super.setTitle("Main");
 
-        // 打开Activity
-        gotoActivity(ActivityViewGroupEvent.class);
+    }
+
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        if (event.getAction() == MotionEvent.ACTION_DOWN) {
+            gotoActivity(ActivityPageableHorizonalScrollView.class);
+            return true;
+        }
+
+        return super.onTouchEvent(event);
     }
 
     private void gotoActivity(Class<?> clazz) {
         this.startActivity(new Intent(this, clazz));
+    }
+
+    private void log(String msg) {
+        Log.i("lcq", msg);
+    }
+
+    /**
+     * 监视ViewThree
+     */
+    private void addViewThreeObServer(View v) {
+        if (v == null) {
+            return;
+        }
+
+        ViewTreeObserver ob = v.getViewTreeObserver();
+        if (ob == null) {
+            return;
+        }
+
+        if (ob.isAlive()) {
+            ob.addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
+                @Override
+                public void onGlobalLayout() {
+                    log("->ob.addOnGlobalLayoutListener");
+                }
+            });
+        }
     }
 }

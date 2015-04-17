@@ -4,22 +4,32 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.util.AttributeSet;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.widget.LinearLayout;
+
+import com.cacard.androiddemo.R;
 
 public class MySimpleLinearLayout extends LinearLayout {
 
     private final String logTag = "test";
     private final String logClassName = "MySimpleLinearLayout";
+    private Context ctx;
 
     public MySimpleLinearLayout(Context context) {
         super(context);
         Log.i(logTag, logClassName + " ctor1");
+        initView(context);
     }
 
     public MySimpleLinearLayout(Context context, AttributeSet attr) {
         super(context, attr);
         Log.i("test", logClassName + " ctor2");
+        initView(context);
+    }
+
+    private void initView(Context ctx) {
+        LayoutInflater.from(ctx).inflate(R.layout.activity_test_attach_to_root, this, true);
     }
 
 

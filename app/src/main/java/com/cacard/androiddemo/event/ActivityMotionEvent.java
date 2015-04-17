@@ -1,7 +1,9 @@
 package com.cacard.androiddemo.event;
 
 import android.app.Activity;
+import android.app.Application;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
@@ -20,56 +22,77 @@ public class ActivityMotionEvent extends Activity {
 
     private TextView box;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         super.setContentView(R.layout.activity_activity_motion_event);
         box = (TextView) super.findViewById(R.id.box);
 
-        testOnClickListenerAndOnTouchListener();
-
-    }
-
-    private void testOnClickListenerAndOnTouchListener() {
-        box.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                MyApplication.log("box->OnClickListener");
-            }
-        });
-
-        box.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                String msg = "";
-                msg += "pointerCount:" + event.getPointerCount() + "/";
-                msg += "action:" + event.getAction() + "/";
-                msg += "actionMasked:" + event.getActionMasked() + "/";
-                MyApplication.log("box->OnTouchListener" + msg);
-                return true;
-            }
-        });
     }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_activity_motion_event, menu);
-        return true;
+    public boolean onTouchEvent(MotionEvent event) {
+        testMultiPointer(event);
+        return super.onTouchEvent(event);
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
+    // 多个手指按下时，第一个触发的是ACTION_DOWN，第二个或更多的actionMasked()会触发ACTION_POINTER_DWON
+    private void testMultiPointer(MotionEvent e) {
+        //log("count:" + e.getPointerCount());
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+        if (e.getAction() == MotionEvent.ACTION_DOWN) { // 1st pointer OK
+            Log.i("lcq", "ACTION_DWON");
+            printPointerIndexId(e);
+        }
+        if (e.getActionMasked() == MotionEvent.ACTION_DOWN) { // 1st pointer OK
+            Log.i("lcq", "[mask]ACTION_DWON");
+            printPointerIndexId(e);
         }
 
-        return super.onOptionsItemSelected(item);
+        if (e.getAction() == MotionEvent.ACTION_POINTER_DOWN) { // >1 pointer NO
+            Log.i("lcq", "ACTION_POINTER_DOWN");
+        }
+        if (e.getActionMasked() == MotionEvent.ACTION_POINTER_DOWN) { // >1 pointer OK
+            Log.i("lcq", "[mask]ACTION_POINTER_DOWN");
+            printPointerIndexId(e);
+        }
+
+        if (e.getAction() == MotionEvent.ACTION_UP) {
+            Log.i("lcq", "ACTION_UP");
+        }
+        if (e.getActionMasked() == MotionEvent.ACTION_UP) {
+            Log.i("lcq", "[mask]ACTION_UP");
+            printPointerIndexId(e);
+        }
+
+        if (e.getAction() == MotionEvent.ACTION_POINTER_UP) { // NO
+            Log.i("lcq", "ACTION_POINTER_UP");
+        }
+        if (e.getActionMasked() == MotionEvent.ACTION_POINTER_UP) { // YES
+            Log.i("lcq", "[mask]ACTION_POINTER_UP");
+            printPointerIndexId(e);
+        }
     }
+
+    private void printPointerIndexId(MotionEvent e) {
+        // 判断是第几个pointer
+        log("pointer index:" + (e.getActionIndex()));
+        // 获取pointer对应的pointerId
+        log("pointer id:" + (e.getPointerId(e.getActionIndex())));
+    }
+
+    private void t(MotionEvent event) {
+        if (event.getAction() == MotionEvent.ACTION_DOWN) {
+            Log.i("lcq", "->" + event.getX() + "/" + event.getY());
+            Log.i("lcq", "->" + event.getRawX() + "/" + event.getRawX());
+            Log.i("lcq", "->" + event.getX() + "/" + event.getY());
+        }
+    }
+
+    private void log(String msg) {
+        Log.i("lcq", msg);
+    }
+
+
 }

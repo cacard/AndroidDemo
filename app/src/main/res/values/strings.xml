@@ -11,5 +11,9 @@
     <string name="title_activity_activity_value_animator">ActivityValueAnimator</string>
     <string name="title_activity_activity_motion_event">ActivityMotionEvent</string>
     <string name="title_activity_activity_view_group_event">ActivityViewGroupEvent</string>
+    <string name="title_activity_dialog_context_test">DialogContextTest</string>
+    <string name="title_activity_activity_inflater_vsdirect_create">ActivityInflaterVSdirectCreate
+    </string>
+    <string name="title_activity_test_attach_to_root">TestAttachToRootActivity</string>
 
 </resources>
