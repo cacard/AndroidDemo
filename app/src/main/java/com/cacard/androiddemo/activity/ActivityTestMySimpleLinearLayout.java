@@ -17,6 +17,7 @@ import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Scroller;
 
 public class ActivityTestMySimpleLinearLayout extends Activity {
 

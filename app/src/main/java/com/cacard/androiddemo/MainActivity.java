@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewTreeObserver;
 
 import com.cacard.androiddemo.activity.ActivityPageableHorizonalScrollView;
+import com.cacard.androiddemo.activity.ActivityScrollerDemo;
 import com.cacard.androiddemo.activity.singleinstance.Activity1;
 import com.cacard.androiddemo.event.ActivityMotionEvent;
 

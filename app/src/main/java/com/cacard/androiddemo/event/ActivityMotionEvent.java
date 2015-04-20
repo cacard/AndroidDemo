@@ -37,7 +37,6 @@ public class ActivityMotionEvent extends Activity {
         return super.onTouchEvent(event);
     }
 
-    // 多个手指按下时，第一个触发的是ACTION_DOWN，第二个或更多的actionMasked()会触发ACTION_POINTER_DWON
     private void testMultiPointer(MotionEvent e) {
         //log("count:" + e.getPointerCount());
 
@@ -76,9 +75,7 @@ public class ActivityMotionEvent extends Activity {
     }
 
     private void printPointerIndexId(MotionEvent e) {
-        // 判断是第几个pointer
         log("pointer index:" + (e.getActionIndex()));
-        // 获取pointer对应的pointerId
         log("pointer id:" + (e.getPointerId(e.getActionIndex())));
     }
 

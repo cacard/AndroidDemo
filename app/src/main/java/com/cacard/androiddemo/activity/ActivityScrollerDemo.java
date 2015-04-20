@@ -1,62 +1,60 @@
-/**
- * 
- */
+
 package com.cacard.androiddemo.activity;
 
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.GestureDetector;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.ViewTreeObserver;
 import android.widget.Button;
 import android.widget.Scroller;
 import android.widget.TextView;
 
 import com.cacard.androiddemo.R;
 
+/**
+ * 使用Scroller实现滑动动画
+ * <p/>
+ * - 不好的一点是，必须使用自定义View实现computeScroll()方法
+ * - TextView本身支持Scroller
+ */
 public class ActivityScrollerDemo extends Activity {
 
-	@Override
-	public void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
+    private TextView target;
+    Scroller s;
 
-		this.setContentView(R.layout.activity_scroller_demo);
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        this.setContentView(R.layout.activity_scroller_demo);
+        target = (TextView) this.findViewById(R.id.target);
 
-		final TextView target = (TextView) this.findViewById(R.id.target);
+    }
 
-		final Context ctx = this.getApplicationContext();
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        if (event.getActionMasked() == MotionEvent.ACTION_DOWN) {
+            demo1();
+            return true;
+        }
+        return super.onTouchEvent(event);
+    }
 
-		Button btn = (Button) this.findViewById(R.id.btn);
-		btn.setOnClickListener(new OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				// 开启Scroller
-				Scroller s = new Scroller(ctx);
-				s.startScroll(0, 0, 200, 200, 1000);
+    private void demo1() {
+        if (target == null) {
+            return;
+        }
 
-				// 循环获取Scroller计算好的偏移，更新UI
-				while (s.computeScrollOffset()) {
-					
-					if(s.getCurrX()%10!=0){
-						continue;
-					}
-					
-					target.scrollTo(s.getCurrX(), s.getCurrY());
-					target.invalidate();
-					Log.i("test","getScrollX:" + target.getScrollX() + ",getScrollY:" + target.getScrollY());
-					try {
-						Thread.sleep(500);
-					} catch (InterruptedException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					}
-				}
+        s = new Scroller(this);
+        target.setScroller(s);
 
-			}
-		});
+        s.forceFinished(true);
+        s.startScroll(0, 0, -1200, -1200, 1000);
 
-	}
-
-
+        target.invalidate();
+    }
 }
