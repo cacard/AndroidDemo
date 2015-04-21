@@ -33,18 +33,29 @@ public class ActivityScrollerDemo extends Activity {
         this.setContentView(R.layout.activity_scroller_demo);
         target = (TextView) this.findViewById(R.id.target);
 
+        Button btnFling = (Button) findViewById(R.id.btnFling);
+        btnFling.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                flingDemo();
+            }
+        });
+
     }
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
         if (event.getActionMasked() == MotionEvent.ACTION_DOWN) {
-            demo1();
+            scrollDemo();
             return true;
         }
         return super.onTouchEvent(event);
     }
 
-    private void demo1() {
+    /**
+     * Scroll
+     */
+    private void scrollDemo() {
         if (target == null) {
             return;
         }
@@ -57,4 +68,26 @@ public class ActivityScrollerDemo extends Activity {
 
         target.invalidate();
     }
+
+    /**
+     * Flinging
+     */
+    private void flingDemo() {
+        if (target == null) {
+            return;
+        }
+        if (s == null) {
+            s = new Scroller(this);
+        }
+        target.setScroller(s);
+        s.forceFinished(true);
+        s.fling(0, 0, 10/* velocityX */, 0, 100/* minX */, 1000/* maxY */, 0, 0);
+
+    }
+
+    private void overScorllerDemo() {
+
+    }
+
+
 }

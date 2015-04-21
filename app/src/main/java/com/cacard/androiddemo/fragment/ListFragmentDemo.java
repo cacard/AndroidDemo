@@ -11,7 +11,7 @@ import android.app.ListFragment;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
 
-import com.cacard.androiddemo.helper.LogHelper;
+import com.cacard.androiddemo.util.LogHelper;
 
 public class ListFragmentDemo extends ListFragment {
 	/* Fragment与Activity绑定时调用一次 */

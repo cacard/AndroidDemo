@@ -4,13 +4,13 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
 
-    <com.cacard.androiddemo.customview.MySimpleLinearLayout
+    <com.cacard.androiddemo.CustomControl.MySimpleLinearLayout
         android:id="@+id/mySimpleLinearLayout"
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="600px" >
 
-        <com.cacard.androiddemo.customview.MySimpleButton
+        <com.cacard.androiddemo.CustomControl.MySimpleButton
             android:id="@+id/btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -22,7 +22,7 @@
             android:background="#00ff00"
             />
         
-        <com.cacard.androiddemo.customview.MySimpleView 
+        <com.cacard.androiddemo.CustomControl.MySimpleView
             android:id="@+id/mySimpleView"
             android:layout_width="200px"
             android:layout_height="200px"
@@ -30,6 +30,6 @@
             android:clickable="true"
             />
         
-    </com.cacard.androiddemo.customview.MySimpleLinearLayout>
+    </com.cacard.androiddemo.CustomControl.MySimpleLinearLayout>
 
 </LinearLayout>

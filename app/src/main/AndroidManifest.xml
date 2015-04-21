@@ -7,13 +7,6 @@
     <uses-sdk
         android:minSdkVersion="10"
         android:targetSdkVersion="21" />
-
-    <instrumentation
-        android:name=".MyInstrumentation"
-        android:icon="@drawable/logo"
-        android:label="instrumentation_demo"
-        android:targetPackage="com.cacard.androiddemo" />
-
     <uses-feature
         android:glEsVersion="0x00020000"
         android:required="true" />
@@ -65,11 +58,10 @@
         <!-- created by licq at 2014-05-07 10:10:32 -->
         <activity android:name=".activity.ActivityLoopDemo" />
         <!-- created by licq at 2014-05-12 10:39:37 -->
-        <activity android:name=".activity.FragmentStatic" />
+        <activity android:name=".fragment.FragmentStatic" />
         <!-- created by licq at 2014-05-12 13:59:13 -->
-        <activity android:name=".activity.FragmentDynamic" />
+        <activity android:name=".fragment.FragmentDynamic" />
         <!-- created by licq at 2014-05-12 17:37:48 -->
-        <activity android:name=".activity.ActivityTab" />
         <!-- created by licq at 2014-05-14 17:42:47 -->
         <activity android:name=".activity.ActivityViewRefresh" />
         <!-- created by licq at 2014-05-16 16:53:14 -->
@@ -81,10 +73,10 @@
         <!-- created by licq at 2014-08-20 10:06:13 -->
         <activity android:name=".activity.AnimationDemo" />
         <!-- created by licq at 2014-08-26 13:57:56 -->
-        <activity android:name=".activity.FragmentCommutation" />
+        <activity android:name=".fragment.FragmentCommutation" />
         <!-- created by licq at 2014-08-26 15:51:58 -->
-        <activity android:name=".activity.FragmentSupportMultipleScreen" />
-        <activity android:name=".activity.FragmentSupportMultipleScreen_DetailActivity" />
+        <activity android:name=".fragment.FragmentSupportMultipleScreen" />
+        <activity android:name=".fragment.FragmentSupportMultipleScreen_DetailActivity" />
         <!-- created by licq at 2014-08-28 10:50:30 -->
         <activity android:name=".activity.ui.ListViewOptimization" />
         <!-- created by licq at 2014-09-01 15:37:48 -->
@@ -139,7 +131,7 @@
             android:windowSoftInputMode="stateAlwaysHidden|adjustResize" />
         <activity android:name=".activity.ui.ActivityViewPosition" />
 
-        <receiver android:name=".broadcast.BroadcastReceiverSimple" />
+        <receiver android:name=".Broadcast.BroadcastReceiverSimple" />
 
         <activity
             android:name=".graphic.MySurfaceViewActivity"
@@ -160,7 +152,7 @@
             android:name=".event.ActivityViewGroupEvent"
             android:label="@string/title_activity_activity_view_group_event" />
 
-        <receiver android:name=".broadcast.PackageAddRemoveReceiver">
+        <receiver android:name=".Broadcast.PackageAddRemoveReceiver">
             <intent-filter>
                 <action android:name="android.intent.action.PACKAGE_ADDED" />
                 <action android:name="android.intent.action.PACKAGE_REMOVED" />
@@ -180,11 +172,11 @@
             android:label="@string/title_activity_test_attach_to_root"></activity>
 
         <activity
-            android:name=".activity.singleinstance.Activity1"
+            android:name=".launchmode.SingleInstance.Activity1"
             android:launchMode="singleInstance" />
-        <activity android:name=".activity.singleinstance.Activity2" />
+        <activity android:name=".launchmode.SingleInstance.Activity2" />
 
-        <activity android:name=".activity.ActivityPageableHorizonalScrollView" />
+        <activity android:name=".CustomControl.PageableHorizonalScrollView.ActivityPageableHorizonalScrollView" />
 
     </application>
 

@@ -7,7 +7,7 @@
 package com.cacard.androiddemo.fragment;
 
 import com.cacard.androiddemo.R;
-import com.cacard.androiddemo.helper.LogHelper;
+import com.cacard.androiddemo.util.LogHelper;
 
 import android.app.Activity;
 import android.app.Fragment;

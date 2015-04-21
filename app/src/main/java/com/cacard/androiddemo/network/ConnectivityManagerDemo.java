@@ -1,6 +1,6 @@
 package com.cacard.androiddemo.network;
 
-import com.cacard.androiddemo.helper.LogHelper;
+import com.cacard.androiddemo.util.LogHelper;
 
 import android.content.Context;
 import android.net.ConnectivityManager;

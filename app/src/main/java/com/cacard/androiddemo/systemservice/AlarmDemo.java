@@ -1,13 +1,12 @@
-package com.cacard.androiddemo.systemservice;
+package com.cacard.androiddemo.SystemService;
 
 import android.app.Activity;
 import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.content.Intent;
-import android.content.IntentFilter;
 import android.os.SystemClock;
 
-import com.cacard.androiddemo.broadcast.BroadcastReceiverSimple;
+import com.cacard.androiddemo.Broadcast.BroadcastReceiverSimple;
 import com.cacard.androiddemo.service.StartedServiceDemo;
 
 public class AlarmDemo {

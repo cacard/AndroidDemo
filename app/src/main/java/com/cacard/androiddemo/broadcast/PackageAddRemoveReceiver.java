@@ -1,4 +1,4 @@
-package com.cacard.androiddemo.broadcast;
+package com.cacard.androiddemo.Broadcast;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
