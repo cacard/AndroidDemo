@@ -11,7 +11,9 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.util.Log;
+import android.widget.FrameLayout;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 
 public class ActivityScreenSize extends Activity {
 
@@ -27,6 +29,7 @@ public class ActivityScreenSize extends Activity {
         log("density" + metrics.density);
         log("widthPixels" + metrics.widthPixels);
         log("heightPixels" + metrics.heightPixels);
+
 
         final LinearLayout ll = (LinearLayout) this.findViewById(R.id.root);
         ll.post(new Runnable() {

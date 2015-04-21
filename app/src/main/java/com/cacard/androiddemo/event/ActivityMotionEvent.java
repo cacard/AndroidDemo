@@ -1,19 +1,12 @@
 package com.cacard.androiddemo.event;
 
 import android.app.Activity;
-import android.app.Application;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.MotionEvent;
-import android.view.View;
 import android.widget.TextView;
 
-import com.cacard.androiddemo.MyApplication;
 import com.cacard.androiddemo.R;
-
-import org.w3c.dom.Text;
 
 /**
  * MotionEvent Testing

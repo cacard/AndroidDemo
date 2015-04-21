@@ -15,5 +15,4 @@ public class BroadcastReceiverSimple extends BroadcastReceiver {
         //}
 
     }
-
 }

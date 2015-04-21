@@ -32,7 +32,6 @@
         android:maxSdkVersion="18" />
 
     <application
-        android:name=".MyApplication"
         android:debuggable="true"
         android:allowBackup="true"
         android:hardwareAccelerated="true"
@@ -148,29 +147,14 @@
         <activity
             android:name=".event.ActivityMotionEvent"
             android:label="@string/title_activity_activity_motion_event" />
-        <activity
-            android:name=".event.ActivityViewGroupEvent"
-            android:label="@string/title_activity_activity_view_group_event" />
 
         <receiver android:name=".Broadcast.PackageAddRemoveReceiver">
             <intent-filter>
                 <action android:name="android.intent.action.PACKAGE_ADDED" />
                 <action android:name="android.intent.action.PACKAGE_REMOVED" />
-
                 <data android:scheme="package" />
             </intent-filter>
         </receiver>
-
-        <activity
-            android:name=".activity.ui.DialogContextTest"
-            android:label="@string/title_activity_dialog_context_test"></activity>
-        <activity
-            android:name=".activity.ActivityInflaterVSdirectCreate"
-            android:label="@string/title_activity_activity_inflater_vsdirect_create"></activity>
-        <activity
-            android:name=".activity.ui.TestAttachToRootActivity"
-            android:label="@string/title_activity_test_attach_to_root"></activity>
-
         <activity
             android:name=".launchmode.SingleInstance.Activity1"
             android:launchMode="singleInstance" />

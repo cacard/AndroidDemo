@@ -1,6 +1,7 @@
 package com.cacard.androiddemo;
 
 import android.app.Activity;
+import android.app.ActivityOptions;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -17,7 +18,6 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         super.setContentView(R.layout.main_activity); // 使用super而不是this，可减少方法数
         super.setTitle("Main");
-
     }
 
     @Override
