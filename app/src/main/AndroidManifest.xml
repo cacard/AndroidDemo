@@ -132,6 +132,10 @@
 
         <receiver android:name=".Broadcast.BroadcastReceiverSimple" />
 
+        <activity android:name=".ViewDragHelperDemo.VDHActivity" />
+
+        <activity android:name=".GestureDetectorDemo.GestureDetectorDemoActivity" />
+
         <activity
             android:name=".graphic.MySurfaceViewActivity"
             android:label="@string/title_activity_my_surface_view" />

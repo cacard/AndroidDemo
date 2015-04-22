@@ -10,6 +10,8 @@ import android.view.View;
 import android.view.ViewTreeObserver;
 
 import com.cacard.androiddemo.CustomControl.PageableHorizonalScrollView.ActivityPageableHorizonalScrollView;
+import com.cacard.androiddemo.GestureDetectorDemo.GestureDetectorDemoActivity;
+import com.cacard.androiddemo.ViewDragHelperDemo.VDHActivity;
 
 public class MainActivity extends Activity {
 
@@ -23,7 +25,7 @@ public class MainActivity extends Activity {
     @Override
     public boolean onTouchEvent(MotionEvent event) {
         if (event.getAction() == MotionEvent.ACTION_DOWN) {
-            gotoActivity(ActivityPageableHorizonalScrollView.class);
+            gotoActivity(GestureDetectorDemoActivity.class);
             return true;
         }
 
