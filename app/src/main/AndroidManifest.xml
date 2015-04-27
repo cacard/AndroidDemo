@@ -136,6 +136,10 @@
 
         <activity android:name=".GestureDetectorDemo.GestureDetectorDemoActivity" />
 
+        <activity android:name=".activity.ActivityTestRootMeasureSpec" />
+
+        <activity android:name=".DrawableAndImage.ClipDrawableActivity" />
+
         <activity
             android:name=".graphic.MySurfaceViewActivity"
             android:label="@string/title_activity_my_surface_view" />

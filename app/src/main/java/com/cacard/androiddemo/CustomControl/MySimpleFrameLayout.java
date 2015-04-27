@@ -3,13 +3,19 @@ package com.cacard.androiddemo.CustomControl;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.View;
 import android.widget.FrameLayout;
+
+import com.cacard.androiddemo.util.MeasureSpecUtil;
 
 /**
  * Created by cunqingli on 2015/4/10.
  */
 public class MySimpleFrameLayout extends FrameLayout {
+
+    private static final String TAG = "MySimpleFrameLayout";
+
     public MySimpleFrameLayout(Context context) {
         super(context);
     }
@@ -28,6 +34,8 @@ public class MySimpleFrameLayout extends FrameLayout {
         int w = MeasureSpec.getSize(widthMeasureSpec);
         int hMode = MeasureSpec.getMode(heightMeasureSpec);
         int h = MeasureSpec.getSize(heightMeasureSpec);
+
+        log("[tag:" + this.getTag() + "]widthMode:" + MeasureSpecUtil.getModeString(wMode) + "/width:" + w);
 
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
     }
@@ -67,5 +75,9 @@ public class MySimpleFrameLayout extends FrameLayout {
     @Override
     public void draw(Canvas canvas) {
         super.draw(canvas);
+    }
+
+    private void log(String msg) {
+        Log.i("lcq", TAG + "->" + msg);
     }
 }
