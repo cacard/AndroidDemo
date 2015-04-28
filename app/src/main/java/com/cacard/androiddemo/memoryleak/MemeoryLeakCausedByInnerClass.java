@@ -5,7 +5,7 @@
  *
  */
 
-package com.cacard.androiddemo.memoryleak;
+package com.cacard.androiddemo.MemoryLeak;
 
 import android.app.Activity;
 import android.os.Bundle;

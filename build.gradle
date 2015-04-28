@@ -4,17 +4,18 @@ buildscript {
     // 仓库
     def internalMavenUrl = "http://10.231.132.140:8081/nexus/content/repositories/android/"
     repositories {
-        mavenCentral()
+        //mavenCentral()
     }
 
     // 依赖的lib
     dependencies {
-        classpath 'com.android.tools.build:gradle:1.0.0'
+        classpath 'com.android.tools.build:gradle:1.2.0'
+        //compile files('libs/ormlite-android-4.48.jar')
     }
 }
 
 allprojects {
     repositories {
-        mavenCentral()
+       //mavenCentral()
     }
 }

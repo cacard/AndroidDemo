@@ -1,6 +1,6 @@
 
 
-package com.cacard.androiddemo.message;
+package com.cacard.androiddemo.Message;
 
 import android.app.Activity;
 import android.os.Bundle;

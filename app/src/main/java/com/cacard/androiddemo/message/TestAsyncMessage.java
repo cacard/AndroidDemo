@@ -1,8 +1,7 @@
-package com.cacard.androiddemo.message;
+package com.cacard.androiddemo.Message;
 
 import android.content.Context;
 import android.os.Handler;
-import android.os.HandlerThread;
 import android.os.Message;
 import android.util.Log;
 

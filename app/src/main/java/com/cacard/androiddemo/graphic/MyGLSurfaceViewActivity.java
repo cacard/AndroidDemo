@@ -1,4 +1,4 @@
-package com.cacard.androiddemo.graphic;
+package com.cacard.androiddemo.Graphic;
 
 import android.app.Activity;
 import android.os.Bundle;
