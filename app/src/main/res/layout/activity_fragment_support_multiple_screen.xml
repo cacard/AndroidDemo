@@ -6,7 +6,7 @@
     
     <fragment
         android:id="@+id/fragment_menu"
-        android:name="com.cacard.androiddemo.fragment.FragmentMenu"
+        android:name="com.cacard.demo.Fragment.FragmentMenu"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         />

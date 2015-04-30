@@ -12,7 +12,7 @@
 
     <fragment
         android:id="@+id/fgOne"
-        android:name="com.cacard.androiddemo.fragment.FragmentOne"
+        android:name="com.cacard.demo.Fragment.FragmentOne"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent" />
 

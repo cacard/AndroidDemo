@@ -1,10 +1,20 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 buildscript {
 
-    // 仓库
-    def internalMavenUrl = "http://10.231.132.140:8081/nexus/content/repositories/android/"
+    def url1 = "http://10.231.132.140:8081/nexus/content/repositories/android/"
+    def url2 = "http://maven.oschina.net/content/groups/public"
+
     repositories {
-        //mavenCentral()
+        // local file
+        flatDir { dirs 'libs' }
+
+        // custome url
+        maven {
+            url url1;
+        }
+
+        // maven central
+        mavenCentral()
     }
 
     // 依赖的lib
@@ -16,6 +26,15 @@ buildscript {
 
 allprojects {
     repositories {
-       //mavenCentral()
+        all { ArtifactRepository repo ->
+            println repo.url.toString()
+            if ((repo instanceof MavenArtifactRepository) && repo.url.toString().startsWith("https://repo1.maven.org/maven2")) {
+                project.logger.warn "Repository ${repo.url} removed. Only $coporateRepoUrl is allowed"
+                remove repo
+            }
+        }
+        maven {
+            url "http://maven.oschina.net/content/groups/public"
+        }
     }
 }

@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.cacard.androiddemo.CustomControl.MySimpleFrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.cacard.demo.CustomControl.MySimpleFrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="100dp"
     android:layout_height="100dp"
     android:tag="p1">
 
-    <com.cacard.androiddemo.CustomControl.MySimpleFrameLayout
+    <com.cacard.demo.CustomControl.MySimpleFrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:tag="p21" />
 
-    <com.cacard.androiddemo.CustomControl.MySimpleFrameLayout
+    <com.cacard.demo.CustomControl.MySimpleFrameLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:tag="p22" />
 
-    <com.cacard.androiddemo.CustomControl.MySimpleFrameLayout
+    <com.cacard.demo.CustomControl.MySimpleFrameLayout
         android:layout_width="10dp"
         android:layout_height="10dp"
         android:tag="p23" />
 
-</com.cacard.androiddemo.CustomControl.MySimpleFrameLayout>
+</com.cacard.demo.CustomControl.MySimpleFrameLayout>

@@ -7,14 +7,14 @@
     
     <fragment
         android:id="@+id/fg1"
-        android:name="com.cacard.androiddemo.fragment.Fragment1"
+        android:name="com.cacard.demo.Fragment.Fragment1"
         android:layout_weight="1"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent" />
     
     <fragment
         android:id="@+id/fg2"
-        android:name="com.cacard.androiddemo.fragment.Fragment2"
+        android:name="com.cacard.demo.Fragment.Fragment2"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:layout_weight="1"
