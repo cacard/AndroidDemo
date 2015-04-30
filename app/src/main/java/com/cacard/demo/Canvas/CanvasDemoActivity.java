@@ -22,6 +22,7 @@ public class CanvasDemoActivity extends Activity {
         views = new ArrayList<View>();
         views.add(new CanvasSimple(this));
         views.add(new CanvasDrawingText(this));
+        views.add(new CanvasDrawingText_FontMetrics(this));
 
         changeView(0);
 

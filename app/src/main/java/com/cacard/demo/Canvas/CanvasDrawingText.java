@@ -45,11 +45,7 @@ public class CanvasDrawingText extends View {
 
         // 字体高度
         Paint.FontMetrics fm = p.getFontMetrics();
-        float fontTop = fm.top;
-        float fontBottom = fm.bottom;
-        float fontHeight = fontBottom - fontTop;
-        Log.i(TAG, "top:" + fontTop + "/bottom:" + fontBottom);
-
+        float fontHeight = fm.bottom - fm.top;
 
         // 第一行基线
         int baseLineY = (int) fontHeight;
@@ -67,4 +63,6 @@ public class CanvasDrawingText extends View {
 
         canvas.drawText(str, 0/*字体baseLine的x*/, fontHeight/*字体baseLine的y*/, p);
     }
+
+
 }
