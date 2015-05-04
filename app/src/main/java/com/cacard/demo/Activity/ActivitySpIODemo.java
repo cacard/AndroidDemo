@@ -20,9 +20,13 @@ import android.widget.TextView;
  * 测试结果：
  * sp1：读取耗时：
  * meizhu 21034250，20802375，37086792，即约20-30ms
+ * OPPO 30306731
+ * 2.3
  * <p/>
  * sp2：读取耗时：
  * meizhu 789750，856042，735417，即约0.7ms
+ * OPPO 640928
+ * 2.3
  * <p/>
  * Created by cunqingli on 2015/5/4.
  */
@@ -54,6 +58,7 @@ public class ActivitySpIODemo extends Activity {
             @Override
             public void onClick(View v) {
                 readSp();
+                readWriteManyTimes();
             }
         });
         root.addView(btn2);
@@ -80,9 +85,13 @@ public class ActivitySpIODemo extends Activity {
         SharedPreferences sp2 = getSharedPreferences("sp2", MODE_PRIVATE);
         sp2.edit().putString("key1", "value1dfsdfsdfdsfsdfsdfdsfdsfdsdsfdsfs").apply();
 
+        // sp3
+        SharedPreferences sp3 = getSharedPreferences("sp3", MODE_PRIVATE);
+        sp3.edit().putString("key1", sb.toString()).apply();
+
     }
 
-    // 最好重启一下机器再测试
+    // 测试前要Kill App
     private void readSp() {
 
         String msg = "";
@@ -119,5 +128,26 @@ public class ActivitySpIODemo extends Activity {
 
         Log.i(TAG, msg);
 
+    }
+
+    // 测试循环读写
+    private void readWriteManyTimes() {
+
+        long t1 = System.nanoTime();
+        SharedPreferences sp = getSharedPreferences("sp3", MODE_PRIVATE);
+        for (int i = 0; i < 10; i++) {
+            sp.getString("key" + System.nanoTime(), "");
+            sp.edit().putString("key" + System.nanoTime(), "___________________");
+        }
+        long t2 = System.nanoTime();
+
+        final long t = t2 - t1;
+
+        tvLog.post(new Runnable() {
+            @Override
+            public void run() {
+                tvLog.append("read write 10 times:" + t);
+            }
+        });
     }
 }
