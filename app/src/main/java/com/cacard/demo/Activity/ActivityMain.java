@@ -1,4 +1,4 @@
-package com.cacard.demo;
+package com.cacard.demo.Activity;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -19,7 +19,7 @@ import com.cacard.demo.GestureDetectorDemo.GestureDetectorDemoActivity;
 import com.cacard.demo.ViewDragHelperDemo.VDHActivity;
 import com.cacard.demo.launchmode.SingleInstance.Activity0;
 
-public class MainActivity extends Activity {
+public class ActivityMain extends Activity {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -47,6 +47,8 @@ public class MainActivity extends Activity {
 
         addButton(root, "Canvas", CanvasDemoActivity.class);
 
+        addButton(root, "SpSpeed", ActivitySpIODemo.class);
+
         ScrollView sv = new ScrollView(this);
         sv.addView(root);
 
@@ -60,7 +62,7 @@ public class MainActivity extends Activity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                MainActivity.this.startActivity(new Intent(MainActivity.this, clazz));
+                ActivityMain.this.startActivity(new Intent(ActivityMain.this, clazz));
             }
         });
         root.addView(btn);

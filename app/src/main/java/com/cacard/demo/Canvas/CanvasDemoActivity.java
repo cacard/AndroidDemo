@@ -1,6 +1,7 @@
 package com.cacard.demo.Canvas;
 
 import android.app.Activity;
+import android.graphics.Paint;
 import android.os.Bundle;
 import android.view.View;
 
@@ -19,6 +20,7 @@ public class CanvasDemoActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        // pages
         views = new ArrayList<View>();
         views.add(new CanvasSimple(this));
         views.add(new CanvasDrawingText(this));
@@ -26,6 +28,7 @@ public class CanvasDemoActivity extends Activity {
 
         changeView(0);
 
+        // change page when click
         View root = findViewById(android.R.id.content);
         if (root != null) {
             root.setOnClickListener(new View.OnClickListener() {
