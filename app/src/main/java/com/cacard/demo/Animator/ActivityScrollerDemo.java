@@ -1,5 +1,5 @@
 
-package com.cacard.demo.Activity;
+package com.cacard.demo.Animator;
 
 import android.app.Activity;
 import android.os.Bundle;

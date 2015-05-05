@@ -39,135 +39,13 @@
         android:label="@string/app_name"
         android:permission="android.permission.ACCESS_COARSE_LOCATION"
         android:theme="@android:style/Theme.Holo.Light">
-        <activity
-            android:name=".Activity.ActivityMain"
-            android:label="@string/app_name">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <!-- created by licq at 2014-05-05 09:28:11 -->
-        <activity android:name=".Activity.ActivityA" />
-        <!-- created by licq at 2014-05-05 10:15:01 -->
-        <activity android:name=".Activity.ActivityB" />
-        <!-- created by licq at 2014-05-05 10:16:12 -->
-        <activity android:name=".Activity.ActivityC" />
-        <!-- created by licq at 2014-05-07 10:10:32 -->
-        <activity android:name=".Activity.ActivityLoopDemo" />
-        <!-- created by licq at 2014-05-12 10:39:37 -->
-        <activity android:name="com.cacard.demo.Fragment.FragmentStatic" />
-        <!-- created by licq at 2014-05-12 13:59:13 -->
-        <activity android:name="com.cacard.demo.Fragment.FragmentDynamic" />
-        <!-- created by licq at 2014-05-12 17:37:48 -->
-        <!-- created by licq at 2014-05-14 17:42:47 -->
-        <activity android:name=".Activity.ActivityViewRefresh" />
-        <!-- created by licq at 2014-05-16 16:53:14 -->
-        <activity android:name=".Activity.ui.TextViewDemo" />
-        <!-- created by licq at 2014-05-16 17:29:06 -->
-        <activity android:name=".Activity.ui.SettingDemo" />
-        <!-- created by licq at 2014-08-18 14:30:50 -->
-        <activity android:name=".Activity.ActivityTouchEvent" />
-        <!-- created by licq at 2014-08-20 10:06:13 -->
-        <activity android:name=".Activity.AnimationDemo" />
-        <!-- created by licq at 2014-08-26 13:57:56 -->
-        <activity android:name="com.cacard.demo.Fragment.FragmentCommutation" />
-        <!-- created by licq at 2014-08-26 15:51:58 -->
-        <activity android:name="com.cacard.demo.Fragment.FragmentSupportMultipleScreen" />
-        <activity android:name="com.cacard.demo.Fragment.FragmentSupportMultipleScreen_DetailActivity" />
-        <!-- created by licq at 2014-08-28 10:50:30 -->
-        <activity android:name=".Activity.ui.ListViewOptimization" />
-        <!-- created by licq at 2014-09-01 15:37:48 -->
-        <activity android:name="com.cacard.demo.Drawable.DrawingCacheDemo" />
-        <!-- created by licq at 2014-09-01 16:51:35 -->
-        <activity android:name=".Activity.ui.LinearLayout_Weight_Demo" />
-        <!-- created by licq at 2014-09-02 10:51:26 -->
-        <activity android:name=".Activity.TouchEvent_Scroll" />
-        <!-- created by licq at 2014-09-03 10:31:50 -->
-        <activity android:name=".Activity.TouchEvent_ViewGroup" />
-        <!-- created by licq at 2014-09-03 14:42:30 -->
-        <activity android:name="com.cacard.demo.MemoryLeak.ActivityWithThread" />
-        <!-- created by licq at 2014-09-03 15:00:48 -->
-        <activity android:name="com.cacard.demo.MemoryLeak.ActivityUsingHandler" />
-        <!-- created by licq at 2014-09-03 15:59:43 -->
-        <activity android:name="com.cacard.demo.Message.MessageAndHandler" />
-        <!-- created by licq at 2014-09-05 14:44:07 -->
-        <activity android:name=".Activity.ANRDemo" />
-        <!-- created by licq at 2014-09-09 09:42:17 -->
-        <activity android:name="com.cacard.demo.Activity.ActivityTestMySimpleLinearLayout" />
-        <!-- created by licq at 2014-09-10 09:12:00 -->
-        <activity android:name=".Activity.ActivityScrollDemo" />
-        <!-- created by licq at 2014-09-10 10:18:00 -->
-        <activity android:name=".Activity.ActivityGestureDetector" />
-        <!-- created by licq at 2014-09-10 13:31:40 -->
-        <activity android:name="com.cacard.demo.Activity.ActivityScrollerDemo" />
-        <!-- created by licq at 2014-09-10 14:38:49 -->
-        <activity
-            android:name=".Activity.ActivityUsingAndroidTheme"
-            android:theme="@android:style/Theme.Dialog" />
-        <!-- created by licq at 2014-09-10 15:14:12 -->
-        <activity android:name=".Activity.ui.ActivityActionBarDemo" />
-        <!-- created by licq at 2014-09-18 15:45:23 -->
-        <activity android:name="com.cacard.demo.Activity.ActivityScreenSize" />
-        <!-- created by licq at 2014-10-09 13:57:26 -->
-        <activity android:name=".contentprovider.ContentProviderDemo" />
-        <!-- created by licq at 2014-10-10 09:19:08 -->
-        <activity android:name="com.cacard.demo.Thread.Loader_CursorLoader_SimpleCursorAdapter" />
-        <!-- created by licq at 2014-10-10 10:59:50 -->
 
 
-        <!-- created by licq at 2014-09-03 17:41:36 -->
         <service android:name="com.cacard.demo.Service.StartedServiceIntentServiceDemo" />
         <service android:name="com.cacard.demo.Service.StartedServiceDemo" />
         <service android:name="com.cacard.demo.Service.BoundServiceDemo" />
 
-        <activity android:name=".Activity.ActivitySpIODemo" />
-
-        <activity
-            android:name=".Activity.ui.ViewPagerDemo"
-            android:label="@string/title_activity_view_pager_demo" />
-        <activity
-            android:name=".Activity.ui.SoftInputDemo"
-            android:windowSoftInputMode="stateAlwaysHidden|adjustResize" />
-        <activity android:name=".Activity.ui.ActivityViewPosition" />
-
         <receiver android:name="com.cacard.demo.Broadcast.BroadcastReceiverSimple" />
-
-        <activity android:name="com.cacard.demo.ViewDragHelperDemo.VDHActivity" />
-
-        <activity android:name="com.cacard.demo.GestureDetectorDemo.GestureDetectorDemoActivity" />
-
-        <activity android:name="com.cacard.demo.Activity.ActivityTestRootMeasureSpec" />
-
-        <activity android:name="com.cacard.demo.Drawable.ClipDrawableActivity" />
-
-        <activity android:name="com.cacard.demo.Drawable.DrawableDemo" />
-
-        <activity android:name="com.cacard.demo.Drawable.TransitionDrawableActivity" />
-
-        <activity android:name="com.cacard.demo.launchmode.SingleInstance.Activity0" />
-
-        <activity android:name="com.cacard.demo.Drawable.ShapeDrawableActivity" />
-
-        <activity android:name="com.cacard.demo.Canvas.CanvasDemoActivity" />
-
-        <activity
-            android:name="com.cacard.demo.Graphic.MySurfaceViewActivity"
-            android:label="@string/title_activity_my_surface_view" />
-        <activity
-            android:name="com.cacard.demo.Graphic.MyGLSurfaceViewActivity"
-            android:label="@string/title_activity_my_glsurface_view" />
-        <activity
-            android:name=".Activity.ActivityInstrumentationTest"
-            android:label="@string/title_activity_activity_instrumentation_test" />
-        <activity
-            android:name="com.cacard.demo.Animator.ActivityValueAnimator"
-            android:label="@string/title_activity_activity_value_animator" />
-        <activity
-            android:name="com.cacard.demo.Event.ActivityMotionEvent"
-            android:label="@string/title_activity_activity_motion_event" />
-
         <receiver android:name="com.cacard.demo.Broadcast.PackageAddRemoveReceiver">
             <intent-filter>
                 <action android:name="android.intent.action.PACKAGE_ADDED" />
@@ -177,11 +55,46 @@
             </intent-filter>
         </receiver>
 
+        <activity android:name=".Activity.ActivityMain">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Activity.ActivityA" />
+        <activity android:name=".Activity.ActivityB" />
+        <activity android:name=".Activity.ActivityC" />
+        <activity android:name=".Activity.ActivityLoopDemo" />
+        <activity android:name="com.cacard.demo.Fragment.FragmentStatic" />
+        <activity android:name="com.cacard.demo.Fragment.FragmentDynamic" />
+        <activity android:name="com.cacard.demo.Fragment.FragmentCommutation" />
+        <activity android:name="com.cacard.demo.Fragment.FragmentSupportMultipleScreen" />
+        <activity android:name="com.cacard.demo.Fragment.FragmentSupportMultipleScreen_DetailActivity" />
+        <activity android:name=".Drawable.DrawingCacheCaptureActivity" />
+        <activity android:name="com.cacard.demo.MemoryLeak.ActivityWithThread" />
+        <activity android:name="com.cacard.demo.MemoryLeak.ActivityUsingHandler" />
+        <activity android:name=".Animator.ActivityScrollerDemo" />
+        <activity android:name="com.cacard.demo.Activity.ActivityScreenSize" />
+        <activity android:name="com.cacard.demo.Thread.Loader_CursorLoader_SimpleCursorAdapter" />
+        <activity android:name=".Activity.ActivitySpIODemo" />
+        <activity android:name="com.cacard.demo.ViewDragHelperDemo.VDHActivity" />
+        <activity android:name="com.cacard.demo.GestureDetectorDemo.GestureDetectorDemoActivity" />
+        <activity android:name="com.cacard.demo.Activity.ActivityTestRootMeasureSpec" />
+        <activity android:name="com.cacard.demo.Drawable.ClipDrawableActivity" />
+        <activity android:name="com.cacard.demo.Drawable.DrawableDemo" />
+        <activity android:name="com.cacard.demo.Drawable.TransitionDrawableActivity" />
+        <activity android:name="com.cacard.demo.launchmode.SingleInstance.Activity0" />
+        <activity android:name="com.cacard.demo.Drawable.ShapeDrawableActivity" />
+        <activity android:name="com.cacard.demo.Canvas.CanvasDemoActivity" />
+        <activity android:name="com.cacard.demo.Graphic.MySurfaceViewActivity" />
+        <activity android:name="com.cacard.demo.Graphic.MyGLSurfaceViewActivity" />
+        <activity android:name=".Activity.ActivityInstrumentationTest" />
+        <activity android:name="com.cacard.demo.Animator.ActivityValueAnimator" />
+        <activity android:name="com.cacard.demo.Event.ActivityMotionEvent" />
         <activity
             android:name="com.cacard.demo.launchmode.SingleInstance.Activity1"
             android:launchMode="singleInstance" />
         <activity android:name="com.cacard.demo.launchmode.SingleInstance.Activity2" />
-
         <activity android:name="com.cacard.demo.CustomControl.PageableHorizonalScrollView.ActivityPageableHorizonalScrollView" />
 
     </application>

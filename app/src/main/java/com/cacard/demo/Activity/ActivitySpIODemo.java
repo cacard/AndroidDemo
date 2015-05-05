@@ -21,12 +21,12 @@ import android.widget.TextView;
  * sp1：读取耗时：
  * meizhu 21034250，20802375，37086792，即约20-30ms
  * OPPO 30306731
- * 2.3
+ * NexusOne 68939208
  * <p/>
  * sp2：读取耗时：
  * meizhu 789750，856042，735417，即约0.7ms
  * OPPO 640928
- * 2.3
+ * 2.3 1403808
  * <p/>
  * Created by cunqingli on 2015/5/4.
  */

@@ -16,20 +16,17 @@ import android.widget.ImageView;
  * - 实现对LinearLayout的“截屏”。
  */
 
-public class DrawingCacheDemo extends Activity {
+public class DrawingCacheCaptureActivity extends Activity {
 
-    View layout = null;
-    ImageView imageView = null;
+    private View layout = null;
+    private ImageView imageView = null;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        this.setContentView(R.layout.drawing_cache_demo);
-
+        setContentView(R.layout.drawing_cache_demo);
         layout = this.findViewById(R.id.v);
         imageView = (ImageView) this.findViewById(R.id.imageView);
-
         layout.setDrawingCacheEnabled(true);
         layout.setDrawingCacheQuality(View.DRAWING_CACHE_QUALITY_HIGH);
     }
@@ -43,16 +40,6 @@ public class DrawingCacheDemo extends Activity {
         }
 
         imageView.setImageBitmap(b);
-
-        // View.post 更新 UI
-        imageView.post(new Runnable() {
-
-            @Override
-            public void run() {
-                imageView.setAlpha(0.2f);
-
-            }
-        });
+        imageView.setAlpha(0.2f);
     }
-
 }

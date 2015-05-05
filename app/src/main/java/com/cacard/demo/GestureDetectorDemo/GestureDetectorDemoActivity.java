@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
+import android.widget.FrameLayout;
+import android.widget.TextView;
 
 /**
  * Created by cunqingli on 2015/4/22.
@@ -12,12 +14,18 @@ import android.view.MotionEvent;
 public class GestureDetectorDemoActivity extends Activity {
 
     private GestureDetector gd;
+    private TextView tvMsg;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         gd = new GestureDetector(new MyOnGestureListener());
+
+        tvMsg = new TextView(this);
+        tvMsg.setLayoutParams(new FrameLayout.LayoutParams(FrameLayout.LayoutParams.MATCH_PARENT, FrameLayout.LayoutParams.MATCH_PARENT));
+
+        this.setContentView(tvMsg);
 
     }
 
@@ -29,6 +37,9 @@ public class GestureDetectorDemoActivity extends Activity {
 
     private void log(String msg) {
         Log.i("Gesture", msg);
+        if (tvMsg != null) {
+            tvMsg.setText(msg);
+        }
     }
 
     // 手势Linstener

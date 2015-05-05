@@ -2,6 +2,8 @@ package com.cacard.demo.Activity;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
+import android.graphics.drawable.DrawableContainer;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -11,8 +13,10 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 
+import com.cacard.demo.Animator.ActivityScrollerDemo;
 import com.cacard.demo.Animator.ActivityValueAnimator;
 import com.cacard.demo.Canvas.CanvasDemoActivity;
+import com.cacard.demo.Drawable.DrawingCacheCaptureActivity;
 import com.cacard.demo.Drawable.ShapeDrawableActivity;
 import com.cacard.demo.Drawable.TransitionDrawableActivity;
 import com.cacard.demo.GestureDetectorDemo.GestureDetectorDemoActivity;
@@ -35,10 +39,14 @@ public class ActivityMain extends Activity {
         LinearLayout root = new LinearLayout(this);
         root.setOrientation(LinearLayout.VERTICAL);
 
+        addButton(root, "ScreenInfomation", ActivityScreenSize.class);
+
         addButton(root, "ShapeDrawable", ShapeDrawableActivity.class);
         addButton(root, "TransitionDrawable", TransitionDrawableActivity.class);
+        addButton(root, "Using Drawing Cache to Caputre", DrawingCacheCaptureActivity.class);
 
         addButton(root, "ValueAnimator", ActivityValueAnimator.class);
+        addButton(root, "Scroller", ActivityScrollerDemo.class);
 
         addButton(root, "ViewDragHelper", VDHActivity.class);
         addButton(root, "GestureDetectory", GestureDetectorDemoActivity.class);
