@@ -9,4 +9,10 @@
         android:layout_height="wrap_content"
         android:src="@drawable/clip_drawable_demo" />
 
+    <TextView
+        android:id="@+id/tvLog"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@+id/iv" />
+
 </RelativeLayout>

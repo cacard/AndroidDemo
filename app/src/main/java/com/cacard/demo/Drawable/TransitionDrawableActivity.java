@@ -17,12 +17,16 @@ public class TransitionDrawableActivity extends Activity {
 
     ImageView iv;
     ImageView iv2;
+    ImageView iv3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         LinearLayout root = new LinearLayout(this);
+        root.setOrientation(LinearLayout.VERTICAL);
+        root.setShowDividers(LinearLayout.SHOW_DIVIDER_MIDDLE);
+        root.setDividerPadding(10);
 
         // image transition
         iv = new ImageView(this);
@@ -30,14 +34,20 @@ public class TransitionDrawableActivity extends Activity {
         iv.setImageResource(R.drawable.transition);
         root.addView(iv);
 
-        // color transition
+        // image transition 2
         iv2 = new ImageView(this);
-        iv2.setLayoutParams(new LinearLayout.LayoutParams(100, 100));
-        iv2.setImageResource(R.drawable.transition_color);
+        iv2.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+        iv2.setImageResource(R.drawable.transition_image);
         root.addView(iv2);
 
+        // color transition
+        iv3 = new ImageView(this);
+        iv3.setLayoutParams(new LinearLayout.LayoutParams(100, 100));
+        iv3.setImageResource(R.drawable.transition_color);
+        root.addView(iv3);
+
         this.setContentView(root);
-        this.setTitle("TransitionDrawable/<transition> Demo");
+        this.setTitle("TransitionDrawable");
     }
 
     @Override
@@ -46,6 +56,7 @@ public class TransitionDrawableActivity extends Activity {
         if (event.getActionMasked() == MotionEvent.ACTION_UP) {
             ((TransitionDrawable) iv.getDrawable()).startTransition(1000);
             ((TransitionDrawable) iv2.getDrawable()).startTransition(1000);
+            ((TransitionDrawable) iv3.getDrawable()).startTransition(1000);
             return true;
         }
 

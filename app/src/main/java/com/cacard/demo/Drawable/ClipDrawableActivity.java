@@ -7,6 +7,7 @@ import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.cacard.demo.R;
 
@@ -17,8 +18,9 @@ public class ClipDrawableActivity extends Activity {
 
     private ClipDrawable cd;
     private int level;
-    private int delay = 100;
+    private int delay = 10;
     private static final int MAX = 10000; // max value of level
+    private TextView tvLog;
 
     private Handler myHandler = new Handler() {
         @Override
@@ -29,12 +31,22 @@ public class ClipDrawableActivity extends Activity {
 
             if (cd != null) {
                 cd.setLevel(level);
-                Log.i("lcq", "level=" + level);
+                log(level);
                 this.sendEmptyMessageDelayed(0, delay);
                 level += 10;
             }
         }
     };
+
+    private void log(final int level) {
+        tvLog.post(new Runnable() {
+            @Override
+            public void run() {
+                tvLog.setText("level:" + level);
+            }
+        });
+        Log.i("lcq", "level=" + level);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +56,8 @@ public class ClipDrawableActivity extends Activity {
         ImageView iv = (ImageView) findViewById(R.id.iv);
         cd = (ClipDrawable) iv.getDrawable();
         cd.setLevel(0);
+
+        tvLog = (TextView) findViewById(R.id.tvLog);
     }
 
     @Override

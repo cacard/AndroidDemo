@@ -16,6 +16,7 @@ import android.widget.ScrollView;
 import com.cacard.demo.Animator.ActivityScrollerDemo;
 import com.cacard.demo.Animator.ActivityValueAnimator;
 import com.cacard.demo.Canvas.CanvasDemoActivity;
+import com.cacard.demo.Drawable.ClipDrawableActivity;
 import com.cacard.demo.Drawable.DrawingCacheCaptureActivity;
 import com.cacard.demo.Drawable.ShapeDrawableActivity;
 import com.cacard.demo.Drawable.TransitionDrawableActivity;
@@ -42,7 +43,9 @@ public class ActivityMain extends Activity {
         addButton(root, "ScreenInfomation", ActivityScreenSize.class);
 
         addButton(root, "ShapeDrawable", ShapeDrawableActivity.class);
+        addButton(root, "ClipDrawable", ClipDrawableActivity.class);
         addButton(root, "TransitionDrawable", TransitionDrawableActivity.class);
+
         addButton(root, "Using Drawing Cache to Caputre", DrawingCacheCaptureActivity.class);
 
         addButton(root, "ValueAnimator", ActivityValueAnimator.class);
