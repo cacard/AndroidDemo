@@ -21,6 +21,7 @@ import com.cacard.demo.Drawable.DrawingCacheCaptureActivity;
 import com.cacard.demo.Drawable.ShapeDrawableActivity;
 import com.cacard.demo.Drawable.TransitionDrawableActivity;
 import com.cacard.demo.GestureDetectorDemo.GestureDetectorDemoActivity;
+import com.cacard.demo.Media.ActivityAudioPlayer;
 import com.cacard.demo.ViewDragHelperDemo.VDHActivity;
 import com.cacard.demo.launchmode.SingleInstance.Activity0;
 
@@ -59,6 +60,8 @@ public class ActivityMain extends Activity {
         addButton(root, "Canvas", CanvasDemoActivity.class);
 
         addButton(root, "SpSpeed", ActivitySpIODemo.class);
+
+        addButton(root, "AudioPlayer", ActivityAudioPlayer.class);
 
         ScrollView sv = new ScrollView(this);
         sv.addView(root);

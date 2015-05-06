@@ -91,6 +91,7 @@
         <activity android:name=".Activity.ActivityInstrumentationTest" />
         <activity android:name="com.cacard.demo.Animator.ActivityValueAnimator" />
         <activity android:name="com.cacard.demo.Event.ActivityMotionEvent" />
+        <activity android:name=".Media.ActivityAudioPlayer" />
         <activity
             android:name="com.cacard.demo.launchmode.SingleInstance.Activity1"
             android:launchMode="singleInstance" />
