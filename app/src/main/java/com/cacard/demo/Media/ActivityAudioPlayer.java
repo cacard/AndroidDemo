@@ -16,6 +16,8 @@ import android.widget.TextView;
 import com.cacard.demo.R;
 
 /**
+ * 音频播放Demo
+ * <p/>
  * Created by cunqingli on 2015/5/6.
  */
 public class ActivityAudioPlayer extends Activity {
@@ -27,8 +29,9 @@ public class ActivityAudioPlayer extends Activity {
 
     private static final int WHAT = 1;
     private static final int DELAY = 1000;
-    private Handler handler = new Handler() {
 
+    // 用以循环更新播放进度
+    private Handler handler = new Handler() {
         @Override
         public void handleMessage(Message msg) {
             displayMediaInfo();
@@ -95,9 +98,6 @@ public class ActivityAudioPlayer extends Activity {
             @Override
             public void onClick(View v) {
                 displayMediaInfo();
-
-                // 开启循环显示
-                handler.sendEmptyMessageDelayed(WHAT, DELAY);
             }
         });
 
@@ -145,6 +145,7 @@ public class ActivityAudioPlayer extends Activity {
         player.start();
 
         displayMediaInfo();
+        handler.sendEmptyMessageDelayed(WHAT, DELAY);// 开启循环显示
     }
 
     // 为当前player添加监听事件
