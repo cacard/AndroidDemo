@@ -16,10 +16,12 @@ import android.widget.ScrollView;
 import com.cacard.demo.Animator.ActivityScrollerDemo;
 import com.cacard.demo.Animator.ActivityValueAnimator;
 import com.cacard.demo.Canvas.CanvasDemoActivity;
+import com.cacard.demo.Canvas.CycleProgressViewActivity;
 import com.cacard.demo.Drawable.ClipDrawableActivity;
 import com.cacard.demo.Drawable.DrawingCacheCaptureActivity;
 import com.cacard.demo.Drawable.ShapeDrawableActivity;
 import com.cacard.demo.Drawable.TransitionDrawableActivity;
+import com.cacard.demo.FloatWindow.ActivityFloatWindow;
 import com.cacard.demo.GestureDetectorDemo.GestureDetectorDemoActivity;
 import com.cacard.demo.Media.ActivityAudioPlayer;
 import com.cacard.demo.ViewDragHelperDemo.VDHActivity;
@@ -58,10 +60,14 @@ public class ActivityMain extends Activity {
         addButton(root, "LaunchMode-SingleInstance", Activity0.class);
 
         addButton(root, "Canvas", CanvasDemoActivity.class);
+        addButton(root, "Canvas,CycleProgress", CycleProgressViewActivity.class);
 
         addButton(root, "SpSpeed", ActivitySpIODemo.class);
+        addButton(root, "SpSpeed2", ActivitySpIODemo2.class);
 
         addButton(root, "AudioPlayer", ActivityAudioPlayer.class);
+
+        addButton(root, "FloatWindow", ActivityFloatWindow.class);
 
         ScrollView sv = new ScrollView(this);
         sv.addView(root);

@@ -14,6 +14,7 @@
         android:layout_height="100dp" />
 
     <ImageView
+        android:id="@+id/imgRing"
         android:background="@drawable/shape_ring"
         android:layout_width="100dp"
         android:layout_height="100dp" />

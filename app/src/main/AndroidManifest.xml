@@ -22,6 +22,9 @@
     <uses-permission android:name="com.android.browser.permission.READ_HISTORY_BOOKMARKS" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.RESTART_PACKAGES" />
+    <!-- for float window -->
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+
 
     <android:uses-permission
         android:name="android.permission.WRITE_EXTERNAL_STORAGE"
@@ -32,6 +35,7 @@
         android:maxSdkVersion="18" />
 
     <application
+        android:name=".MyApplication"
         android:allowBackup="true"
         android:debuggable="true"
         android:hardwareAccelerated="true"
@@ -92,12 +96,14 @@
         <activity android:name="com.cacard.demo.Animator.ActivityValueAnimator" />
         <activity android:name="com.cacard.demo.Event.ActivityMotionEvent" />
         <activity android:name=".Media.ActivityAudioPlayer" />
+        <activity android:name=".Activity.ActivitySpIODemo2" />
         <activity
             android:name="com.cacard.demo.launchmode.SingleInstance.Activity1"
             android:launchMode="singleInstance" />
         <activity android:name="com.cacard.demo.launchmode.SingleInstance.Activity2" />
         <activity android:name="com.cacard.demo.CustomControl.PageableHorizonalScrollView.ActivityPageableHorizonalScrollView" />
-
+        <activity android:name=".FloatWindow.ActivityFloatWindow" />
+        <activity android:name=".Canvas.CycleProgressViewActivity" />
     </application>
 
 </manifest>

@@ -50,11 +50,20 @@ public class ActivityAudioPlayer extends Activity {
         root.setOrientation(LinearLayout.VERTICAL);
 
         Button btn1 = new Button(this);
-        btn1.setText("Play");
+        btn1.setText("Play Local Music");
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 playLocalMusic();
+            }
+        });
+
+        Button btn11 = new Button(this);
+        btn11.setText("Play Internet Music");
+        btn11.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                playInternetMusic();
             }
         });
 
@@ -134,7 +143,6 @@ public class ActivityAudioPlayer extends Activity {
 
     // 播放本地音乐
     private void playLocalMusic() {
-
         if (player != null) {
             releasePlayer();
         }
@@ -146,6 +154,16 @@ public class ActivityAudioPlayer extends Activity {
 
         displayMediaInfo();
         handler.sendEmptyMessageDelayed(WHAT, DELAY);// 开启循环显示
+    }
+
+    // TODO 播放网络音乐
+    private void playInternetMusic() {
+        if (player != null) {
+            releasePlayer();
+        }
+
+        String url = "";
+
     }
 
     // 为当前player添加监听事件
