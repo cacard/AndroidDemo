@@ -23,14 +23,11 @@ import android.widget.TextView;
  * 7296833
  * 8012250
  * 7473209
- * ~7ms
+ * ~7.7ms
  * <p/>
- *
  * sp_config3.xml 144b
- *
  * ~1.7ms
- *
- *
+ * <p/>
  * Created by cunqingli on 2015/5/6.
  */
 public class ActivitySpIODemo2 extends Activity {

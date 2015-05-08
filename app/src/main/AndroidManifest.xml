@@ -45,9 +45,9 @@
         android:theme="@android:style/Theme.Holo.Light">
 
 
-        <service android:name="com.cacard.demo.Service.StartedServiceIntentServiceDemo" />
         <service android:name="com.cacard.demo.Service.StartedServiceDemo" />
         <service android:name="com.cacard.demo.Service.BoundServiceDemo" />
+        <service android:name=".Media.AudioPlayerService" />
 
         <receiver android:name="com.cacard.demo.Broadcast.BroadcastReceiverSimple" />
         <receiver android:name="com.cacard.demo.Broadcast.PackageAddRemoveReceiver">
@@ -96,6 +96,8 @@
         <activity android:name="com.cacard.demo.Animator.ActivityValueAnimator" />
         <activity android:name="com.cacard.demo.Event.ActivityMotionEvent" />
         <activity android:name=".Media.ActivityAudioPlayer" />
+        <activity android:name=".Media.ActivityAudioPlayerUsingService" />
+        <activity android:name=".Media.ActivityAudioPlayerUsingService2" />
         <activity android:name=".Activity.ActivitySpIODemo2" />
         <activity
             android:name="com.cacard.demo.launchmode.SingleInstance.Activity1"
@@ -104,6 +106,7 @@
         <activity android:name="com.cacard.demo.CustomControl.PageableHorizonalScrollView.ActivityPageableHorizonalScrollView" />
         <activity android:name=".FloatWindow.ActivityFloatWindow" />
         <activity android:name=".Canvas.CycleProgressViewActivity" />
+        <activity android:name=".IO.ActivityDirInfo" />
     </application>
 
 </manifest>

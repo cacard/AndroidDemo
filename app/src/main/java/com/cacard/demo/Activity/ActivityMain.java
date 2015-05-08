@@ -23,7 +23,9 @@ import com.cacard.demo.Drawable.ShapeDrawableActivity;
 import com.cacard.demo.Drawable.TransitionDrawableActivity;
 import com.cacard.demo.FloatWindow.ActivityFloatWindow;
 import com.cacard.demo.GestureDetectorDemo.GestureDetectorDemoActivity;
+import com.cacard.demo.IO.ActivityDirInfo;
 import com.cacard.demo.Media.ActivityAudioPlayer;
+import com.cacard.demo.Media.ActivityAudioPlayerUsingService;
 import com.cacard.demo.ViewDragHelperDemo.VDHActivity;
 import com.cacard.demo.launchmode.SingleInstance.Activity0;
 
@@ -44,6 +46,7 @@ public class ActivityMain extends Activity {
         root.setOrientation(LinearLayout.VERTICAL);
 
         addButton(root, "ScreenInfomation", ActivityScreenSize.class);
+        addButton(root, "DirInfo", ActivityDirInfo.class);
 
         addButton(root, "ShapeDrawable", ShapeDrawableActivity.class);
         addButton(root, "ClipDrawable", ClipDrawableActivity.class);
@@ -66,6 +69,7 @@ public class ActivityMain extends Activity {
         addButton(root, "SpSpeed2", ActivitySpIODemo2.class);
 
         addButton(root, "AudioPlayer", ActivityAudioPlayer.class);
+        addButton(root, "AudioPlayerUsingService", ActivityAudioPlayerUsingService.class);
 
         addButton(root, "FloatWindow", ActivityFloatWindow.class);
 

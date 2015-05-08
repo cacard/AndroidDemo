@@ -10,11 +10,16 @@ import com.cacard.demo.FloatWindow.FloatWindowManager;
  */
 public class MyApplication extends Application {
 
+    public static boolean isAudioPlayerServiceRunning;
+
     public FloatWindowManager floatWindowManager= new FloatWindowManager();
+
+    public static MyApplication instance;
 
     @Override
     public void onCreate() {
         super.onCreate();
+        instance = this;
     }
 
     @Override
