@@ -5,17 +5,11 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
-import android.graphics.Rect;
 import android.graphics.RectF;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Message;
 import android.view.View;
 import android.widget.LinearLayout;
 
-import java.lang.ref.WeakReference;
-import java.util.Date;
-import java.util.List;
 import java.util.Random;
 
 /**
@@ -46,7 +40,7 @@ public class MusicWaveAnimationActivity extends Activity {
         v3.setLayoutParams(lp3);
 
         MusicWaveView v4 = new MusicWaveView(this, Color.WHITE, Color.GRAY, 10, 0.05f);
-        LinearLayout.LayoutParams lp4 = new LinearLayout.LayoutParams(900, 300);
+        LinearLayout.LayoutParams lp4 = new LinearLayout.LayoutParams(1200, 300);
         v4.setLayoutParams(lp4);
 
         root.addView(v);
@@ -82,6 +76,7 @@ public class MusicWaveAnimationActivity extends Activity {
 
         private void init() {
             paint = new Paint(Paint.ANTI_ALIAS_FLAG);
+            paint.setFilterBitmap(true);
             paint.setColor(color);
         }
 
@@ -105,7 +100,9 @@ public class MusicWaveAnimationActivity extends Activity {
                     continue;
                 } else {
                     final int rectIndex = i / 2;
-                    canvas.drawRect(rectStats[rectIndex].rect, paint);
+                    if (rectIndex < rectStats.length) {
+                        canvas.drawRect(rectStats[rectIndex].rect, paint);
+                    }
                     canvas.translate(w, 0);
                 }
             }
@@ -131,9 +128,9 @@ public class MusicWaveAnimationActivity extends Activity {
                 final int randomHeight = new Random(System.nanoTime()).nextInt((int) h);
 
                 // 方向策略
-                int direction = RectStat.DWON;
+                int direction = RectStat.DIRECTION_DWON;
                 if (randomHeight < hHalf) {
-                    direction = RectStat.UP;
+                    direction = RectStat.DIRECTION_UP;
                 }
 
                 rectStats[i] = new RectStat(new RectF(0, randomHeight, w, h), direction, heightStep, getMeasuredHeight());
@@ -157,8 +154,8 @@ public class MusicWaveAnimationActivity extends Activity {
          * 波柱初始状态
          */
         private static class RectStat {
-            public static final int DWON = 0; // 变化方向为向下
-            public static final int UP = 1;// 变化方向为向上
+            public static final int DIRECTION_DWON = 0; // 变化方向为向下
+            public static final int DIRECTION_UP = 1;// 变化方向为向上
             private int direction; // 变化方向
             private RectF rect; // 波柱对应的矩形
             private int step; // 每次变化的该变量
@@ -172,16 +169,16 @@ public class MusicWaveAnimationActivity extends Activity {
             }
 
             public void update() {
-                if (direction == UP) {
+                if (direction == DIRECTION_UP) {
                     rect.top -= step;
                     if (rect.top <= 0) {
-                        direction = DWON;
+                        direction = DIRECTION_DWON;
                         rect.top += step;
                     }
                 } else {
                     rect.top += step;
                     if (rect.top >= maxHeight) {
-                        direction = UP;
+                        direction = DIRECTION_UP;
                         rect.top -= step;
                     }
                 }

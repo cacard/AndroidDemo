@@ -2,8 +2,6 @@ package com.cacard.demo.Activity;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.graphics.drawable.Drawable;
-import android.graphics.drawable.DrawableContainer;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -20,6 +18,8 @@ import com.cacard.demo.Canvas.CanvasLayerActivity;
 import com.cacard.demo.Canvas.CanvasOperationActivity;
 import com.cacard.demo.Canvas.CycleProgressViewActivity;
 import com.cacard.demo.Canvas.MusicWaveAnimationActivity;
+import com.cacard.demo.Canvas.Paint.ColorFilter.ColorMatrixColorFilterDemoActivity;
+import com.cacard.demo.Canvas.Paint.MaskFilter.MaskFilterDemoActivity;
 import com.cacard.demo.Drawable.ClipDrawableActivity;
 import com.cacard.demo.Drawable.DrawingCacheCaptureActivity;
 import com.cacard.demo.Drawable.ShapeDrawableActivity;
@@ -65,11 +65,13 @@ public class ActivityMain extends Activity {
 
         addButton(root, "LaunchMode-SingleInstance", Activity0.class);
 
-        addButton(root, "Canvas", CanvasDemoActivity.class);
-        addButton(root, "Canvas:CycleProgress", CycleProgressViewActivity.class);
-        addButton(root, "Canvas:MusicWave", MusicWaveAnimationActivity.class);
-        addButton(root, "Canvas:Layer", CanvasLayerActivity.class);
-        addButton(root, "Canvas:Operation:Translate...", CanvasOperationActivity.class);
+        addButton(root, "Canvas/", CanvasDemoActivity.class);
+        addButton(root, "Canvas/CycleProgress", CycleProgressViewActivity.class);
+        addButton(root, "Canvas/MusicWave", MusicWaveAnimationActivity.class);
+        addButton(root, "Canvas/Layer", CanvasLayerActivity.class);
+        addButton(root, "Canvas/Operation/Translate...", CanvasOperationActivity.class);
+        addButton(root, "Canvas/Paint/ColorMatrixColorFilter", ColorMatrixColorFilterDemoActivity.class);
+        addButton(root, "Canvas/Paint/MaskFilter", MaskFilterDemoActivity.class);
 
         addButton(root, "SpSpeed", ActivitySpIODemo.class);
         addButton(root, "SpSpeed2", ActivitySpIODemo2.class);

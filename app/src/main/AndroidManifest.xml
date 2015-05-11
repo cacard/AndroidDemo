@@ -110,6 +110,8 @@
         <activity android:name=".Canvas.CanvasLayerActivity" />
         <activity android:name=".Canvas.CanvasOperationActivity" />
         <activity android:name=".Canvas.MusicWaveAnimationActivity" />
+        <activity android:name=".Canvas.Paint.ColorFilter.ColorMatrixColorFilterDemoActivity" />
+        <activity android:name=".Canvas.Paint.MaskFilter.MaskFilterDemoActivity" />
     </application>
 
 </manifest>
