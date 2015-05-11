@@ -1,28 +1,20 @@
-package com.cacard.demo.Canvas.Paint.PathEffect;
+package com.cacard.demo.Canvas;
 
 import android.app.Activity;
 import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.BlurMaskFilter;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.CornerPathEffect;
-import android.graphics.DashPathEffect;
 import android.graphics.Paint;
 import android.graphics.Path;
 import android.os.Bundle;
 import android.view.View;
-import android.view.ViewGroup;
-import android.view.accessibility.AccessibilityNodeInfo;
 import android.widget.LinearLayout;
-
-import com.cacard.demo.R;
 
 /**
  * Created by cunqingli on 2015/5/11.
  */
-public class PathEffectActivity extends Activity {
+public class PathActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -59,16 +51,12 @@ public class PathEffectActivity extends Activity {
             canvas.drawPath(p, pPath);
 
             // CornerPathEffect
-            canvas.translate(0, 200);
+            canvas.translate(100, 0);
             CornerPathEffect cornerPathEffect = new CornerPathEffect(50);
             pPath.setPathEffect(cornerPathEffect);
             canvas.drawPath(p, pPath);
 
-            // 虚线
-            canvas.translate(0, 200);
-            DashPathEffect dashPathEffect = new DashPathEffect(new float[]{20, 20}, 0);
-            pPath.setPathEffect(dashPathEffect);
-            canvas.drawPath(p, pPath);
         }
     }
+
 }

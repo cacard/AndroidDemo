@@ -20,6 +20,9 @@ import com.cacard.demo.Canvas.CycleProgressViewActivity;
 import com.cacard.demo.Canvas.MusicWaveAnimationActivity;
 import com.cacard.demo.Canvas.Paint.ColorFilter.ColorMatrixColorFilterDemoActivity;
 import com.cacard.demo.Canvas.Paint.MaskFilter.MaskFilterDemoActivity;
+import com.cacard.demo.Canvas.Paint.PathEffect.PathEffectActivity;
+import com.cacard.demo.Canvas.Paint.Shader.ShaderActivity;
+import com.cacard.demo.Canvas.PathActivity;
 import com.cacard.demo.Drawable.ClipDrawableActivity;
 import com.cacard.demo.Drawable.DrawingCacheCaptureActivity;
 import com.cacard.demo.Drawable.ShapeDrawableActivity;
@@ -72,6 +75,9 @@ public class ActivityMain extends Activity {
         addButton(root, "Canvas/Operation/Translate...", CanvasOperationActivity.class);
         addButton(root, "Canvas/Paint/ColorMatrixColorFilter", ColorMatrixColorFilterDemoActivity.class);
         addButton(root, "Canvas/Paint/MaskFilter", MaskFilterDemoActivity.class);
+        addButton(root, "Canvas/Paint/PathEffect", PathEffectActivity.class);
+        addButton(root, "Canvas/Paint/Shader", ShaderActivity.class);
+        addButton(root, "Canvas/DrawPath", PathActivity.class);
 
         addButton(root, "SpSpeed", ActivitySpIODemo.class);
         addButton(root, "SpSpeed2", ActivitySpIODemo2.class);

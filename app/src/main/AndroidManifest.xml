@@ -112,6 +112,9 @@
         <activity android:name=".Canvas.MusicWaveAnimationActivity" />
         <activity android:name=".Canvas.Paint.ColorFilter.ColorMatrixColorFilterDemoActivity" />
         <activity android:name=".Canvas.Paint.MaskFilter.MaskFilterDemoActivity" />
+        <activity android:name=".Canvas.Paint.PathEffect.PathEffectActivity" />
+        <activity android:name=".Canvas.PathActivity" />
+        <activity android:name=".Canvas.Paint.Shader.ShaderActivity" />
     </application>
 
 </manifest>
