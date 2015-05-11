@@ -44,6 +44,7 @@ public class CanvasDemoActivity extends Activity {
                 }
             });
         }
+
     }
 
     private void changeView(int index) {

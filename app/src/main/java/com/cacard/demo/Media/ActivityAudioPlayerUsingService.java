@@ -242,7 +242,6 @@ public class ActivityAudioPlayerUsingService extends Activity {
         }
     }
 
-
     private void log(String msg) {
         Log.i(TAG, msg);
     }

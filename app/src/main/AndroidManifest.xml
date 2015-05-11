@@ -107,6 +107,9 @@
         <activity android:name=".FloatWindow.ActivityFloatWindow" />
         <activity android:name=".Canvas.CycleProgressViewActivity" />
         <activity android:name=".IO.ActivityDirInfo" />
+        <activity android:name=".Canvas.CanvasLayerActivity" />
+        <activity android:name=".Canvas.CanvasOperationActivity" />
+        <activity android:name=".Canvas.MusicWaveAnimationActivity" />
     </application>
 
 </manifest>

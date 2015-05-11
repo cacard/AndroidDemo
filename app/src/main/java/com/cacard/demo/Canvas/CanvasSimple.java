@@ -8,6 +8,8 @@ import android.util.AttributeSet;
 import android.view.View;
 
 /**
+ * 最简单的使用Canvas绘制的Demo
+ * <p/>
  * Created by cunqingli on 2015/4/30.
  */
 public class CanvasSimple extends View {
@@ -41,8 +43,5 @@ public class CanvasSimple extends View {
 
         // 圆
         canvas.drawCircle(200, 100, 100, paint);
-
     }
-
-
 }

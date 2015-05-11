@@ -32,12 +32,10 @@ public class AudioPlayerService extends Service {
 
     @Override
     public void onCreate() {
-        log("onCreate()");
         super.onCreate();
+        log("onCreate()");
         ((MyApplication) getApplication()).isAudioPlayerServiceRunning = false;
-
         createPlayer4Local("");
-
         PlayerWindowManager.getInstance().createAndShowWindow();
     }
 

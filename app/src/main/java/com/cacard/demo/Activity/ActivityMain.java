@@ -16,7 +16,10 @@ import android.widget.ScrollView;
 import com.cacard.demo.Animator.ActivityScrollerDemo;
 import com.cacard.demo.Animator.ActivityValueAnimator;
 import com.cacard.demo.Canvas.CanvasDemoActivity;
+import com.cacard.demo.Canvas.CanvasLayerActivity;
+import com.cacard.demo.Canvas.CanvasOperationActivity;
 import com.cacard.demo.Canvas.CycleProgressViewActivity;
+import com.cacard.demo.Canvas.MusicWaveAnimationActivity;
 import com.cacard.demo.Drawable.ClipDrawableActivity;
 import com.cacard.demo.Drawable.DrawingCacheCaptureActivity;
 import com.cacard.demo.Drawable.ShapeDrawableActivity;
@@ -64,6 +67,9 @@ public class ActivityMain extends Activity {
 
         addButton(root, "Canvas", CanvasDemoActivity.class);
         addButton(root, "Canvas,CycleProgress", CycleProgressViewActivity.class);
+        addButton(root,"Canvas,MusicWave",MusicWaveAnimationActivity.class);
+        addButton(root, "Canvas,Layer", CanvasLayerActivity.class);
+        addButton(root, "Canvas,Operation:Translate...", CanvasOperationActivity.class);
 
         addButton(root, "SpSpeed", ActivitySpIODemo.class);
         addButton(root, "SpSpeed2", ActivitySpIODemo2.class);
