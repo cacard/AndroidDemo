@@ -4,6 +4,7 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
+import android.graphics.Rect;
 import android.util.AttributeSet;
 import android.view.View;
 
@@ -40,6 +41,11 @@ public class CanvasSimple extends View {
         paint.setColor(Color.parseColor("#ff0000"));
         paint.setStrokeWidth(5);
         canvas.drawLine(0, 0, 100, 100, paint);
+
+        // 矩形
+        Paint pRect = new Paint();
+        pRect.setColor(Color.BLUE);
+        canvas.drawRect(new Rect(0, 0, 200, 400), pRect);
 
         // 圆
         canvas.drawCircle(200, 100, 100, paint);

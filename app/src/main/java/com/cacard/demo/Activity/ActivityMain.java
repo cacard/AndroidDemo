@@ -66,10 +66,10 @@ public class ActivityMain extends Activity {
         addButton(root, "LaunchMode-SingleInstance", Activity0.class);
 
         addButton(root, "Canvas", CanvasDemoActivity.class);
-        addButton(root, "Canvas,CycleProgress", CycleProgressViewActivity.class);
-        addButton(root,"Canvas,MusicWave",MusicWaveAnimationActivity.class);
-        addButton(root, "Canvas,Layer", CanvasLayerActivity.class);
-        addButton(root, "Canvas,Operation:Translate...", CanvasOperationActivity.class);
+        addButton(root, "Canvas:CycleProgress", CycleProgressViewActivity.class);
+        addButton(root, "Canvas:MusicWave", MusicWaveAnimationActivity.class);
+        addButton(root, "Canvas:Layer", CanvasLayerActivity.class);
+        addButton(root, "Canvas:Operation:Translate...", CanvasOperationActivity.class);
 
         addButton(root, "SpSpeed", ActivitySpIODemo.class);
         addButton(root, "SpSpeed2", ActivitySpIODemo2.class);
