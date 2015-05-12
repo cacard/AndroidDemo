@@ -7,6 +7,7 @@ import android.graphics.Color;
 import android.graphics.CornerPathEffect;
 import android.graphics.Paint;
 import android.graphics.Path;
+import android.graphics.RectF;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.LinearLayout;
@@ -42,19 +43,14 @@ public class PathActivity extends Activity {
             p.lineTo(100, 100);
             p.lineTo(200, 100);
 
-            Paint pPath = new Paint();
-            pPath.setStyle(Paint.Style.STROKE);
-            pPath.setStrokeWidth(2);
-            pPath.setColor(Color.RED);
+            Paint paint = new Paint();
+            paint.setStyle(Paint.Style.STROKE);
+            paint.setStrokeWidth(2);
+            paint.setColor(Color.RED);
 
             // 普通线
-            canvas.drawPath(p, pPath);
+            canvas.drawPath(p, paint);
 
-            // CornerPathEffect
-            canvas.translate(100, 0);
-            CornerPathEffect cornerPathEffect = new CornerPathEffect(50);
-            pPath.setPathEffect(cornerPathEffect);
-            canvas.drawPath(p, pPath);
 
         }
     }

@@ -8,6 +8,7 @@ import android.graphics.CornerPathEffect;
 import android.graphics.LinearGradient;
 import android.graphics.Paint;
 import android.graphics.Path;
+import android.graphics.RadialGradient;
 import android.graphics.Rect;
 import android.graphics.Shader;
 import android.os.Bundle;
@@ -58,6 +59,20 @@ public class ShaderActivity extends Activity {
             linearGradient = new LinearGradient(0, 0, 0, 100, Color.RED, Color.BLUE, Shader.TileMode.MIRROR); // 平铺模式改为 MIRROR
             p.setShader(linearGradient);
             canvas.drawRect(rect, p);
+
+
+            // 环形渐变
+            canvas.translate(0, 210);
+            Rect rect2 = new Rect(0, 0, 200, 200);
+            RadialGradient radialGradient = new RadialGradient(100, 100, 50, Color.YELLOW, Color.RED, Shader.TileMode.CLAMP);
+            p.setShader(radialGradient);
+            canvas.drawRect(rect2, p);
+
+            canvas.translate(0, 210);
+            Rect rect3 = new Rect(0, 0, 600, 200);
+            RadialGradient radialGradient2 = new RadialGradient(0, 100, 500, Color.WHITE, Color.GRAY, Shader.TileMode.CLAMP);
+            p.setShader(radialGradient2);
+            canvas.drawRect(rect3, p);
 
         }
     }
