@@ -111,10 +111,16 @@
         <activity android:name=".Canvas.CanvasOperationActivity" />
         <activity android:name=".Canvas.MusicWaveAnimationActivity" />
         <activity android:name=".Canvas.Paint.ColorFilter.ColorMatrixColorFilterDemoActivity" />
-        <activity android:name=".Canvas.Paint.MaskFilter.MaskFilterDemoActivity" />
+        <activity
+            android:name=".Canvas.Paint.MaskFilter.MaskFilterDemoActivity"
+            android:hardwareAccelerated="false" />
         <activity android:name=".Canvas.Paint.PathEffect.PathEffectActivity" />
         <activity android:name=".Canvas.PathActivity" />
         <activity android:name=".Canvas.Paint.Shader.ShaderActivity" />
+        <activity
+            android:name=".Canvas.FlashDotDemoActivity"
+            android:hardwareAccelerated="false" />
+        <activity android:name=".CustomView.Flat.SimpleActivity" />
     </application>
 
 </manifest>

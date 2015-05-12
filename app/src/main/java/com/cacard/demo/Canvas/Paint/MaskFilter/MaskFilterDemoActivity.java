@@ -37,6 +37,7 @@ public class MaskFilterDemoActivity extends Activity {
         MyView v = new MyView(this);
         LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         v.setLayoutParams(lp);
+        v.setLayerType(View.LAYER_TYPE_SOFTWARE, null); // 关闭硬件加速，让Blur效果生效
 
         root.addView(v);
         this.setContentView(root);
@@ -67,6 +68,9 @@ public class MaskFilterDemoActivity extends Activity {
             pText.setTextSize(160);
             pText.setMaskFilter(new BlurMaskFilter(10.0f, BlurMaskFilter.Blur.OUTER));
             canvas.drawText("Hello", 100, 800, pText);
+
+            // cycle
+            canvas.drawCircle(600, 600, 70, paint);
         }
     }
 }

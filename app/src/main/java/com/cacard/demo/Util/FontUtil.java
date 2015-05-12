@@ -36,4 +36,12 @@ public class FontUtil {
         return p.measureText(str);
     }
 
+    public static void slicingString(String str,Paint p,int lineWidth) {
+
+    }
+
+    public static class FontStringSlicingResult {
+        public int linesCount; // 行数
+    }
+
 }
