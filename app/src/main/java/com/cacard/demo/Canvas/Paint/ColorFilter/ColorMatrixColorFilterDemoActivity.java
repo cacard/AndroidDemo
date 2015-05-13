@@ -19,6 +19,7 @@ import com.cacard.demo.R;
  * 颜色矩阵（ColorMatrixColorFilter）更改图片的颜色Demo
  * <p/>
  * - 颜色矩阵，即使用矩阵参数去修改Bitmap中每个像素
+ * <p/>
  * Created by cunqingli on 2015/5/11.
  */
 public class ColorMatrixColorFilterDemoActivity extends Activity {

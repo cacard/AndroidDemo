@@ -89,7 +89,6 @@
         <activity android:name="com.cacard.demo.Drawable.TransitionDrawableActivity" />
         <activity android:name="com.cacard.demo.launchmode.SingleInstance.Activity0" />
         <activity android:name="com.cacard.demo.Drawable.ShapeDrawableActivity" />
-        <activity android:name="com.cacard.demo.Canvas.CanvasDemoActivity" />
         <activity android:name="com.cacard.demo.Graphic.MySurfaceViewActivity" />
         <activity android:name="com.cacard.demo.Graphic.MyGLSurfaceViewActivity" />
         <activity android:name=".Activity.ActivityInstrumentationTest" />

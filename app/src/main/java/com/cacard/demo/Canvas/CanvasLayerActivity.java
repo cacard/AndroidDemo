@@ -28,8 +28,6 @@ public class CanvasLayerActivity extends Activity {
         this.setTitle("Canvas Layer");
     }
 
-
-    // 自定义View
     public static class MyView extends View {
 
         public MyView(Context context) {
@@ -38,7 +36,6 @@ public class CanvasLayerActivity extends Activity {
 
         @Override
         protected void onDraw(Canvas canvas) {
-
             Paint pText = new Paint();
             pText.setColor(Color.BLACK);
             pText.setTextSize(60);

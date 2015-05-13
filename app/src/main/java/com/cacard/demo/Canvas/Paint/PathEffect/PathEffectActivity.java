@@ -44,7 +44,6 @@ public class PathEffectActivity extends Activity {
 
         @Override
         protected void onDraw(Canvas canvas) {
-
             Path p = new Path();
             p.moveTo(0, 0);
             p.lineTo(100, 100);
@@ -58,13 +57,13 @@ public class PathEffectActivity extends Activity {
             // 普通线
             canvas.drawPath(p, pPath);
 
-            // CornerPathEffect
+            // 圆角线：CornerPathEffect
             canvas.translate(0, 200);
             CornerPathEffect cornerPathEffect = new CornerPathEffect(50);
             pPath.setPathEffect(cornerPathEffect);
             canvas.drawPath(p, pPath);
 
-            // 虚线
+            // 虚线：DashPathEffect
             canvas.translate(0, 200);
             DashPathEffect dashPathEffect = new DashPathEffect(new float[]{20, 20}, 0);
             pPath.setPathEffect(dashPathEffect);

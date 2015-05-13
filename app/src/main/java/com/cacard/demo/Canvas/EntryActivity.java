@@ -48,8 +48,6 @@ public class EntryActivity extends Activity {
         root = new LinearLayout(this);
         root.setOrientation(LinearLayout.VERTICAL);
 
-        addButton("Canvas/", CanvasDemoActivity.class);
-
         // Canvas Operations
         addButton("Layer分层", CanvasLayerActivity.class);
         addButton("Operation/Translate...", CanvasOperationActivity.class);
@@ -78,7 +76,6 @@ public class EntryActivity extends Activity {
         ScrollView sv = new ScrollView(this);
         sv.addView(root);
         setContentView(sv);
-
     }
 
     private void addButton(String text, final Class<?> clazz) {
@@ -93,6 +90,4 @@ public class EntryActivity extends Activity {
         });
         root.addView(btn);
     }
-
-
 }

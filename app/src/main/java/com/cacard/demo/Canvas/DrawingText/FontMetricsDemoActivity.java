@@ -21,11 +21,13 @@ import com.cacard.demo.Util.FontUtil;
  * Created by cunqingli on 2015/5/13.
  */
 public class FontMetricsDemoActivity extends Activity {
+
+    private static final String TITLE = "Canvas/FontMetrics演示";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        this.setTitle("Canvas/FontMetrics演示");
-
+        this.setTitle(TITLE);
         MyView v = new MyView(this);
         ((FrameLayout) this.getWindow().getDecorView().findViewById(android.R.id.content)).addView(v);
     }
@@ -33,6 +35,9 @@ public class FontMetricsDemoActivity extends Activity {
     public class MyView extends View {
 
         private static final String TAG = "CanvasDrawingText_FontMetrics";
+        private static final String text1 = "My English Text line 123";
+        private static final String text2 = "这是中文字符串";
+        private static final String text3 = "这是中英文englishText 123";
 
         public MyView(Context context) {
             super(context);
@@ -41,10 +46,6 @@ public class FontMetricsDemoActivity extends Activity {
         @Override
         protected void onDraw(Canvas canvas) {
             super.onDraw(canvas);
-
-            final String text1 = "My English Text line 123";
-            final String text2 = "这是中文字符串";
-            final String text3 = "这是中英文englishText 123";
 
             Paint pFont = new Paint(Paint.ANTI_ALIAS_FLAG);
             pFont.setTextSize(150);
@@ -109,8 +110,6 @@ public class FontMetricsDemoActivity extends Activity {
             topY = baseLineY + m.bottom;
             stopX += setp;
             canvas.drawLine(startX, (int) topY, stopX, (int) topY, pLine);
-
         }
-
     }
 }
