@@ -1,4 +1,4 @@
-package com.cacard.demo.Canvas;
+package com.cacard.demo.Canvas.DrawingBitmap;
 
 import android.app.Activity;
 import android.content.Context;

@@ -17,6 +17,8 @@ import com.cacard.demo.Canvas.CanvasDemoActivity;
 import com.cacard.demo.Canvas.CanvasLayerActivity;
 import com.cacard.demo.Canvas.CanvasOperationActivity;
 import com.cacard.demo.Canvas.CycleProgressViewActivity;
+import com.cacard.demo.Canvas.DrawingText.DrawingOneByOneOrDrawingStringActivity;
+import com.cacard.demo.Canvas.EntryActivity;
 import com.cacard.demo.Canvas.FlashDotDemoActivity;
 import com.cacard.demo.Canvas.MusicWaveAnimationActivity;
 import com.cacard.demo.Canvas.Paint.ColorFilter.ColorMatrixColorFilterDemoActivity;
@@ -70,24 +72,7 @@ public class ActivityMain extends Activity {
 
         addButton(root, "LaunchMode-SingleInstance", Activity0.class);
 
-        addButton(root, "Canvas/", CanvasDemoActivity.class);
-        addButton(root, "Canvas/CycleProgress", CycleProgressViewActivity.class);
-        addButton(root, "Canvas/MusicWave", MusicWaveAnimationActivity.class);
-        addButton(root, "Canvas/FlashDot", FlashDotDemoActivity.class);
-
-        addButton(root, "Canvas/Layer", CanvasLayerActivity.class);
-
-        addButton(root, "Canvas/Operation/Translate...", CanvasOperationActivity.class);
-
-        addButton(root, "Canvas/Paint/ColorMatrixColorFilter", ColorMatrixColorFilterDemoActivity.class);
-        addButton(root, "Canvas/Paint/MaskFilter", MaskFilterDemoActivity.class);
-        addButton(root, "Canvas/Paint/PathEffect", PathEffectActivity.class);
-        addButton(root, "Canvas/Paint/Shader", ShaderActivity.class);
-
-        addButton(root, "Canvas/Draw/Path", PathActivity.class);
-
-        // CustomView
-        addButton(root, "CustomView/Flat/Simple", SimpleActivity.class);
+        addButton(root, "Canvas/", EntryActivity.class);
 
 
         addButton(root, "SpSpeed", ActivitySpIODemo.class);
