@@ -16,6 +16,7 @@ import com.cacard.demo.Animator.ActivityScrollerDemo;
 import com.cacard.demo.Animator.ActivityValueAnimator;
 import com.cacard.demo.Canvas.DrawingText.DrawingOneByOneOrDrawingStringActivity;
 import com.cacard.demo.Canvas.DrawingText.FontMetricsDemoActivity;
+import com.cacard.demo.Canvas.DrawingText.WaveTextViewActivity;
 import com.cacard.demo.Canvas.Paint.ColorFilter.ColorMatrixColorFilterDemoActivity;
 import com.cacard.demo.Canvas.Paint.MaskFilter.MaskFilterDemoActivity;
 import com.cacard.demo.Canvas.Paint.PathEffect.PathEffectActivity;
@@ -63,7 +64,7 @@ public class EntryActivity extends Activity {
         // Drawing Text
         addButton("Draw/Text/FontMetrics演示", FontMetricsDemoActivity.class);
         addButton("Draw/Text/逐字符和字符串绘制比较", DrawingOneByOneOrDrawingStringActivity.class);
-
+        addButton("Draw/Text/带有波浪线", WaveTextViewActivity.class);
 
         // Controls
         addButton("CycleProgress", CycleProgressViewActivity.class);

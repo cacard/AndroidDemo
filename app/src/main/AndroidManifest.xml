@@ -123,6 +123,7 @@
         <activity android:name=".Canvas.DrawingText.DrawingOneByOneOrDrawingStringActivity" />
         <activity android:name=".Canvas.EntryActivity" />
         <activity android:name=".Canvas.DrawingText.FontMetricsDemoActivity" />
+        <activity android:name=".Canvas.DrawingText.WaveTextViewActivity" />
     </application>
 
 </manifest>

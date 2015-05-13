@@ -13,7 +13,6 @@ import android.widget.ScrollView;
 
 import com.cacard.demo.Animator.ActivityScrollerDemo;
 import com.cacard.demo.Animator.ActivityValueAnimator;
-import com.cacard.demo.Canvas.CanvasDemoActivity;
 import com.cacard.demo.Canvas.EntryActivity;
 import com.cacard.demo.Drawable.ClipDrawableActivity;
 import com.cacard.demo.Drawable.DrawingCacheCaptureActivity;
