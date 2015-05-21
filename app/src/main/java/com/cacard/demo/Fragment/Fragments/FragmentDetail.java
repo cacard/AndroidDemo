@@ -1,4 +1,4 @@
-package com.cacard.demo.Fragment;
+package com.cacard.demo.Fragment.Fragments;
 
 import com.cacard.demo.R;
 import com.cacard.demo.Util.LogHelper;

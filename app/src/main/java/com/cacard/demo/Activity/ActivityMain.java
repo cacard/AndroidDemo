@@ -23,6 +23,7 @@ import com.cacard.demo.GestureDetectorDemo.GestureDetectorDemoActivity;
 import com.cacard.demo.IO.ActivityDirInfo;
 import com.cacard.demo.Media.ActivityAudioPlayer;
 import com.cacard.demo.Media.ActivityAudioPlayerUsingService;
+import com.cacard.demo.Notification.MIUIDeskIconNotificationDemoActivity;
 import com.cacard.demo.ViewDragHelperDemo.VDHActivity;
 import com.cacard.demo.launchmode.SingleInstance.Activity0;
 
@@ -43,6 +44,7 @@ public class ActivityMain extends Activity {
         root.setOrientation(LinearLayout.VERTICAL);
 
         addButton(root, "ScreenInfomation", ActivityScreenSize.class);
+        addButton(root, "Info", ActivityInfo.class);
         addButton(root, "DirInfo", ActivityDirInfo.class);
 
         addButton(root, "ShapeDrawable", ShapeDrawableActivity.class);
@@ -69,6 +71,7 @@ public class ActivityMain extends Activity {
         addButton(root, "AudioPlayerUsingService", ActivityAudioPlayerUsingService.class);
 
         addButton(root, "FloatWindow", ActivityFloatWindow.class);
+        addButton(root, "MIUIDeskIconNotification", MIUIDeskIconNotificationDemoActivity.class);
 
         ScrollView sv = new ScrollView(this);
         sv.addView(root);

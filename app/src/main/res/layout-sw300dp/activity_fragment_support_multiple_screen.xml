@@ -6,14 +6,14 @@
 
     <fragment
         android:id="@+id/fragment_menu"
-        android:name="com.cacard.demo.Fragment.FragmentMenu"
+        android:name="com.cacard.demo.Fragment.Fragments.FragmentMenu"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:layout_weight="1" />
 
     <fragment
         android:id="@+id/fragment_detail"
-        android:name="com.cacard.demo.Fragment.FragmentDetail"
+        android:name="com.cacard.demo.Fragment.Fragments.FragmentDetail"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:layout_weight="1" />

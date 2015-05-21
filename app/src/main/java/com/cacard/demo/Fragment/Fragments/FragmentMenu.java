@@ -1,5 +1,7 @@
-package com.cacard.demo.Fragment;
+package com.cacard.demo.Fragment.Fragments;
 
+import com.cacard.demo.Fragment.FragmentSupportMultipleScreen_DetailActivity;
+import com.cacard.demo.Fragment.Fragments.FragmentDetail;
 import com.cacard.demo.R;
 import com.cacard.demo.Util.LogHelper;
 

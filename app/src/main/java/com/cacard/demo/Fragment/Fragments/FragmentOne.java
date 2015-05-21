@@ -1,4 +1,10 @@
-package com.cacard.demo.Fragment;
+/**
+ * 
+ * 
+ * 
+ */
+
+package com.cacard.demo.Fragment.Fragments;
 
 import com.cacard.demo.R;
 import com.cacard.demo.Util.LogHelper;
@@ -10,7 +16,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-public class FragmentTwo extends Fragment {
+public class FragmentOne extends Fragment {
+
 	@Override
 	public void onAttach(Activity activity) {
 		super.onAttach(activity);
@@ -28,12 +35,11 @@ public class FragmentTwo extends Fragment {
 	public View onCreateView(LayoutInflater inflater, ViewGroup root, Bundle b) {
 		super.onCreateView(inflater, root, b);
 		LogHelper.write("Fragment->onCreateView");
-		View v = inflater.inflate(R.layout.fragment_two, root, false);
+		View v = inflater.inflate(R.layout.fragment_one, root, false);
 		return v;
 
 	}
 
-	/* 绑定的Activity执行onCreated()完毕后 */
 	@Override
 	public void onActivityCreated(Bundle b) {
 		super.onActivityCreated(b);
