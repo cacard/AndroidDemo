@@ -126,6 +126,8 @@
         <activity android:name=".Canvas.DrawingText.WaveTextViewActivity" />
         <activity android:name=".Activity.ActivityInfo" />
         <activity android:name=".Notification.MIUIDeskIconNotificationDemoActivity" />
+
+        <service android:name=".Service.BoundAndStartService" />
     </application>
 
 </manifest>
