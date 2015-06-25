@@ -16,6 +16,8 @@ import com.cacard.demo.Service.BoundAndStartService;
  */
 public class MyApplication extends Application {
 
+    private static final String TAG = MyApplication.class.getSimpleName();
+
     public static boolean isAudioPlayerServiceRunning;
 
     public FloatWindowManager floatWindowManager = new FloatWindowManager();
@@ -24,6 +26,7 @@ public class MyApplication extends Application {
 
     @Override
     public void onCreate() {
+        Log.i(TAG, "->onCreate()");
         super.onCreate();
         instance = this;
 
