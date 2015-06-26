@@ -1,10 +1,14 @@
 package com.cacard.demo.Service.BindOnCreate;
 
+import android.app.Application;
 import android.app.Service;
 import android.content.Intent;
 import android.os.Binder;
 import android.os.IBinder;
 import android.util.Log;
+import android.widget.Toast;
+
+import com.cacard.demo.MyApplication;
 
 /**
  * -> 仅仅Bind会调用Service的onCreate吗？
@@ -31,7 +35,7 @@ public class BindOnCreateService extends Service {
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
         log("onStartCommand");
-        return super.onStartCommand(intent, flags, startId);
+        return START_STICKY; //super.onStartCommand(intent, flags, startId);
     }
 
     @Override

@@ -12,7 +12,7 @@ import com.cacard.demo.MyApplication;
 /**
  * Created by cunqingli on 2015/6/25.
  */
-public class StickyDemoActivity extends Activity {
+public class StickyActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,6 +35,6 @@ public class StickyDemoActivity extends Activity {
     }
 
     private void startStickyService() {
-        MyApplication.instance.startService(new Intent(MyApplication.instance, StartStickyService.class));
+        MyApplication.instance.startService(new Intent(MyApplication.instance, StickyService.class));
     }
 }

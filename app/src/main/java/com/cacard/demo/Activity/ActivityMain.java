@@ -24,9 +24,8 @@ import com.cacard.demo.IO.ActivityDirInfo;
 import com.cacard.demo.Media.ActivityAudioPlayer;
 import com.cacard.demo.Media.ActivityAudioPlayerUsingService;
 import com.cacard.demo.Notification.MIUIDeskIconNotificationDemoActivity;
-import com.cacard.demo.Service.BindOnCreate.BindOnCreateService;
-import com.cacard.demo.Service.BindOnCreate.DemoActivity;
-import com.cacard.demo.Service.Sticky.StickyDemoActivity;
+import com.cacard.demo.Service.BindOnCreate.BindOnCreateActivity;
+import com.cacard.demo.Service.Sticky.StickyActivity;
 import com.cacard.demo.ViewDragHelperDemo.VDHActivity;
 import com.cacard.demo.launchmode.SingleInstance.Activity0;
 
@@ -76,8 +75,8 @@ public class ActivityMain extends Activity {
         addButton(root, "MIUIDeskIconNotification", MIUIDeskIconNotificationDemoActivity.class);
 
         // service
-        addButton(root, "Service/StickyService", StickyDemoActivity.class);
-        addButton(root, "Service/BindOnCreateService", DemoActivity.class);
+        addButton(root, "Service/StickyService", StickyActivity.class);
+        addButton(root, "Service/BindOnCreateService", BindOnCreateActivity.class);
 
         ScrollView sv = new ScrollView(this);
         sv.addView(root);

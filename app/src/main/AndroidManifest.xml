@@ -128,12 +128,11 @@
         <activity android:name=".Notification.MIUIDeskIconNotificationDemoActivity" />
 
         <service android:name=".Service.BoundAndStartService" />
-        <service android:name=".Service.Sticky.StartStickyService" />
-        <service android:name=".Service.Sticky.StartNotStickyService" />
+        <service android:name=".Service.Sticky.StickyService" />
         <service android:name="com.cacard.demo.Service.BindOnCreate.BindOnCreateService" />
 
-        <activity android:name=".Service.Sticky.StickyDemoActivity" />
-        <activity android:name=".Service.BindOnCreate.DemoActivity" />
+        <activity android:name=".Service.Sticky.StickyActivity" />
+        <activity android:name=".Service.BindOnCreate.BindOnCreateActivity" />
     </application>
 
 </manifest>

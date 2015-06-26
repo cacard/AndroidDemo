@@ -11,12 +11,14 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 
+import com.cacard.demo.MyApplication;
+
 /**
  * Created by cunqingli on 2015/6/25.
  */
-public class DemoActivity extends Activity {
+public class BindOnCreateActivity extends Activity {
 
-    private static final String TAG = DemoActivity.class.getSimpleName();
+    private static final String TAG = BindOnCreateActivity.class.getSimpleName();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +36,17 @@ public class DemoActivity extends Activity {
             }
         });
 
+        Button btn2 = new Button(this);
+        btn2.setText("stop bind");
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                unbind();
+            }
+        });
+
         linearLayout.addView(btn1);
+        linearLayout.addView(btn2);
         this.setContentView(linearLayout);
     }
 
@@ -42,6 +54,7 @@ public class DemoActivity extends Activity {
         @Override
         public void onServiceConnected(ComponentName name, IBinder service) {
             log("onServiceConnected");
+            MyApplication.instance.startService(new Intent(MyApplication.instance, BindOnCreateService.class));
         }
 
         @Override
@@ -51,7 +64,8 @@ public class DemoActivity extends Activity {
     };
 
     private void bind() {
-        this.bindService(new Intent(this, BindOnCreateService.class), connection, 0);
+        log("->bind()");
+        MyApplication.instance.bindService(new Intent(MyApplication.instance, BindOnCreateService.class), connection, BIND_AUTO_CREATE);
     }
 
     private void unbind() {
