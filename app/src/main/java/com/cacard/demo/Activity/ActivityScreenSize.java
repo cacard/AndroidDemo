@@ -10,6 +10,9 @@ import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+/**
+ * 屏幕尺寸信息
+ */
 public class ActivityScreenSize extends Activity {
 
     @Override

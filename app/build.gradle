@@ -6,7 +6,7 @@ android {
 
     defaultConfig {
         applicationId "com.cacard.demo"
-        minSdkVersion 8
+        minSdkVersion 9
         targetSdkVersion 21
     }
 
@@ -24,6 +24,7 @@ android {
 
 dependencies {
     compile 'com.android.support:support-v4:19.1.0'
+    compile 'com.facebook.fresco:fresco:0.5.0+'
     compile files('libs/ormlite-android-4.48.jar')
     compile files('libs/ormlite-core-4.48.jar')
 }

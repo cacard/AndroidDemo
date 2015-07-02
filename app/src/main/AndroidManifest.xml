@@ -83,7 +83,6 @@
         <activity android:name=".Activity.ActivitySpIODemo" />
         <activity android:name="com.cacard.demo.ViewDragHelperDemo.VDHActivity" />
         <activity android:name="com.cacard.demo.GestureDetectorDemo.GestureDetectorDemoActivity" />
-        <activity android:name="com.cacard.demo.Activity.ActivityTestRootMeasureSpec" />
         <activity android:name="com.cacard.demo.Drawable.ClipDrawableActivity" />
         <activity android:name="com.cacard.demo.Drawable.DrawableDemo" />
         <activity android:name="com.cacard.demo.Drawable.TransitionDrawableActivity" />
@@ -133,6 +132,7 @@
 
         <activity android:name=".Service.Sticky.StickyActivity" />
         <activity android:name=".Service.BindOnCreate.BindOnCreateActivity" />
+        <activity android:name=".FrescoDemo.FrescoActivity" />
     </application>
 
 </manifest>

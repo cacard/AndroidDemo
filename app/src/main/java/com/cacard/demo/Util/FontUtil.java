@@ -60,13 +60,4 @@ public class FontUtil {
         return w;
     }
 
-
-    public static void slicingString(String str, Paint p, int lineWidth) {
-
-    }
-
-    public static class FontStringSlicingResult {
-        public int linesCount; // 行数
-    }
-
 }

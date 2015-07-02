@@ -87,6 +87,4 @@ public class ActivitySpIODemo2 extends Activity {
 
         tvLog.append(msg);
     }
-
-
 }

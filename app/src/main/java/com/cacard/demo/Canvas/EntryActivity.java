@@ -35,6 +35,8 @@ import com.cacard.demo.ViewDragHelperDemo.VDHActivity;
 import com.cacard.demo.launchmode.SingleInstance.Activity0;
 
 /**
+ * Canvas各个Demo的入口
+ * <p/>
  * Created by cunqingli on 2015/5/13.
  */
 public class EntryActivity extends Activity {

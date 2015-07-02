@@ -9,6 +9,8 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 /**
+ * ViewDragHelper演示
+ * <p/>
  * Created by cunqingli on 2015/4/22.
  */
 public class VDHActivity extends Activity {

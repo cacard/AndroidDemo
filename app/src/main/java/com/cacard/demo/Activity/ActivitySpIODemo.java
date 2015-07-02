@@ -94,7 +94,6 @@ public class ActivitySpIODemo extends Activity {
 
     // 测试前要Kill App
     private void readSp() {
-
         String msg = "";
 
         // 初次读取sp1

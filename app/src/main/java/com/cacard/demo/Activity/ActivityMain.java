@@ -3,10 +3,8 @@ package com.cacard.demo.Activity;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.ViewTreeObserver;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
@@ -19,6 +17,7 @@ import com.cacard.demo.Drawable.DrawingCacheCaptureActivity;
 import com.cacard.demo.Drawable.ShapeDrawableActivity;
 import com.cacard.demo.Drawable.TransitionDrawableActivity;
 import com.cacard.demo.FloatWindow.ActivityFloatWindow;
+import com.cacard.demo.FrescoDemo.FrescoActivity;
 import com.cacard.demo.GestureDetectorDemo.GestureDetectorDemoActivity;
 import com.cacard.demo.IO.ActivityDirInfo;
 import com.cacard.demo.Media.ActivityAudioPlayer;
@@ -35,12 +34,12 @@ public class ActivityMain extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         super.setTitle("Main Activity");
-
         generateMenu();
-
     }
 
-    // 各个子Demo入口
+    /**
+     * 生成各个子Demo入口菜单
+     */
     private void generateMenu() {
         LinearLayout root = new LinearLayout(this);
         root.setOrientation(LinearLayout.VERTICAL);
@@ -52,9 +51,7 @@ public class ActivityMain extends Activity {
         addButton(root, "ShapeDrawable", ShapeDrawableActivity.class);
         addButton(root, "ClipDrawable", ClipDrawableActivity.class);
         addButton(root, "TransitionDrawable", TransitionDrawableActivity.class);
-
         addButton(root, "Using Drawing Cache to Caputre", DrawingCacheCaptureActivity.class);
-
         addButton(root, "ValueAnimator", ActivityValueAnimator.class);
         addButton(root, "Scroller", ActivityScrollerDemo.class);
 
@@ -74,13 +71,13 @@ public class ActivityMain extends Activity {
         addButton(root, "FloatWindow", ActivityFloatWindow.class);
         addButton(root, "MIUIDeskIconNotification", MIUIDeskIconNotificationDemoActivity.class);
 
-        // service
         addButton(root, "Service/StickyService", StickyActivity.class);
         addButton(root, "Service/BindOnCreateService", BindOnCreateActivity.class);
 
+        addButton(root, "Fresco", FrescoActivity.class);
+
         ScrollView sv = new ScrollView(this);
         sv.addView(root);
-
         setContentView(sv);
     }
 
@@ -95,38 +92,5 @@ public class ActivityMain extends Activity {
             }
         });
         root.addView(btn);
-    }
-
-
-    private void log(String msg) {
-        Log.i("lcq", msg);
-    }
-
-    /**
-     * 监视ViewThree
-     */
-    private void addViewThreeObServer(View v) {
-        if (v == null) {
-            return;
-        }
-
-        ViewTreeObserver ob = v.getViewTreeObserver();
-        if (ob == null) {
-            return;
-        }
-
-        if (ob.isAlive()) {
-            ob.addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
-                @Override
-                public void onGlobalLayout() {
-                    log("->ob.addOnGlobalLayoutListener");
-                }
-            });
-        }
-    }
-
-    private void getRootView() {
-        ((ViewGroup) this.findViewById(android.R.id.content)).getChildAt(0);
-        getWindow().getDecorView().findViewById(android.R.id.content);
     }
 }

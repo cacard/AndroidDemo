@@ -11,6 +11,9 @@ import android.widget.TextView;
 
 import com.cacard.demo.R;
 
+/**
+ * ValueAnimator、ObjectAnimator演示
+ */
 public class ActivityValueAnimator extends Activity {
 
     private static String TAG = "ActivityValueAnimator";
@@ -20,17 +23,8 @@ public class ActivityValueAnimator extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_activity_value_animator);
-
-        // find controls
         tvHello = (TextView) this.findViewById(R.id.tvHello);
-
         startObjectAnimator();
-    }
-
-    @Override
-    public void onWindowFocusChanged(boolean hasFocus) {
-
-        super.onWindowFocusChanged(hasFocus);
     }
 
     /**
@@ -39,8 +33,6 @@ public class ActivityValueAnimator extends Activity {
     private void startValueAnimator() {
         final int width = tvHello.getLayoutParams().width;
         Log.i(TAG, "init width:" + width);
-
-
         final ValueAnimator valueAnimator = ValueAnimator.ofInt(1, 500);
 
         // 默认为间隔10ms触发该监听
@@ -56,8 +48,6 @@ public class ActivityValueAnimator extends Activity {
 
         valueAnimator.setDuration(5 * 1000);
         valueAnimator.start();
-
-
     }
 
     /**
@@ -67,27 +57,5 @@ public class ActivityValueAnimator extends Activity {
         ObjectAnimator objectAnimator = ObjectAnimator.ofFloat(tvHello, "alpha", 1.0f, 0f);
         objectAnimator.setDuration(5000);
         objectAnimator.start();
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_activity_value_animator, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
     }
 }

@@ -183,9 +183,6 @@ public class MusicWaveAnimationActivity extends Activity {
                     }
                 }
             }
-
         }
-
     }
-
 }

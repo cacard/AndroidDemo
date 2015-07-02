@@ -14,17 +14,21 @@ buildscript {
         }
 
         // maven central
-        mavenCentral()
+        //mavenCentral()
     }
 
     // 依赖的lib
     dependencies {
-        classpath 'com.android.tools.build:gradle:1.2.0'
+        classpath 'com.android.tools.build:gradle:1.2.3'
         //compile files('libs/ormlite-android-4.48.jar')
     }
 }
 
 allprojects {
+
+    def url1 = "http://maven.oa.com/nexus/content/repositories/android/" // 内网
+    def url2 = "http://maven.oschina.net/content/groups/public"
+
     repositories {
         all { ArtifactRepository repo ->
             println repo.url.toString()
@@ -34,7 +38,7 @@ allprojects {
             }
         }
         maven {
-            url "http://maven.oschina.net/content/groups/public"
+            url url1
         }
     }
 }

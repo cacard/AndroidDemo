@@ -19,9 +19,8 @@ import com.cacard.demo.R;
  * - TextView本身支持Scroller
  */
 public class ActivityScrollerDemo extends Activity {
-
     private TextView target;
-    Scroller s;
+    private Scroller s;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -36,7 +35,6 @@ public class ActivityScrollerDemo extends Activity {
                 flingDemo();
             }
         });
-
     }
 
     @Override
@@ -78,12 +76,5 @@ public class ActivityScrollerDemo extends Activity {
         target.setScroller(s);
         s.forceFinished(true);
         s.fling(0, 0, 10/* velocityX */, 0, 100/* minX */, 1000/* maxY */, 0, 0);
-
     }
-
-    private void overScorllerDemo() {
-
-    }
-
-
 }

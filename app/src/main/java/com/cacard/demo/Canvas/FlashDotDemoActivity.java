@@ -59,9 +59,7 @@ public class FlashDotDemoActivity extends Activity {
             } else {
                 rBlur = rBlurMin;
             }
-
             canvas.drawCircle(wCenter, hCenter, r, p);
-
             invalidate();
         }
     }

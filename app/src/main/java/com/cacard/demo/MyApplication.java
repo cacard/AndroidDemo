@@ -10,18 +10,15 @@ import android.util.Log;
 import com.cacard.demo.FloatWindow.FloatWindowManager;
 import com.cacard.demo.Service.AfterAppKilledWillReStartService;
 import com.cacard.demo.Service.BoundAndStartService;
+import com.facebook.drawee.backends.pipeline.Fresco;
 
 /**
  * Created by cunqingli on 2015/5/7.
  */
 public class MyApplication extends Application {
-
     private static final String TAG = MyApplication.class.getSimpleName();
-
     public static boolean isAudioPlayerServiceRunning;
-
     public FloatWindowManager floatWindowManager = new FloatWindowManager();
-
     public static MyApplication instance;
 
     @Override
@@ -29,8 +26,12 @@ public class MyApplication extends Application {
         Log.i(TAG, "->onCreate()");
         super.onCreate();
         instance = this;
-
+        frescoInit();
         testAfterAppKilledWillReStartService();
+    }
+
+    private void frescoInit() {
+        Fresco.initialize(this);
     }
 
     /**
@@ -53,7 +54,7 @@ public class MyApplication extends Application {
     }
 
     /**
-     * BIND_AUTO_CREATE是什么意思？
+     * 测试BIND_AUTO_CREATE
      */
     private void testBindAutoCrate() {
 
@@ -75,7 +76,7 @@ public class MyApplication extends Application {
     @Override
     public void onTerminate() {
         super.onTerminate();
-        Log.i("lcq", "Applicatoin onTerminate");
+        Log.i(TAG, "Applicatoin onTerminate");
     }
 
     @Override

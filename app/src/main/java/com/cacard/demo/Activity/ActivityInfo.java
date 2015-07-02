@@ -8,6 +8,8 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 /**
+ * App和Android信息
+ * <p/>
  * Created by cunqingli on 2015/5/14.
  */
 public class ActivityInfo extends Activity {
@@ -20,9 +22,7 @@ public class ActivityInfo extends Activity {
 
         root = new LinearLayout(this);
         root.setOrientation(LinearLayout.VERTICAL);
-
-        this.setContentView(root);
-
+        super.setContentView(root);
 
         // versionCode
         try {
@@ -30,9 +30,7 @@ public class ActivityInfo extends Activity {
             addInfo("versionCode:" + pi.versionCode + ",versionName:" + pi.versionName);
         } catch (Exception e) {
             e.printStackTrace();
-            addInfo("Exception:" + e.getMessage());
         }
-
     }
 
     private void addInfo(String message) {
