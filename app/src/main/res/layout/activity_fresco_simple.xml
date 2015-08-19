@@ -5,10 +5,10 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <com.facebook.drawee.view.SimpleDraweeView
-        android:id="@+id/img"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        fresco:placeholderImage="@drawable/android_cycle" />
+    <!--<com.facebook.drawee.view.SimpleDraweeView-->
+        <!--android:id="@+id/img"-->
+        <!--android:layout_width="100dp"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--fresco:placeholderImage="@drawable/android_cycle" />-->
 
 </LinearLayout>

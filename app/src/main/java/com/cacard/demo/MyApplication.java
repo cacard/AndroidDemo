@@ -10,7 +10,7 @@ import android.util.Log;
 import com.cacard.demo.FloatWindow.FloatWindowManager;
 import com.cacard.demo.Service.AfterAppKilledWillReStartService;
 import com.cacard.demo.Service.BoundAndStartService;
-import com.facebook.drawee.backends.pipeline.Fresco;
+//import com.facebook.drawee.backends.pipeline.Fresco;
 
 /**
  * Created by cunqingli on 2015/5/7.
@@ -31,7 +31,7 @@ public class MyApplication extends Application {
     }
 
     private void frescoInit() {
-        Fresco.initialize(this);
+        //Fresco.initialize(this);
     }
 
     /**

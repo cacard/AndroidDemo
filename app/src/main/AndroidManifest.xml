@@ -133,6 +133,11 @@
         <activity android:name=".Service.Sticky.StickyActivity" />
         <activity android:name=".Service.BindOnCreate.BindOnCreateActivity" />
         <activity android:name=".FrescoDemo.FrescoActivity" />
+        <activity android:name=".Graphic.Martix.MartixDemoActivity" />
+        <activity android:name=".CustomControl.PullHeader.PullHeader1Activity" />
+        <activity android:name=".RecyclerView.RecyclerViewSimpleActivity" />
+        <activity android:name=".Animator.ActivityAnimateLayoutChanges" />
+        <activity android:name=".Broadcast.ActivityRegReceiverManyTimes" />
     </application>
 
 </manifest>
