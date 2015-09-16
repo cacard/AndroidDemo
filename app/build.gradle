@@ -21,8 +21,10 @@ android {
 }
 
 dependencies {
-    compile 'com.android.support:support-v4:19.1.0'
     compile 'com.android.support:recyclerview-v7:+'
+
+    compile 'com.android.support:design:22.2.0' // contains v4 and v7
+
     compile files('libs/ormlite-android-4.48.jar')
     compile files('libs/ormlite-core-4.48.jar')
 }

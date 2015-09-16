@@ -1,21 +1,26 @@
-package com.cacard.demo.Activity;
+package com.cacard.demo;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 
+import com.cacard.demo.Activity.ActivityInfo;
+import com.cacard.demo.Activity.ActivityScreenSize;
+import com.cacard.demo.Activity.ActivitySpIODemo;
+import com.cacard.demo.Activity.ActivitySpIODemo2;
 import com.cacard.demo.Animator.ActivityAnimateLayoutChanges;
 import com.cacard.demo.Animator.ActivityScrollerDemo;
 import com.cacard.demo.Animator.ActivityValueAnimator;
 import com.cacard.demo.Broadcast.ActivityRegReceiverManyTimes;
 import com.cacard.demo.Canvas.EntryActivity;
 import com.cacard.demo.CustomControl.PullHeader.PullHeader1Activity;
+import com.cacard.demo.DesignSupportLibrary.SnackBarDemoActivity;
+import com.cacard.demo.DesignSupportLibrary.TextInputLayoutDemoActivity;
 import com.cacard.demo.Drawable.ClipDrawableActivity;
 import com.cacard.demo.Drawable.DrawingCacheCaptureActivity;
 import com.cacard.demo.Drawable.ShapeDrawableActivity;
@@ -25,21 +30,29 @@ import com.cacard.demo.FrescoDemo.FrescoActivity;
 import com.cacard.demo.GestureDetectorDemo.GestureDetectorDemoActivity;
 import com.cacard.demo.Graphic.Martix.MartixDemoActivity;
 import com.cacard.demo.IO.ActivityDirInfo;
+import com.cacard.demo.Intent.ImplicitIntentDemoActivity;
 import com.cacard.demo.Media.ActivityAudioPlayer;
 import com.cacard.demo.Media.ActivityAudioPlayerUsingService;
 import com.cacard.demo.Notification.MIUIDeskIconNotificationDemoActivity;
 import com.cacard.demo.RecyclerView.RecyclerViewSimpleActivity;
 import com.cacard.demo.Service.BindOnCreate.BindOnCreateActivity;
 import com.cacard.demo.Service.Sticky.StickyActivity;
+import com.cacard.demo.System.ActivityCreatePackageContext;
 import com.cacard.demo.ViewDragHelperDemo.VDHActivity;
 import com.cacard.demo.launchmode.SingleInstance.Activity0;
 
 public class ActivityMain extends Activity {
 
+    private LinearLayout root;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         super.setTitle("Main Activity");
+
+        root = new LinearLayout(this);
+        root.setOrientation(LinearLayout.VERTICAL);
+
         generateMenu();
     }
 
@@ -47,13 +60,14 @@ public class ActivityMain extends Activity {
      * 生成各个子Demo入口菜单
      */
     private void generateMenu() {
-        LinearLayout root = new LinearLayout(this);
-        root.setOrientation(LinearLayout.VERTICAL);
 
+        // Basic
         addButton(root, "ScreenInfomation", ActivityScreenSize.class);
         addButton(root, "Info", ActivityInfo.class);
         addButton(root, "DirInfo", ActivityDirInfo.class);
+        addButton("ImplicitIntent", ImplicitIntentDemoActivity.class);
 
+        // Shape
         addButton(root, "ShapeDrawable", ShapeDrawableActivity.class);
         addButton(root, "ClipDrawable", ClipDrawableActivity.class);
         addButton(root, "TransitionDrawable", TransitionDrawableActivity.class);
@@ -90,6 +104,12 @@ public class ActivityMain extends Activity {
 
         addButton(root, "Broadcast/RegManyTimes", ActivityRegReceiverManyTimes.class);
 
+        addButton(root, "System/createPackageContext", ActivityCreatePackageContext.class);
+
+        // android design support library
+        addButton("DesignSupportLibrary/SnackBar", SnackBarDemoActivity.class);
+        addButton("DesignSupportLibrary/TextInputLayout", TextInputLayoutDemoActivity.class);
+
         ScrollView sv = new ScrollView(this);
         sv.addView(root);
         setContentView(sv);
@@ -106,5 +126,9 @@ public class ActivityMain extends Activity {
             }
         });
         root.addView(btn);
+    }
+
+    private void addButton(String text, final Class<?> clazz) {
+        addButton(root, text, clazz);
     }
 }

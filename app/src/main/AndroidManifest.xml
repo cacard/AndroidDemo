@@ -59,7 +59,7 @@
             </intent-filter>
         </receiver>
 
-        <activity android:name=".Activity.ActivityMain">
+        <activity android:name=".ActivityMain">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -138,6 +138,16 @@
         <activity android:name=".RecyclerView.RecyclerViewSimpleActivity" />
         <activity android:name=".Animator.ActivityAnimateLayoutChanges" />
         <activity android:name=".Broadcast.ActivityRegReceiverManyTimes" />
+        <activity
+            android:name=".launchmode.SingleTask.Activity1SingleTask"
+            android:launchMode="singleTask">
+
+        </activity>
+        <activity android:name=".launchmode.SingleTask.Activity2Normal" />
+        <activity android:name=".System.ActivityCreatePackageContext" />
+        <activity android:name=".DesignSupportLibrary.SnackBarDemoActivity" />
+        <activity android:name=".DesignSupportLibrary.TextInputLayoutDemoActivity" />
+        <activity android:name=".Intent.ImplicitIntentDemoActivity" />
     </application>
 
 </manifest>
