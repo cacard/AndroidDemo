@@ -19,6 +19,8 @@ import com.cacard.demo.Animator.ActivityValueAnimator;
 import com.cacard.demo.Broadcast.ActivityRegReceiverManyTimes;
 import com.cacard.demo.Canvas.EntryActivity;
 import com.cacard.demo.CustomControl.PullHeader.PullHeader1Activity;
+import com.cacard.demo.DesignSupportLibrary.CoornaditorLayout.CoornaditorLayoutAndFABActivity;
+import com.cacard.demo.DesignSupportLibrary.FloatingActionBarDemoActivity;
 import com.cacard.demo.DesignSupportLibrary.SnackBarDemoActivity;
 import com.cacard.demo.DesignSupportLibrary.TextInputLayoutDemoActivity;
 import com.cacard.demo.Drawable.ClipDrawableActivity;
@@ -107,8 +109,10 @@ public class ActivityMain extends Activity {
         addButton(root, "System/createPackageContext", ActivityCreatePackageContext.class);
 
         // android design support library
-        addButton("DesignSupportLibrary/SnackBar", SnackBarDemoActivity.class);
-        addButton("DesignSupportLibrary/TextInputLayout", TextInputLayoutDemoActivity.class);
+        addButton("DSL/SnackBar", SnackBarDemoActivity.class);
+        addButton("DSL/TextInputLayout", TextInputLayoutDemoActivity.class);
+        addButton("DSL/FloatingActionBarDemoActivity",FloatingActionBarDemoActivity.class);
+        addButton("DSL/CoorditorLayoutAndFab", CoornaditorLayoutAndFABActivity.class);
 
         ScrollView sv = new ScrollView(this);
         sv.addView(root);

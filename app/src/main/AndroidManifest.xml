@@ -141,13 +141,14 @@
         <activity
             android:name=".launchmode.SingleTask.Activity1SingleTask"
             android:launchMode="singleTask">
-
         </activity>
         <activity android:name=".launchmode.SingleTask.Activity2Normal" />
         <activity android:name=".System.ActivityCreatePackageContext" />
         <activity android:name=".DesignSupportLibrary.SnackBarDemoActivity" />
         <activity android:name=".DesignSupportLibrary.TextInputLayoutDemoActivity" />
         <activity android:name=".Intent.ImplicitIntentDemoActivity" />
+        <activity android:name=".DesignSupportLibrary.FloatingActionBarDemoActivity" />
+        <activity android:name=".DesignSupportLibrary.CoornaditorLayout.CoornaditorLayoutAndFABActivity" />
     </application>
 
 </manifest>
