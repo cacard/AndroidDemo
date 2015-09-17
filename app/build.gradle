@@ -1,13 +1,13 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 21
-    buildToolsVersion "23"
+    compileSdkVersion 23
+    buildToolsVersion "23.0.0"
 
     defaultConfig {
         applicationId "com.cacard.demo"
         minSdkVersion 9
-        targetSdkVersion 21
+        targetSdkVersion 23
     }
 
     buildTypes {
@@ -22,9 +22,12 @@ android {
 
 dependencies {
     compile 'com.android.support:recyclerview-v7:+'
-
-    compile 'com.android.support:design:22.2.0' // contains v4 and v7
-
+    // contains v4 and v7
     compile files('libs/ormlite-android-4.48.jar')
     compile files('libs/ormlite-core-4.48.jar')
+    compile 'com.android.support:appcompat-v7:23.0.1'
+    compile 'com.android.support:design:23.0.1'
+    compile 'com.jakewharton:butterknife:5.1.1'
+    compile 'com.google.code.gson:gson:2.2.4'
+    compile 'com.squareup.okhttp:okhttp:2.0.0'
 }
