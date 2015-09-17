@@ -42,7 +42,7 @@
         android:icon="@drawable/android_yellow"
         android:label="@string/app_name"
         android:permission="android.permission.ACCESS_COARSE_LOCATION"
-        android:theme="@style/Theme.AppCompat.Light">
+        android:theme="@style/AppTheme">
 
 
         <service android:name="com.cacard.demo.Service.StartedServiceDemo" />
@@ -149,6 +149,7 @@
         <activity android:name=".Intent.ImplicitIntentDemoActivity" />
         <activity android:name=".DesignSupportLibrary.FloatingActionBarDemoActivity" />
         <activity android:name=".DesignSupportLibrary.CoornaditorLayout.CoornaditorLayoutAndFABActivity" />
+        <activity android:name=".DesignSupportLibrary._ToolbarDemoActivity" />
     </application>
 
 </manifest>

@@ -1,18 +1,19 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context="com.cacard.demo.ActivityMain" >
 
     <item
         android:id="@+id/action_settings"
         android:orderInCategory="100"
-        android:showAsAction="always"
+        app:showAsAction="always"
         android:icon="@drawable/ic_launcher"
         android:title="@string/action_settings"/>
     
     <item
         android:id="@+id/action_search"
         android:orderInCategory="100"
-        android:showAsAction="never"
+        app:showAsAction="never"
         android:icon="@drawable/ic_launcher"
         android:title="Search"/>
 
