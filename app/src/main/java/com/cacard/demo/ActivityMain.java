@@ -23,6 +23,8 @@ import com.cacard.demo.DesignSupportLibrary.CoornaditorLayout.CoornaditorLayoutA
 import com.cacard.demo.DesignSupportLibrary.FloatingActionBarDemoActivity;
 import com.cacard.demo.DesignSupportLibrary.SnackBarDemoActivity;
 import com.cacard.demo.DesignSupportLibrary.TextInputLayoutDemoActivity;
+import com.cacard.demo.DesignSupportLibrary._DrawerLayout._DrawerLayoutDemoActivity;
+import com.cacard.demo.DesignSupportLibrary._DrawerLayout._DrawerLayoutWithToolBarActivity;
 import com.cacard.demo.DesignSupportLibrary._ToolbarDemoActivity;
 import com.cacard.demo.Drawable.ClipDrawableActivity;
 import com.cacard.demo.Drawable.DrawingCacheCaptureActivity;
@@ -114,7 +116,9 @@ public class ActivityMain extends Activity {
         addButton("DSL/TextInputLayout", TextInputLayoutDemoActivity.class);
         addButton("DSL/FloatingActionBarDemoActivity",FloatingActionBarDemoActivity.class);
         addButton("DSL/CoorditorLayoutAndFab", CoornaditorLayoutAndFABActivity.class);
-        addButton("DSL/Toolbar",_ToolbarDemoActivity.class);
+        addButton("DSL/_Toolbar",_ToolbarDemoActivity.class);
+        addButton("DSL/_DrawerLayout",_DrawerLayoutDemoActivity.class);
+        addButton("DSL/_DrawerLayoutWithToolBar",_DrawerLayoutWithToolBarActivity.class);
 
         ScrollView sv = new ScrollView(this);
         sv.addView(root);
