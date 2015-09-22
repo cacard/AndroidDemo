@@ -9,8 +9,8 @@ import android.view.ViewGroup;
 
 import com.cacard.demo.R;
 
+import butterknife.Bind;
 import butterknife.ButterKnife;
-import butterknife.InjectView;
 
 /**
  * DrawerLayout 来自 v4
@@ -20,20 +20,20 @@ public class _DrawerLayoutDemoActivity extends AppCompatActivity {
 
     private static final String TAG = "_DrawerLayoutDemoActivity";
 
-    @InjectView(R.id.drawerLayout)
+    @Bind(R.id.drawerLayout)
     DrawerLayout drawerLayout;
 
-    @InjectView(R.id.mainLayout)
+    @Bind(R.id.mainLayout)
     ViewGroup mainLayout;
 
-    @InjectView(R.id.drawerView)
+    @Bind(R.id.drawerView)
     ViewGroup drawerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_drawable_left_demo);
-        ButterKnife.inject(this);
+        ButterKnife.bind(this);
 
         // 默认先打开DrawerView
         drawerLayout.openDrawer(drawerView);

@@ -13,8 +13,8 @@ import android.widget.TextView;
 
 import com.cacard.demo.R;
 
+import butterknife.Bind;
 import butterknife.ButterKnife;
-import butterknife.InjectView;
 
 /**
  * CoornaditorLayout与Fab的互动
@@ -28,10 +28,10 @@ public class CoornaditorLayoutAndFABActivity extends Activity {
 
     private static final String TAG = "CoornaditorLayoutAndFABActivity";
 
-    @InjectView(R.id.fab)
+    @Bind(R.id.fab)
     FloatingActionButton fab;
 
-    @InjectView(R.id.root)
+    @Bind(R.id.root)
     CoordinatorLayout root;
 
     boolean isShowing = false;
@@ -40,7 +40,7 @@ public class CoornaditorLayoutAndFABActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_coornditor_and_fab);
-        ButterKnife.inject(this);
+        ButterKnife.bind(this);
 
         // fab点击动作
         if (fab != null) {

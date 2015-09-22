@@ -12,31 +12,31 @@ import android.view.ViewGroup;
 
 import com.cacard.demo.R;
 
+import butterknife.Bind;
 import butterknife.ButterKnife;
-import butterknife.InjectView;
 
 /**
  * Created by cunqingli on 2015/9/18.
  */
 public class _DrawerLayoutWithToolBarActivity extends AppCompatActivity {
 
-    @InjectView(R.id.toolBar)
+    @Bind(R.id.toolBar)
     Toolbar toolbar;
 
-    @InjectView(R.id.drawerLayout)
+    @Bind(R.id.drawerLayout)
     DrawerLayout drawerLayout;
 
-    @InjectView(R.id.mainLayout)
+    @Bind(R.id.mainLayout)
     ViewGroup mainLayout;
 
-    @InjectView(R.id.drawerView)
+    @Bind(R.id.drawerView)
     ViewGroup drawerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_drawer_layout_and_tool_bar);
-        ButterKnife.inject(this);
+        ButterKnife.bind(this);
 
         // 将ToolBar作为ActionBar
         if (toolbar != null) {
