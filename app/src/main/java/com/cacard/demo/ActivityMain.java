@@ -44,7 +44,8 @@ import com.cacard.demo.Service.BindOnCreate.BindOnCreateActivity;
 import com.cacard.demo.Service.Sticky.StickyActivity;
 import com.cacard.demo.System.ActivityCreatePackageContext;
 import com.cacard.demo.ViewDragHelperDemo.VDHActivity;
-import com.cacard.demo.ViewPagerDemo.ViewPagerDemo1Simple;
+import com.cacard.demo.ViewPager.Demo1.ViewPagerDemo1SimpleActivity;
+import com.cacard.demo.ViewPager.Demo2FragmentPagerAdapter.ViewPager_FragmentPagerAdapter_Activity;
 import com.cacard.demo.launchmode.SingleInstance.Activity0;
 
 public class ActivityMain extends Activity {
@@ -113,7 +114,8 @@ public class ActivityMain extends Activity {
         addButton(root, "System/createPackageContext", ActivityCreatePackageContext.class);
 
         // ViewPager Demo
-        addButton("ViewPager/SimpleDemo", ViewPagerDemo1Simple.class);
+        addButton("ViewPager/SimpleDemo", ViewPagerDemo1SimpleActivity.class);
+        addButton("ViewPager/FragmentPagerAdapter",ViewPager_FragmentPagerAdapter_Activity.class);
 
         // android design support library
         addButton("DSL/SnackBar", SnackBarDemoActivity.class);

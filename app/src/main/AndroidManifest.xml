@@ -151,7 +151,8 @@
         <activity android:name=".DesignSupportLibrary._ToolbarDemoActivity" />
         <activity android:name=".DesignSupportLibrary._DrawerLayout._DrawerLayoutDemoActivity" />
         <activity android:name=".DesignSupportLibrary._DrawerLayout._DrawerLayoutWithToolBarActivity" />
-        <activity android:name=".ViewPagerDemo.ViewPagerDemo1Simple" />
+        <activity android:name=".ViewPager.Demo1.ViewPagerDemo1SimpleActivity" />
+        <activity android:name=".ViewPager.Demo2FragmentPagerAdapter.ViewPager_FragmentPagerAdapter_Activity" />
     </application>
 
 </manifest>
