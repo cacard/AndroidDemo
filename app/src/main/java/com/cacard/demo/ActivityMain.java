@@ -43,9 +43,11 @@ import com.cacard.demo.RecyclerView.RecyclerViewSimpleActivity;
 import com.cacard.demo.Service.BindOnCreate.BindOnCreateActivity;
 import com.cacard.demo.Service.Sticky.StickyActivity;
 import com.cacard.demo.System.ActivityCreatePackageContext;
+import com.cacard.demo.UIRelate.ClipToPaddingDemoActivity;
 import com.cacard.demo.ViewDragHelperDemo.VDHActivity;
 import com.cacard.demo.ViewPager.Demo1.ViewPagerDemo1SimpleActivity;
 import com.cacard.demo.ViewPager.Demo2FragmentPagerAdapter.ViewPager_FragmentPagerAdapter_Activity;
+import com.cacard.demo.ViewPager.Demo4ViewPagerSpecial.ViewPagerSpeicalActivity;
 import com.cacard.demo.launchmode.SingleInstance.Activity0;
 
 public class ActivityMain extends Activity {
@@ -74,6 +76,9 @@ public class ActivityMain extends Activity {
         addButton(root, "DirInfo", ActivityDirInfo.class);
         addButton("ImplicitIntent", ImplicitIntentDemoActivity.class);
 
+        // UI Relate
+        addButton("UI/clipToPadding Demo", ClipToPaddingDemoActivity.class);
+
         // Shape
         addButton(root, "ShapeDrawable", ShapeDrawableActivity.class);
         addButton(root, "ClipDrawable", ClipDrawableActivity.class);
@@ -88,7 +93,7 @@ public class ActivityMain extends Activity {
 
         addButton(root, "LaunchMode-SingleInstance", Activity0.class);
 
-        addButton(root, "Canvas/", EntryActivity.class);
+        addButton(root, "【Canvas】", EntryActivity.class);
 
         addButton(root, "SpSpeed", ActivitySpIODemo.class);
         addButton(root, "SpSpeed2", ActivitySpIODemo2.class);
@@ -116,6 +121,7 @@ public class ActivityMain extends Activity {
         // ViewPager Demo
         addButton("ViewPager/SimpleDemo", ViewPagerDemo1SimpleActivity.class);
         addButton("ViewPager/FragmentPagerAdapter",ViewPager_FragmentPagerAdapter_Activity.class);
+        addButton("ViewPager/ViewPagerSpeical",ViewPagerSpeicalActivity.class);
 
         // android design support library
         addButton("DSL/SnackBar", SnackBarDemoActivity.class);

@@ -153,6 +153,8 @@
         <activity android:name=".DesignSupportLibrary._DrawerLayout._DrawerLayoutWithToolBarActivity" />
         <activity android:name=".ViewPager.Demo1.ViewPagerDemo1SimpleActivity" />
         <activity android:name=".ViewPager.Demo2FragmentPagerAdapter.ViewPager_FragmentPagerAdapter_Activity" />
+        <activity android:name=".ViewPager.Demo4ViewPagerSpecial.ViewPagerSpeicalActivity" />
+        <activity android:name=".UIRelate.ClipToPaddingDemoActivity" />
     </application>
 
 </manifest>

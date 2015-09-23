@@ -13,6 +13,11 @@ public class ViewPagerDemo1Adapter extends PagerAdapter {
 
     private List<View> views;
 
+    @Override
+    public CharSequence getPageTitle(int position) {
+        return String.valueOf(position);
+    }
+
     public ViewPagerDemo1Adapter(List<View> views) {
         this.views = views;
     }
