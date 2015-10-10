@@ -25,6 +25,10 @@ dependencies {
     // contains v4 and v7
     compile files('libs/ormlite-android-4.48.jar')
     compile files('libs/ormlite-core-4.48.jar')
+
+    // see:https://github.com/xyxyLiu/TaskLogger
+    compile files('libs/android-tasklogger-1.0.jar')
+
     compile 'com.android.support:appcompat-v7:23.0.1'
     compile 'com.android.support:design:23.0.1'
     compile 'com.jakewharton:butterknife:7.0.1'

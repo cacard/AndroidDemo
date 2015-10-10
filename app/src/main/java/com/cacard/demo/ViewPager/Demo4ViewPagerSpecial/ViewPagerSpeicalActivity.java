@@ -9,10 +9,14 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 
+import com.cacard.demo.R;
+
 import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * see http://blog.neteril.org/blog/2013/10/14/android-tip-viewpager-with-protruding-children/
+ * <p/>
  * Created by cunqingli on 2015/9/23.
  */
 public class ViewPagerSpeicalActivity extends Activity {
@@ -26,8 +30,8 @@ public class ViewPagerSpeicalActivity extends Activity {
         viewPager = new ViewPager(this);
         viewPager.setId(View.generateViewId());
         viewPager.setClipToPadding(false);
-        viewPager.setPageMargin(20);
-        viewPager.setPadding(60,60,60,60);
+        viewPager.setPageMargin(getResources().getDimensionPixelSize(R.dimen.view_pager_special_pager_margin));
+        viewPager.setPadding(60, 0, 30, 0);
         this.setContentView(viewPager);
 
         List<View> v = new ArrayList<View>();

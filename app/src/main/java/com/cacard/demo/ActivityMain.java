@@ -76,6 +76,9 @@ public class ActivityMain extends Activity {
         addButton(root, "DirInfo", ActivityDirInfo.class);
         addButton("ImplicitIntent", ImplicitIntentDemoActivity.class);
 
+        // launch mode
+        addButton("【LaunchMode】FlagActivityNewTask", com.cacard.demo.launchmode.FlagActivityNewTask.Activity.class);
+
         // UI Relate
         addButton("UI/clipToPadding Demo", ClipToPaddingDemoActivity.class);
 

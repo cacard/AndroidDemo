@@ -14,9 +14,9 @@ import java.util.List;
 
 /**
  * clipToPadding和clipChild效果演示
- *
+ * <p/>
  * android:clipToPadding默认为true，表示设置padding后，子View不会在padding内部绘制；
- *
+ * <p/>
  * Created by cunqingli on 2015/9/23.
  */
 public class ClipToPaddingDemoActivity extends AppCompatActivity {
@@ -32,7 +32,6 @@ public class ClipToPaddingDemoActivity extends AppCompatActivity {
         this.setContentView(listView);
 
         listView.setAdapter(new MyAdapter(this));
-
     }
 
     private static class MyAdapter extends BaseAdapter {
@@ -40,10 +39,10 @@ public class ClipToPaddingDemoActivity extends AppCompatActivity {
         List<Integer> list;
         Context ctx;
 
-        public MyAdapter (Context ctx) {
+        public MyAdapter(Context ctx) {
             this.ctx = ctx;
             list = new ArrayList<>();
-            for (int i = 0;i<60;i++) {
+            for (int i = 0; i < 60; i++) {
                 list.add(i);
             }
         }
@@ -66,7 +65,7 @@ public class ClipToPaddingDemoActivity extends AppCompatActivity {
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
             TextView tv = new TextView(ctx);
-            tv.setText("#"+String.valueOf(list.get(position)));
+            tv.setText("#" + String.valueOf(list.get(position)));
             return tv;
         }
     }
