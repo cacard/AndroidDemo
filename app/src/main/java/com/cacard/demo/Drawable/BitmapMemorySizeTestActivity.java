@@ -32,6 +32,9 @@ import com.cacard.demo.R;
  * 更精确的公式是：
  * (x * scale + 0.5) * (y * scale + 0.5) * 4
  *
+ *
+ * RGB_565是ARGB_8888的一半
+ *
  */
 public class BitmapMemorySizeTestActivity extends Activity {
 
@@ -82,13 +85,15 @@ public class BitmapMemorySizeTestActivity extends Activity {
         // 结果：118336
         // 172*172*4 = 118336
     }
-    
+
     /**
      * 根据BitmapFactory拿到Bitmap
      */
     private void testUsingBitmapFactory() {
 
-        Bitmap bm =  BitmapFactory.decodeResource(this.getResources(), R.drawable.logo);
+        BitmapFactory.Options options = new BitmapFactory.Options();
+        options.inPreferredConfig = Bitmap.Config.RGB_565;
+        Bitmap bm =  BitmapFactory.decodeResource(this.getResources(), R.drawable.logo,options);
         if (bm != null) {
             Log.i(TAG,"[test#1]size="+bm.getByteCount());
         }
@@ -96,8 +101,9 @@ public class BitmapMemorySizeTestActivity extends Activity {
         // 结果：
         // 放在mdpi下，在2倍系数的屏幕下
         // 结果:473344
+
         // 放在xhdpi下，在2倍系数的屏幕下
-        // 结果:118336
+        // 结果:118336(ARGB_8888),59168（RGB_565）
 
     }
 }
