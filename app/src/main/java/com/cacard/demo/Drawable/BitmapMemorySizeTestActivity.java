@@ -2,6 +2,7 @@ package com.cacard.demo.Drawable;
 
 import android.app.Activity;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -45,7 +46,6 @@ public class BitmapMemorySizeTestActivity extends Activity {
 
         imgView = new ImageView(this);
         imgView.setImageResource(R.drawable.logo);
-
         ll.addView(imgView);
 
         Button btn = new Button(this);
@@ -53,24 +53,51 @@ public class BitmapMemorySizeTestActivity extends Activity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                test();
+                testUsingImageView();
+                testUsingBitmapFactory();
             }
         });
-
         ll.addView(btn);
 
         this.setContentView(ll);
-
     }
 
-
-    private void test () {
+    /**
+     * 直接根据ImageView拿到Bitmap
+     */
+    private void testUsingImageView () {
         Drawable drawable = imgView.getDrawable();
         if (drawable instanceof BitmapDrawable) {
             Bitmap bm = ((BitmapDrawable) drawable).getBitmap();
             if (bm != null) {
-                Log.i(TAG,"size="+bm.getByteCount());
+                Log.i(TAG,"[test#1]size="+bm.getByteCount());
             }
         }
+
+        // 结果:
+        // 放在mdpi下，在2倍系数的屏幕下显示
+        // 结果：473344
+        // 172*(2) * 172*(2) * 4 = 473344
+        // 放到xhdpi下，在2倍系数屏幕下显示
+        // 结果：118336
+        // 172*172*4 = 118336
+    }
+    
+    /**
+     * 根据BitmapFactory拿到Bitmap
+     */
+    private void testUsingBitmapFactory() {
+
+        Bitmap bm =  BitmapFactory.decodeResource(this.getResources(), R.drawable.logo);
+        if (bm != null) {
+            Log.i(TAG,"[test#1]size="+bm.getByteCount());
+        }
+
+        // 结果：
+        // 放在mdpi下，在2倍系数的屏幕下
+        // 结果:473344
+        // 放在xhdpi下，在2倍系数的屏幕下
+        // 结果:118336
+
     }
 }
