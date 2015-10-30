@@ -26,6 +26,7 @@ import com.cacard.demo.DesignSupportLibrary.TextInputLayoutDemoActivity;
 import com.cacard.demo.DesignSupportLibrary._DrawerLayout._DrawerLayoutDemoActivity;
 import com.cacard.demo.DesignSupportLibrary._DrawerLayout._DrawerLayoutWithToolBarActivity;
 import com.cacard.demo.DesignSupportLibrary._ToolbarDemoActivity;
+import com.cacard.demo.Drawable.BitmapMemorySizeTestActivity;
 import com.cacard.demo.Drawable.ClipDrawableActivity;
 import com.cacard.demo.Drawable.DrawingCacheCaptureActivity;
 import com.cacard.demo.Drawable.ShapeDrawableActivity;
@@ -81,6 +82,9 @@ public class ActivityMain extends Activity {
 
         // UI Relate
         addButton("UI/clipToPadding Demo", ClipToPaddingDemoActivity.class);
+
+        // Bitmap
+        addButton("Bitmap/占用内存测试",BitmapMemorySizeTestActivity.class);
 
         // Shape
         addButton(root, "ShapeDrawable", ShapeDrawableActivity.class);

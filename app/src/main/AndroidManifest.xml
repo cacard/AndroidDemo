@@ -160,6 +160,7 @@
         <activity android:name=".launchmode.FlagActivityNewTask.Activity" />
         <activity android:name=".launchmode.FlagActivityNewTask.ActivityB" />
         <activity android:name=".launchmode.FlagActivityNewTask.ActivityC" />
+        <activity android:name=".Drawable.BitmapMemorySizeTestActivity" />
     </application>
 
 </manifest>
