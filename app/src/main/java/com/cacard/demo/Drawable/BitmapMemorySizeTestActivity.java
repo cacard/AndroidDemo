@@ -16,25 +16,22 @@ import com.cacard.demo.R;
 
 /**
  * Created by cunqingli on 2015/10/29.
- *
+ * <p/>
  * 一张图片加载屏幕里面所占的内存下列因素有关：
  * - 图片固有的像素尺寸 x * y
  * - 所在目录的dpi
  * - 显示屏幕的dpi
  * - 解码模式（ARGB_8888等）
- *
+ * <p/>
  * 运行时所占内存是：
- *
+ * <p/>
  * scale = 屏幕dpi / 所在目录dpi
  * (x * scale) * (y * scale) * 4
- *
- *
+ * <p/>
  * 更精确的公式是：
  * (x * scale + 0.5) * (y * scale + 0.5) * 4
- *
- *
+ * <p/>
  * RGB_565是ARGB_8888的一半
- *
  */
 public class BitmapMemorySizeTestActivity extends Activity {
 
@@ -62,18 +59,19 @@ public class BitmapMemorySizeTestActivity extends Activity {
         });
         ll.addView(btn);
 
+
         this.setContentView(ll);
     }
 
     /**
      * 直接根据ImageView拿到Bitmap
      */
-    private void testUsingImageView () {
+    private void testUsingImageView() {
         Drawable drawable = imgView.getDrawable();
         if (drawable instanceof BitmapDrawable) {
             Bitmap bm = ((BitmapDrawable) drawable).getBitmap();
             if (bm != null) {
-                Log.i(TAG,"[test#1]size="+bm.getByteCount());
+                Log.i(TAG, "[test#1]size=" + bm.getByteCount());
             }
         }
 
@@ -93,9 +91,9 @@ public class BitmapMemorySizeTestActivity extends Activity {
 
         BitmapFactory.Options options = new BitmapFactory.Options();
         options.inPreferredConfig = Bitmap.Config.RGB_565;
-        Bitmap bm =  BitmapFactory.decodeResource(this.getResources(), R.drawable.logo,options);
+        Bitmap bm = BitmapFactory.decodeResource(this.getResources(), R.drawable.logo, options);
         if (bm != null) {
-            Log.i(TAG,"[test#1]size="+bm.getByteCount());
+            Log.i(TAG, "[test#1]size=" + bm.getByteCount());
         }
 
         // 结果：
@@ -104,6 +102,5 @@ public class BitmapMemorySizeTestActivity extends Activity {
 
         // 放在xhdpi下，在2倍系数的屏幕下
         // 结果:118336(ARGB_8888),59168（RGB_565）
-
     }
 }

@@ -33,7 +33,8 @@
     <android:uses-permission
         android:name="android.permission.READ_EXTERNAL_STORAGE"
         android:maxSdkVersion="18" />
-    <uses-permission android:name="android.permission.GET_TASKS"/>
+
+    <uses-permission android:name="android.permission.GET_TASKS" />
 
     <application
         android:name=".MyApplication"
@@ -45,7 +46,8 @@
         android:permission="android.permission.ACCESS_COARSE_LOCATION"
         android:theme="@style/AppTheme">
 
-        <service android:name="com.reginald.tasklogger.TaskLoggerService"
+        <service
+            android:name="com.reginald.tasklogger.TaskLoggerService"
             android:process=":taskLogger" />
         <service android:name="com.cacard.demo.Service.StartedServiceDemo" />
         <service android:name="com.cacard.demo.Service.BoundServiceDemo" />

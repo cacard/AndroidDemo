@@ -84,7 +84,7 @@ public class ActivityMain extends Activity {
         addButton("UI/clipToPadding Demo", ClipToPaddingDemoActivity.class);
 
         // Bitmap
-        addButton("Bitmap/占用内存测试",BitmapMemorySizeTestActivity.class);
+        addButton("Bitmap/占用内存测试", BitmapMemorySizeTestActivity.class);
 
         // Shape
         addButton(root, "ShapeDrawable", ShapeDrawableActivity.class);
@@ -127,17 +127,17 @@ public class ActivityMain extends Activity {
 
         // ViewPager Demo
         addButton("ViewPager/SimpleDemo", ViewPagerDemo1SimpleActivity.class);
-        addButton("ViewPager/FragmentPagerAdapter",ViewPager_FragmentPagerAdapter_Activity.class);
-        addButton("ViewPager/ViewPagerSpeical",ViewPagerSpeicalActivity.class);
+        addButton("ViewPager/FragmentPagerAdapter", ViewPager_FragmentPagerAdapter_Activity.class);
+        addButton("ViewPager/ViewPagerSpeical", ViewPagerSpeicalActivity.class);
 
         // android design support library
         addButton("DSL/SnackBar", SnackBarDemoActivity.class);
         addButton("DSL/TextInputLayout", TextInputLayoutDemoActivity.class);
-        addButton("DSL/FloatingActionBarDemoActivity",FloatingActionBarDemoActivity.class);
+        addButton("DSL/FloatingActionBarDemoActivity", FloatingActionBarDemoActivity.class);
         addButton("DSL/CoorditorLayoutAndFab", CoornaditorLayoutAndFABActivity.class);
-        addButton("DSL/_Toolbar",_ToolbarDemoActivity.class);
-        addButton("DSL/_DrawerLayout",_DrawerLayoutDemoActivity.class);
-        addButton("DSL/_DrawerLayoutWithToolBar",_DrawerLayoutWithToolBarActivity.class);
+        addButton("DSL/_Toolbar", _ToolbarDemoActivity.class);
+        addButton("DSL/_DrawerLayout", _DrawerLayoutDemoActivity.class);
+        addButton("DSL/_DrawerLayoutWithToolBar", _DrawerLayoutWithToolBarActivity.class);
 
         ScrollView sv = new ScrollView(this);
         sv.addView(root);
