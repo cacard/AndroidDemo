@@ -7,6 +7,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.cacard.demo.R;
@@ -20,6 +21,7 @@ import java.util.List;
 public class RecyclerViewSimpleActivity extends Activity {
 
     private RecyclerView rv;
+    private MyAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,12 +36,31 @@ public class RecyclerViewSimpleActivity extends Activity {
         rv.setLayoutManager(llm);
 
         // 5 set Adapter
-        List<MyItem> items = new ArrayList<MyItem>();
+        final List<MyItem> items = new ArrayList<MyItem>();
         for (int i = 0; i < 20; i++) {
             items.add(new MyItem(i + "", i + "_"));
         }
-        MyAdapter adapter = new MyAdapter(items);
+        adapter = new MyAdapter(items);
         rv.setAdapter(adapter);
+
+
+        // ----------------------
+        ((Button) findViewById(R.id.btnAdd)).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                items.add(1, new MyItem("add", "add_"));
+                adapter.notifyItemInserted(1);
+            }
+        });
+        findViewById(R.id.btnRemove).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (items.size() >= 2) {
+                    items.remove(1);
+                    adapter.notifyItemRemoved(1);
+                }
+            }
+        });
 
     }
 

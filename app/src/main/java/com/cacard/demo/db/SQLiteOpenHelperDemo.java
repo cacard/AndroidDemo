@@ -24,7 +24,11 @@ public class SQLiteOpenHelperDemo extends SQLiteOpenHelper {
 	public void onCreate(SQLiteDatabase db) {
 		// create user table
 		db.execSQL(SQL_TABLE_USER_CREATE);
-		db.close();
+		try {
+			db.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		LogHelper.write("SQLiteOpenHelper->onCreate()");
 	}
 

@@ -25,6 +25,10 @@
     <!-- for float window -->
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
 
+    <!-- Camera -->
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-feature android:name="android.hardware.Camera" /> <!-- means only the phone with camera can download on google play -->
+    <uses-feature android:name="android.hardware.camera.autofocus" />
 
     <android:uses-permission
         android:name="android.permission.WRITE_EXTERNAL_STORAGE"
@@ -159,10 +163,14 @@
         <activity android:name=".ViewPager.Demo2FragmentPagerAdapter.ViewPager_FragmentPagerAdapter_Activity" />
         <activity android:name=".ViewPager.Demo4ViewPagerSpecial.ViewPagerSpeicalActivity" />
         <activity android:name=".UIRelate.ClipToPaddingDemoActivity" />
-        <activity android:name=".launchmode.FlagActivityNewTask.Activity" />
+        <activity android:name=".launchmode.FlagActivityNewTask.ActivityStart" />
         <activity android:name=".launchmode.FlagActivityNewTask.ActivityB" />
         <activity android:name=".launchmode.FlagActivityNewTask.ActivityC" />
         <activity android:name=".Drawable.BitmapMemorySizeTestActivity" />
+        <activity android:name=".Parcel.ParcelSaveToDBActivity" />
+        <activity android:name=".Parcel.ParcelNullUnmashall.ActivityFirst" />
+        <activity android:name=".Parcel.ParcelNullUnmashall.ActivitySecond" />
+        <activity android:name=".Camera.CameraSimpleActivity" android:screenOrientation="landscape" />
     </application>
 
 </manifest>

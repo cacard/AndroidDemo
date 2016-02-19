@@ -17,6 +17,7 @@ import com.cacard.demo.Animator.ActivityAnimateLayoutChanges;
 import com.cacard.demo.Animator.ActivityScrollerDemo;
 import com.cacard.demo.Animator.ActivityValueAnimator;
 import com.cacard.demo.Broadcast.ActivityRegReceiverManyTimes;
+import com.cacard.demo.Camera.CameraSimpleActivity;
 import com.cacard.demo.Canvas.EntryActivity;
 import com.cacard.demo.CustomControl.PullHeader.PullHeader1Activity;
 import com.cacard.demo.DesignSupportLibrary.CoornaditorLayout.CoornaditorLayoutAndFABActivity;
@@ -40,6 +41,8 @@ import com.cacard.demo.Intent.ImplicitIntentDemoActivity;
 import com.cacard.demo.Media.ActivityAudioPlayer;
 import com.cacard.demo.Media.ActivityAudioPlayerUsingService;
 import com.cacard.demo.Notification.MIUIDeskIconNotificationDemoActivity;
+import com.cacard.demo.Parcel.ParcelNullUnmashall.ActivityFirst;
+import com.cacard.demo.Parcel.ParcelSaveToDBActivity;
 import com.cacard.demo.RecyclerView.RecyclerViewSimpleActivity;
 import com.cacard.demo.Service.BindOnCreate.BindOnCreateActivity;
 import com.cacard.demo.Service.Sticky.StickyActivity;
@@ -49,6 +52,7 @@ import com.cacard.demo.ViewDragHelperDemo.VDHActivity;
 import com.cacard.demo.ViewPager.Demo1.ViewPagerDemo1SimpleActivity;
 import com.cacard.demo.ViewPager.Demo2FragmentPagerAdapter.ViewPager_FragmentPagerAdapter_Activity;
 import com.cacard.demo.ViewPager.Demo4ViewPagerSpecial.ViewPagerSpeicalActivity;
+import com.cacard.demo.launchmode.FlagActivityNewTask.ActivityStart;
 import com.cacard.demo.launchmode.SingleInstance.Activity0;
 
 public class ActivityMain extends Activity {
@@ -58,7 +62,7 @@ public class ActivityMain extends Activity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        super.setTitle("Main Activity");
+        super.setTitle("Main ActivityStart");
 
         root = new LinearLayout(this);
         root.setOrientation(LinearLayout.VERTICAL);
@@ -78,7 +82,7 @@ public class ActivityMain extends Activity {
         addButton("ImplicitIntent", ImplicitIntentDemoActivity.class);
 
         // launch mode
-        addButton("【LaunchMode】FlagActivityNewTask", com.cacard.demo.launchmode.FlagActivityNewTask.Activity.class);
+        addButton("【LaunchMode】FlagActivityNewTask", ActivityStart.class);
 
         // UI Relate
         addButton("UI/clipToPadding Demo", ClipToPaddingDemoActivity.class);
@@ -138,6 +142,12 @@ public class ActivityMain extends Activity {
         addButton("DSL/_Toolbar", _ToolbarDemoActivity.class);
         addButton("DSL/_DrawerLayout", _DrawerLayoutDemoActivity.class);
         addButton("DSL/_DrawerLayoutWithToolBar", _DrawerLayoutWithToolBarActivity.class);
+
+        addButton("----------", ActivityMain.class);
+        addButton("Parcel save to db", ParcelSaveToDBActivity.class);
+        addButton("Parcel null test", ActivityFirst.class);
+
+        addButton("Camera/SimpleDemo", CameraSimpleActivity.class);
 
         ScrollView sv = new ScrollView(this);
         sv.addView(root);

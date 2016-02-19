@@ -41,19 +41,19 @@ public class MyGLSurfaceViewActivity extends Activity {
 
     @Override
     public void finish(){
-        Log.i("lcq","Activity finish");
+        Log.i("lcq","ActivityStart finish");
         super.finish();
     }
 
     @Override
     public void onStop(){
-        Log.i("lcq","Activity stop");
+        Log.i("lcq","ActivityStart stop");
         super.onStop();
     }
 
     @Override
     public void onDestroy(){
-        Log.i("lcq","Activity destory");
+        Log.i("lcq","ActivityStart destory");
         super.onDestroy();
     }
 }

@@ -18,7 +18,7 @@ import android.os.Bundle;
  *
  * Created by cunqingli on 2015/9/28.
  */
-public class Activity extends android.app.Activity {
+public class ActivityStart extends android.app.Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,9 +28,9 @@ public class Activity extends android.app.Activity {
             @Override
             public void run() {
                 // start B
-                Intent i = new Intent(Activity.this, ActivityB.class);
+                Intent i = new Intent(ActivityStart.this, ActivityB.class);
                 i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                Activity.this.startActivity(i);
+                ActivityStart.this.startActivity(i);
             }
         }, 1000);
 
