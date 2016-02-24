@@ -40,6 +40,7 @@ import com.cacard.demo.IO.ActivityDirInfo;
 import com.cacard.demo.Intent.ImplicitIntentDemoActivity;
 import com.cacard.demo.Media.ActivityAudioPlayer;
 import com.cacard.demo.Media.ActivityAudioPlayerUsingService;
+import com.cacard.demo.Messenger.MessengerDemoActivity;
 import com.cacard.demo.Notification.MIUIDeskIconNotificationDemoActivity;
 import com.cacard.demo.Parcel.ParcelNullUnmashall.ActivityFirst;
 import com.cacard.demo.Parcel.ParcelSaveToDBActivity;
@@ -80,6 +81,9 @@ public class ActivityMain extends Activity {
         addButton(root, "Info", ActivityInfo.class);
         addButton(root, "DirInfo", ActivityDirInfo.class);
         addButton("ImplicitIntent", ImplicitIntentDemoActivity.class);
+
+        // Messenger
+        addButton("MessengerDemo", MessengerDemoActivity.class);
 
         // launch mode
         addButton("【LaunchMode】FlagActivityNewTask", ActivityStart.class);

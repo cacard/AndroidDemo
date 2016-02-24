@@ -170,7 +170,15 @@
         <activity android:name=".Parcel.ParcelSaveToDBActivity" />
         <activity android:name=".Parcel.ParcelNullUnmashall.ActivityFirst" />
         <activity android:name=".Parcel.ParcelNullUnmashall.ActivitySecond" />
-        <activity android:name=".Camera.CameraSimpleActivity" android:screenOrientation="landscape" />
+        <activity
+            android:name=".Camera.CameraSimpleActivity"
+            android:screenOrientation="landscape" />
+        <activity android:name=".Messenger.MessengerDemoActivity" />
+
+        <service
+            android:name=".Messenger.ServiceInOtherProcess"
+            android:exported="true"
+            android:process=":AndroidDemoProcess2" />
     </application>
 
 </manifest>
