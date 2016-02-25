@@ -1,4 +1,4 @@
-package com.cacard.demo.UIRelate;
+package com.cacard.demo.UI;
 
 import android.content.Context;
 import android.os.Bundle;

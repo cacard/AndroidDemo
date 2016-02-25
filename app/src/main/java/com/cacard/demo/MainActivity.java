@@ -48,7 +48,8 @@ import com.cacard.demo.RecyclerView.RecyclerViewSimpleActivity;
 import com.cacard.demo.Service.BindOnCreate.BindOnCreateActivity;
 import com.cacard.demo.Service.Sticky.StickyActivity;
 import com.cacard.demo.System.ActivityCreatePackageContext;
-import com.cacard.demo.UIRelate.ClipToPaddingDemoActivity;
+import com.cacard.demo.UI.ClipToPaddingDemoActivity;
+import com.cacard.demo.UI.TextViewMaxLines;
 import com.cacard.demo.ViewDragHelperDemo.VDHActivity;
 import com.cacard.demo.ViewPager.Demo1.ViewPagerDemo1SimpleActivity;
 import com.cacard.demo.ViewPager.Demo2FragmentPagerAdapter.ViewPager_FragmentPagerAdapter_Activity;
@@ -56,7 +57,7 @@ import com.cacard.demo.ViewPager.Demo4ViewPagerSpecial.ViewPagerSpeicalActivity;
 import com.cacard.demo.launchmode.FlagActivityNewTask.ActivityStart;
 import com.cacard.demo.launchmode.SingleInstance.Activity0;
 
-public class ActivityMain extends Activity {
+public class MainActivity extends Activity {
 
     private LinearLayout root;
 
@@ -82,6 +83,7 @@ public class ActivityMain extends Activity {
         addButton(root, "DirInfo", ActivityDirInfo.class);
         addButton("ImplicitIntent", ImplicitIntentDemoActivity.class);
 
+
         // Messenger
         addButton("MessengerDemo", MessengerDemoActivity.class);
 
@@ -90,6 +92,7 @@ public class ActivityMain extends Activity {
 
         // UI Relate
         addButton("UI/clipToPadding Demo", ClipToPaddingDemoActivity.class);
+        addButton("UI/TextView Maxlines", TextViewMaxLines.class);
 
         // Bitmap
         addButton("Bitmap/占用内存测试", BitmapMemorySizeTestActivity.class);
@@ -147,7 +150,7 @@ public class ActivityMain extends Activity {
         addButton("DSL/_DrawerLayout", _DrawerLayoutDemoActivity.class);
         addButton("DSL/_DrawerLayoutWithToolBar", _DrawerLayoutWithToolBarActivity.class);
 
-        addButton("----------", ActivityMain.class);
+        addButton("----------", MainActivity.class);
         addButton("Parcel save to db", ParcelSaveToDBActivity.class);
         addButton("Parcel null test", ActivityFirst.class);
 
@@ -165,7 +168,7 @@ public class ActivityMain extends Activity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ActivityMain.this.startActivity(new Intent(ActivityMain.this, clazz));
+                MainActivity.this.startActivity(new Intent(MainActivity.this, clazz));
             }
         });
         root.addView(btn);

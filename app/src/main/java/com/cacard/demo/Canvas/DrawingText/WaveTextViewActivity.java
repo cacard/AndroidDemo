@@ -29,7 +29,8 @@ public class WaveTextViewActivity extends Activity {
         super.onCreate(savedInstanceState);
         this.setTitle("带有波浪线标记的TextView");
 
-        String txt = "这是测试文本，要断行，并且可设定下划波浪线，包含英文字符（This is english string），数字（1,2,3,4,5,6），也可以包含其他更多特殊字符。";
+        String txt = "这是测试文本，要断行，并且可设定下划波浪线，" +
+                "包含英文字符（This is english string），数字（1,2,3,4,5,6），也可以包含其他更多特殊字符。";
         int lineVerticalPadding = 10;
         int fontSize = 80;
         int txtColor = Color.BLACK;
@@ -43,9 +44,11 @@ public class WaveTextViewActivity extends Activity {
         waveIndexs.add(new Pair<Integer, Integer>(15, 26));
         waveIndexs.add(new Pair<Integer, Integer>(32, 59));
 
-        WaveTextView v = new WaveTextView(this, txt, lineVerticalPadding, fontSize, txtColor, waveIndexs, waveColor);
+        WaveTextView v = new WaveTextView(this, txt, lineVerticalPadding,
+                fontSize, txtColor, waveIndexs, waveColor);
 
-        ((ViewGroup) this.getWindow().getDecorView().findViewById(android.R.id.content)).addView(v);
+        ((ViewGroup) this.getWindow().getDecorView().findViewById(android.R.id.content))
+                .addView(v);
     }
 
 
@@ -83,7 +86,8 @@ public class WaveTextViewActivity extends Activity {
          * @param waveIndexs          波浪线开始结束集合
          * @param waveColor           波浪线颜色
          */
-        public WaveTextView(Context context, String txt, int lineVerticalPadding, int fontSize, int txtColor, List<Pair<Integer, Integer>> waveIndexs, int waveColor) {
+        public WaveTextView(Context context, String txt, int lineVerticalPadding, int fontSize,
+                            int txtColor, List<Pair<Integer, Integer>> waveIndexs, int waveColor) {
             super(context);
 
             this.mContext = context;
@@ -157,7 +161,8 @@ public class WaveTextViewActivity extends Activity {
             for (Pair<Integer, Integer> pair : waveIndexs) {
                 if (pair != null) {
 
-                    if (pair.first < 0 || pair.first >= txt.length() || pair.second < 0 || pair.second > txt.length()) {
+                    if (pair.first < 0 || pair.first >= txt.length()
+                            || pair.second < 0 || pair.second > txt.length()) {
                         continue;
                     }
 
@@ -168,7 +173,9 @@ public class WaveTextViewActivity extends Activity {
 
                     if (pointEnd.y == pointStart.y) {
                         //canvas.drawLine(pointStart.x, pointStart.y, pointEnd.x, pointEnd.y, paintWave);
-                        drawWave(pointStart.x, pointEnd.x + charInfos.get(pair.second).width, pointStart.y + diff, canvas, paintWave);
+                        drawWave(pointStart.x,
+                                pointEnd.x + charInfos.get(pair.second).width,
+                                pointStart.y + diff, canvas, paintWave);
                     } else {
                         // 直线
                         //canvas.drawLine(pointStart.x, pointStart.y, viewMeasuredWidth, pointStart.y, paintWave);

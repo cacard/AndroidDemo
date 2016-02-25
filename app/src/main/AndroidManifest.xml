@@ -67,7 +67,7 @@
             </intent-filter>
         </receiver>
 
-        <activity android:name=".ActivityMain">
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -162,7 +162,7 @@
         <activity android:name=".ViewPager.Demo1.ViewPagerDemo1SimpleActivity" />
         <activity android:name=".ViewPager.Demo2FragmentPagerAdapter.ViewPager_FragmentPagerAdapter_Activity" />
         <activity android:name=".ViewPager.Demo4ViewPagerSpecial.ViewPagerSpeicalActivity" />
-        <activity android:name=".UIRelate.ClipToPaddingDemoActivity" />
+        <activity android:name=".UI.ClipToPaddingDemoActivity" />
         <activity android:name=".launchmode.FlagActivityNewTask.ActivityStart" />
         <activity android:name=".launchmode.FlagActivityNewTask.ActivityB" />
         <activity android:name=".launchmode.FlagActivityNewTask.ActivityC" />
@@ -179,6 +179,7 @@
             android:name=".Messenger.ServiceInOtherProcess"
             android:exported="true"
             android:process=":AndroidDemoProcess2" />
+        <activity android:name=".UI.TextViewMaxLines" />
     </application>
 
 </manifest>

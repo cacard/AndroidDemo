@@ -75,7 +75,8 @@ public class FontMetricsDemoActivity extends Activity {
          * @param pLine     信息线Paint
          * @param canvas
          */
-        private void drawFontMetrics(String text, int baseLineX, int baseLineY, Paint pFont, Paint pLine, Canvas canvas) {
+        private void drawFontMetrics(String text, int baseLineX, int baseLineY,
+                                     Paint pFont, Paint pLine, Canvas canvas) {
             final int setp = 20;
 
             canvas.drawText(text, baseLineX, baseLineY, pFont);
