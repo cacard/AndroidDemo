@@ -179,7 +179,10 @@
             android:name=".Messenger.ServiceInOtherProcess"
             android:exported="true"
             android:process=":AndroidDemoProcess2" />
+
         <activity android:name=".UI.TextViewMaxLines" />
+        <activity android:name=".UI.View.TestViewGroupLayoutParamsActivity" />
+        <activity android:name=".Fragment.RetainInstance.Fragment_RetainInstance_Activity" />
     </application>
 
 </manifest>

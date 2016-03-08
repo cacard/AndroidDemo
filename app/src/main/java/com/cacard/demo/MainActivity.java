@@ -33,6 +33,9 @@ import com.cacard.demo.Drawable.DrawingCacheCaptureActivity;
 import com.cacard.demo.Drawable.ShapeDrawableActivity;
 import com.cacard.demo.Drawable.TransitionDrawableActivity;
 import com.cacard.demo.FloatWindow.ActivityFloatWindow;
+import com.cacard.demo.Fragment.A_SimpleDemo.A_FragmentStaticActivity;
+import com.cacard.demo.Fragment.A_SimpleDemo.B_FragmentDynamicActivity;
+import com.cacard.demo.Fragment.RetainInstance.Fragment_RetainInstance_Activity;
 import com.cacard.demo.FrescoDemo.FrescoActivity;
 import com.cacard.demo.GestureDetectorDemo.GestureDetectorDemoActivity;
 import com.cacard.demo.Graphic.Martix.MartixDemoActivity;
@@ -50,6 +53,7 @@ import com.cacard.demo.Service.Sticky.StickyActivity;
 import com.cacard.demo.System.ActivityCreatePackageContext;
 import com.cacard.demo.UI.ClipToPaddingDemoActivity;
 import com.cacard.demo.UI.TextViewMaxLines;
+import com.cacard.demo.UI.View.TestViewGroupLayoutParamsActivity;
 import com.cacard.demo.ViewDragHelperDemo.VDHActivity;
 import com.cacard.demo.ViewPager.Demo1.ViewPagerDemo1SimpleActivity;
 import com.cacard.demo.ViewPager.Demo2FragmentPagerAdapter.ViewPager_FragmentPagerAdapter_Activity;
@@ -93,6 +97,11 @@ public class MainActivity extends Activity {
         // UI Relate
         addButton("UI/clipToPadding Demo", ClipToPaddingDemoActivity.class);
         addButton("UI/TextView Maxlines", TextViewMaxLines.class);
+        addButton("UI/addView", TestViewGroupLayoutParamsActivity.class);
+        // Fragment
+        addButton("UI/Fragment/StaticDemo", A_FragmentStaticActivity.class);
+        addButton("UI/Fragment/DynamicDemo", B_FragmentDynamicActivity.class);
+        addButton("UI/Fragment/RetainInstance", Fragment_RetainInstance_Activity.class);
 
         // Bitmap
         addButton("Bitmap/占用内存测试", BitmapMemorySizeTestActivity.class);

@@ -35,7 +35,7 @@ public class FragmentOne extends Fragment {
 	public View onCreateView(LayoutInflater inflater, ViewGroup root, Bundle b) {
 		super.onCreateView(inflater, root, b);
 		LogHelper.write("Fragment->onCreateView");
-		View v = inflater.inflate(R.layout.fragment_one, root, false);
+		View v = inflater.inflate(R.layout.fragment_one, root, true);
 		return v;
 
 	}
