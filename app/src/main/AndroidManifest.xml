@@ -183,6 +183,7 @@
         <activity android:name=".UI.TextViewMaxLines" />
         <activity android:name=".UI.View.TestViewGroupLayoutParamsActivity" />
         <activity android:name=".Fragment.RetainInstance.Fragment_RetainInstance_Activity" />
+        <activity android:name=".UI.Measure.CustomViewMeasureDemoActivity" />
     </application>
 
 </manifest>

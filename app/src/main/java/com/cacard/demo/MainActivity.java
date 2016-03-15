@@ -52,6 +52,7 @@ import com.cacard.demo.Service.BindOnCreate.BindOnCreateActivity;
 import com.cacard.demo.Service.Sticky.StickyActivity;
 import com.cacard.demo.System.ActivityCreatePackageContext;
 import com.cacard.demo.UI.ClipToPaddingDemoActivity;
+import com.cacard.demo.UI.Measure.CustomViewMeasureDemoActivity;
 import com.cacard.demo.UI.TextViewMaxLines;
 import com.cacard.demo.UI.View.TestViewGroupLayoutParamsActivity;
 import com.cacard.demo.ViewDragHelperDemo.VDHActivity;
@@ -98,6 +99,8 @@ public class MainActivity extends Activity {
         addButton("UI/clipToPadding Demo", ClipToPaddingDemoActivity.class);
         addButton("UI/TextView Maxlines", TextViewMaxLines.class);
         addButton("UI/addView", TestViewGroupLayoutParamsActivity.class);
+        addButton("UI/Measure/demo", CustomViewMeasureDemoActivity.class);
+
         // Fragment
         addButton("UI/Fragment/StaticDemo", A_FragmentStaticActivity.class);
         addButton("UI/Fragment/DynamicDemo", B_FragmentDynamicActivity.class);
