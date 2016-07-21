@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:orientation="vertical"
+             android:padding="10dp">
+
+    <com.cacard.demo.Event.Intercept.demo1.VG1
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ff00ff00"
+        android:padding="30dp">
+
+
+        <com.cacard.demo.Event.Intercept.demo1.VG2
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#ffff00ff"
+            android:padding="30dp">
+
+            <com.cacard.demo.Event.Intercept.demo1.TV1
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#ff0000ff"
+                android:text="BUTTON"/>
+
+        </com.cacard.demo.Event.Intercept.demo1.VG2>
+
+
+    </com.cacard.demo.Event.Intercept.demo1.VG1>
+
+</FrameLayout>

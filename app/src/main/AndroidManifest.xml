@@ -1,44 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.cacard.demo"
-    android:versionCode="5"
-    android:versionName="5.0.0">
+          package="com.cacard.demo"
+          android:versionCode="5"
+          android:versionName="5.0.0">
 
     <uses-sdk
         android:minSdkVersion="10"
-        android:targetSdkVersion="23" />
+        android:targetSdkVersion="23"/>
     <uses-feature
         android:glEsVersion="0x00020000"
-        android:required="true" />
+        android:required="true"/>
 
-    <supports-gl-texture android:name="GL_OES_compressed_ETC1_RGB8_texture" />
-    <supports-gl-texture android:name="GL_OES_compressed_paletted_texture" />
+    <supports-gl-texture android:name="GL_OES_compressed_ETC1_RGB8_texture"/>
+    <supports-gl-texture android:name="GL_OES_compressed_paletted_texture"/>
 
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <uses-permission android:name="android.permission.READ_USER_DICTIONARY" />
-    <uses-permission android:name="android.permission.WRITE_USER_DICTIONARY" />
-    <uses-permission android:name="com.android.browser.permission.READ_HISTORY_BOOKMARKS" />
-    <uses-permission android:name="android.permission.WAKE_LOCK" />
-    <uses-permission android:name="android.permission.RESTART_PACKAGES" />
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.READ_USER_DICTIONARY"/>
+    <uses-permission android:name="android.permission.WRITE_USER_DICTIONARY"/>
+    <uses-permission android:name="com.android.browser.permission.READ_HISTORY_BOOKMARKS"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.RESTART_PACKAGES"/>
     <!-- for float window -->
-    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
 
     <!-- Camera -->
-    <uses-permission android:name="android.permission.CAMERA" />
-    <uses-feature android:name="android.hardware.Camera" /> <!-- means only the phone with camera can download on google play -->
-    <uses-feature android:name="android.hardware.camera.autofocus" />
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-feature android:name="android.hardware.Camera"/> <!-- means only the phone with camera can download on google play -->
+    <uses-feature android:name="android.hardware.camera.autofocus"/>
 
     <android:uses-permission
         android:name="android.permission.WRITE_EXTERNAL_STORAGE"
-        android:maxSdkVersion="18" />
-    <android:uses-permission android:name="android.permission.READ_PHONE_STATE" />
+        android:maxSdkVersion="18"/>
+    <android:uses-permission android:name="android.permission.READ_PHONE_STATE"/>
     <android:uses-permission
         android:name="android.permission.READ_EXTERNAL_STORAGE"
-        android:maxSdkVersion="18" />
+        android:maxSdkVersion="18"/>
 
-    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.GET_TASKS"/>
+
+
+    <!-- 定位需要 -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.WIFI_STATE_CHANGED"/>
+    <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.GET_TASKS"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT"/>
+    <uses-permission android:name="com.android.launcher.permission.UNINSTALL_SHORTCUT"/>
+    <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="com.android.launcher2.permission.READ_SETTINGS"/>
+    <uses-permission android:name="android.permission.RESTART_PACKAGES"/>
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD"/>
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <uses-permission android:name="com.tencent.news.permisson.ACTION"/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+
 
     <application
         android:name=".MyApplication"
@@ -46,144 +75,153 @@
         android:debuggable="true"
         android:hardwareAccelerated="true"
         android:icon="@drawable/android_yellow"
+        android:installLocation="preferExternal"
         android:label="@string/app_name"
         android:permission="android.permission.ACCESS_COARSE_LOCATION"
         android:theme="@style/AppTheme">
 
-        <service
-            android:name="com.reginald.tasklogger.TaskLoggerService"
-            android:process=":taskLogger" />
-        <service android:name="com.cacard.demo.Service.StartedServiceDemo" />
-        <service android:name="com.cacard.demo.Service.BoundServiceDemo" />
-        <service android:name=".Media.AudioPlayerService" />
+        <!--<service-->
+            <!--android:name="com.reginald.tasklogger.TaskLoggerService"-->
+            <!--android:process=":taskLogger"/>-->
 
-        <receiver android:name="com.cacard.demo.Broadcast.BroadcastReceiverSimple" />
+
+        <service android:name="com.cacard.demo.Service.StartedServiceDemo"/>
+        <service android:name="com.cacard.demo.Service.BoundServiceDemo"/>
+        <service android:name=".Media.AudioPlayerService"/>
+
+        <receiver android:name="com.cacard.demo.Broadcast.BroadcastReceiverSimple"/>
         <receiver android:name="com.cacard.demo.Broadcast.PackageAddRemoveReceiver">
             <intent-filter>
-                <action android:name="android.intent.action.PACKAGE_ADDED" />
-                <action android:name="android.intent.action.PACKAGE_REMOVED" />
+                <action android:name="android.intent.action.PACKAGE_ADDED"/>
+                <action android:name="android.intent.action.PACKAGE_REMOVED"/>
 
-                <data android:scheme="package" />
+                <data android:scheme="package"/>
             </intent-filter>
         </receiver>
 
         <activity android:name=".MainActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".Activity.ActivityA" />
-        <activity android:name=".Activity.ActivityB" />
-        <activity android:name=".Activity.ActivityC" />
-        <activity android:name=".Activity.ActivityLoopDemo" />
-        <activity android:name=".Fragment.A_SimpleDemo.A_FragmentStaticActivity" />
-        <activity android:name=".Fragment.A_SimpleDemo.B_FragmentDynamicActivity" />
-        <activity android:name="com.cacard.demo.Fragment.FragmentCommutation" />
-        <activity android:name="com.cacard.demo.Fragment.FragmentSupportMultipleScreen" />
-        <activity android:name="com.cacard.demo.Fragment.FragmentSupportMultipleScreen_DetailActivity" />
-        <activity android:name=".Drawable.DrawingCacheCaptureActivity" />
-        <activity android:name="com.cacard.demo.MemoryLeak.ActivityWithThread" />
-        <activity android:name="com.cacard.demo.MemoryLeak.ActivityUsingHandler" />
-        <activity android:name=".Animator.ActivityScrollerDemo" />
-        <activity android:name="com.cacard.demo.Activity.ActivityScreenSize" />
-        <activity android:name="com.cacard.demo.Thread.Loader_CursorLoader_SimpleCursorAdapter" />
-        <activity android:name=".Activity.ActivitySpIODemo" />
-        <activity android:name="com.cacard.demo.ViewDragHelperDemo.VDHActivity" />
-        <activity android:name="com.cacard.demo.GestureDetectorDemo.GestureDetectorDemoActivity" />
-        <activity android:name="com.cacard.demo.Drawable.ClipDrawableActivity" />
-        <activity android:name="com.cacard.demo.Drawable.DrawableDemo" />
-        <activity android:name="com.cacard.demo.Drawable.TransitionDrawableActivity" />
-        <activity android:name="com.cacard.demo.launchmode.SingleInstance.Activity0" />
-        <activity android:name="com.cacard.demo.Drawable.ShapeDrawableActivity" />
-        <activity android:name="com.cacard.demo.Graphic.MySurfaceViewActivity" />
-        <activity android:name="com.cacard.demo.Graphic.MyGLSurfaceViewActivity" />
-        <activity android:name=".Activity.ActivityInstrumentationTest" />
-        <activity android:name="com.cacard.demo.Animator.ActivityValueAnimator" />
-        <activity android:name="com.cacard.demo.Event.ActivityMotionEvent" />
-        <activity android:name=".Media.ActivityAudioPlayer" />
-        <activity android:name=".Media.ActivityAudioPlayerUsingService" />
-        <activity android:name=".Media.ActivityAudioPlayerUsingService2" />
-        <activity android:name=".Activity.ActivitySpIODemo2" />
+        <activity android:name=".Activity.ActivityA"/>
+        <activity android:name=".Activity.ActivityB"/>
+        <activity android:name=".Activity.ActivityC"/>
+        <activity android:name=".Activity.ActivityLoopDemo"/>
+        <activity android:name=".Fragment.A_SimpleDemo.A_FragmentStaticActivity"/>
+        <activity android:name=".Fragment.A_SimpleDemo.B_FragmentDynamicActivity"/>
+        <activity android:name="com.cacard.demo.Fragment.FragmentCommutation"/>
+        <activity android:name="com.cacard.demo.Fragment.FragmentSupportMultipleScreen"/>
+        <activity android:name="com.cacard.demo.Fragment.FragmentSupportMultipleScreen_DetailActivity"/>
+        <activity android:name=".Drawable.DrawingCacheCaptureActivity"/>
+        <activity android:name="com.cacard.demo.MemoryLeak.ActivityWithThread"/>
+        <activity android:name="com.cacard.demo.MemoryLeak.ActivityUsingHandler"/>
+        <activity android:name=".Animator.ActivityScrollerDemo"/>
+        <activity android:name="com.cacard.demo.Activity.ActivityScreenSize"/>
+        <activity android:name="com.cacard.demo.Thread.Loader_CursorLoader_SimpleCursorAdapter"/>
+        <activity android:name=".Activity.ActivitySpIODemo"/>
+        <activity android:name="com.cacard.demo.ViewDragHelperDemo.VDHActivity"/>
+        <activity android:name="com.cacard.demo.GestureDetectorDemo.GestureDetectorDemoActivity"/>
+        <activity android:name="com.cacard.demo.Drawable.ClipDrawableActivity"/>
+        <activity android:name="com.cacard.demo.Drawable.DrawableDemo"/>
+        <activity android:name="com.cacard.demo.Drawable.TransitionDrawableActivity"/>
+        <activity android:name="com.cacard.demo.launchmode.SingleInstance.Activity0"/>
+        <activity android:name="com.cacard.demo.Drawable.ShapeDrawableActivity"/>
+        <activity android:name="com.cacard.demo.Graphic.MySurfaceViewActivity"/>
+        <activity android:name="com.cacard.demo.Graphic.MyGLSurfaceViewActivity"/>
+        <activity android:name=".Activity.ActivityInstrumentationTest"/>
+        <activity android:name="com.cacard.demo.Animator.ActivityValueAnimator"/>
+        <activity android:name="com.cacard.demo.Event.ActivityMotionEvent"/>
+        <activity android:name=".Media.ActivityAudioPlayer"/>
+        <activity android:name=".Media.ActivityAudioPlayerUsingService"/>
+        <activity android:name=".Media.ActivityAudioPlayerUsingService2"/>
+        <activity android:name=".Activity.ActivitySpIODemo2"/>
         <activity
             android:name="com.cacard.demo.launchmode.SingleInstance.Activity1"
-            android:launchMode="singleInstance" />
-        <activity android:name="com.cacard.demo.launchmode.SingleInstance.Activity2" />
-        <activity android:name="com.cacard.demo.CustomControl.PageableHorizonalScrollView.ActivityPageableHorizonalScrollView" />
-        <activity android:name=".FloatWindow.ActivityFloatWindow" />
-        <activity android:name=".Canvas.CycleProgressViewActivity" />
-        <activity android:name=".IO.ActivityDirInfo" />
-        <activity android:name=".Canvas.CanvasLayerActivity" />
-        <activity android:name=".Canvas.CanvasOperationActivity" />
-        <activity android:name=".Canvas.MusicWaveAnimationActivity" />
-        <activity android:name=".Canvas.Paint.ColorFilter.ColorMatrixColorFilterDemoActivity" />
+            android:launchMode="singleInstance"/>
+        <activity android:name="com.cacard.demo.launchmode.SingleInstance.Activity2"/>
+        <activity android:name="com.cacard.demo.CustomControl.PageableHorizonalScrollView.ActivityPageableHorizonalScrollView"/>
+        <activity android:name=".FloatWindow.ActivityFloatWindow"/>
+        <activity android:name=".Canvas.CycleProgressViewActivity"/>
+        <activity android:name=".IO.ActivityDirInfo"/>
+        <activity android:name=".Canvas.CanvasLayerActivity"/>
+        <activity android:name=".Canvas.CanvasOperationActivity"/>
+        <activity android:name=".Canvas.MusicWaveAnimationActivity"/>
+        <activity android:name=".Canvas.Paint.ColorFilter.ColorMatrixColorFilterDemoActivity"/>
         <activity
             android:name=".Canvas.Paint.MaskFilter.MaskFilterDemoActivity"
-            android:hardwareAccelerated="false" />
-        <activity android:name=".Canvas.Paint.PathEffect.PathEffectActivity" />
-        <activity android:name=".Canvas.PathActivity" />
-        <activity android:name=".Canvas.Paint.Shader.ShaderActivity" />
+            android:hardwareAccelerated="false"/>
+        <activity android:name=".Canvas.Paint.PathEffect.PathEffectActivity"/>
+        <activity android:name=".Canvas.PathActivity"/>
+        <activity android:name=".Canvas.Paint.Shader.ShaderActivity"/>
         <activity
             android:name=".Canvas.FlashDotDemoActivity"
-            android:hardwareAccelerated="false" />
-        <activity android:name=".CustomView.Flat.SimpleActivity" />
-        <activity android:name=".Canvas.DrawingText.DrawingOneByOneOrDrawingStringActivity" />
-        <activity android:name=".Canvas.EntryActivity" />
-        <activity android:name=".Canvas.DrawingText.FontMetricsDemoActivity" />
-        <activity android:name=".Canvas.DrawingText.WaveTextViewActivity" />
-        <activity android:name=".Activity.ActivityInfo" />
-        <activity android:name=".Notification.MIUIDeskIconNotificationDemoActivity" />
+            android:hardwareAccelerated="false"/>
+        <activity android:name=".CustomView.Flat.SimpleActivity"/>
+        <activity android:name=".Canvas.DrawingText.DrawingOneByOneOrDrawingStringActivity"/>
+        <activity android:name=".Canvas.EntryActivity"/>
+        <activity android:name=".Canvas.DrawingText.FontMetricsDemoActivity"/>
+        <activity android:name=".Canvas.DrawingText.WaveTextViewActivity"/>
+        <activity android:name=".Activity.ActivityInfo"/>
+        <activity android:name=".Notification.MIUIDeskIconNotificationDemoActivity"/>
 
-        <service android:name=".Service.BoundAndStartService" />
-        <service android:name=".Service.Sticky.StickyService" />
-        <service android:name="com.cacard.demo.Service.BindOnCreate.BindOnCreateService" />
+        <service android:name=".Service.BoundAndStartService"/>
+        <service android:name=".Service.Sticky.StickyService"/>
+        <service android:name="com.cacard.demo.Service.BindOnCreate.BindOnCreateService"/>
 
-        <activity android:name=".Service.Sticky.StickyActivity" />
-        <activity android:name=".Service.BindOnCreate.BindOnCreateActivity" />
-        <activity android:name=".FrescoDemo.FrescoActivity" />
-        <activity android:name=".Graphic.Martix.MartixDemoActivity" />
-        <activity android:name=".CustomControl.PullHeader.PullHeader1Activity" />
-        <activity android:name=".RecyclerView.RecyclerViewSimpleActivity" />
-        <activity android:name=".Animator.ActivityAnimateLayoutChanges" />
-        <activity android:name=".Broadcast.ActivityRegReceiverManyTimes" />
+        <activity android:name=".Service.Sticky.StickyActivity"/>
+        <activity android:name=".Service.BindOnCreate.BindOnCreateActivity"/>
+        <activity android:name=".FrescoDemo.FrescoActivity"/>
+        <activity android:name=".Graphic.Martix.MartixDemoActivity"/>
+        <activity android:name=".CustomControl.PullHeader.PullHeader1Activity"/>
+        <activity android:name=".RecyclerView.RecyclerViewSimpleActivity"/>
+        <activity android:name=".Animator.ActivityAnimateLayoutChanges"/>
+        <activity android:name=".Broadcast.ActivityRegReceiverManyTimes"/>
         <activity
             android:name=".launchmode.SingleTask.Activity1SingleTask"
             android:launchMode="singleTask"></activity>
-        <activity android:name=".launchmode.SingleTask.Activity2Normal" />
-        <activity android:name=".System.ActivityCreatePackageContext" />
-        <activity android:name=".DesignSupportLibrary.SnackBarDemoActivity" />
-        <activity android:name=".DesignSupportLibrary.TextInputLayoutDemoActivity" />
-        <activity android:name=".Intent.ImplicitIntentDemoActivity" />
-        <activity android:name=".DesignSupportLibrary.FloatingActionBarDemoActivity" />
-        <activity android:name=".DesignSupportLibrary.CoornaditorLayout.CoornaditorLayoutAndFABActivity" />
-        <activity android:name=".DesignSupportLibrary._ToolbarDemoActivity" />
-        <activity android:name=".DesignSupportLibrary._DrawerLayout._DrawerLayoutDemoActivity" />
-        <activity android:name=".DesignSupportLibrary._DrawerLayout._DrawerLayoutWithToolBarActivity" />
-        <activity android:name=".ViewPager.Demo1.ViewPagerDemo1SimpleActivity" />
-        <activity android:name=".ViewPager.Demo2FragmentPagerAdapter.ViewPager_FragmentPagerAdapter_Activity" />
-        <activity android:name=".ViewPager.Demo4ViewPagerSpecial.ViewPagerSpeicalActivity" />
-        <activity android:name=".UI.ClipToPaddingDemoActivity" />
-        <activity android:name=".launchmode.FlagActivityNewTask.ActivityStart" />
-        <activity android:name=".launchmode.FlagActivityNewTask.ActivityB" />
-        <activity android:name=".launchmode.FlagActivityNewTask.ActivityC" />
-        <activity android:name=".Drawable.BitmapMemorySizeTestActivity" />
-        <activity android:name=".Parcel.ParcelSaveToDBActivity" />
-        <activity android:name=".Parcel.ParcelNullUnmashall.ActivityFirst" />
-        <activity android:name=".Parcel.ParcelNullUnmashall.ActivitySecond" />
+        <activity android:name=".launchmode.SingleTask.Activity2Normal"/>
+        <activity android:name=".System.ActivityCreatePackageContext"/>
+        <activity android:name=".DesignSupportLibrary.SnackBarDemoActivity"/>
+        <activity android:name=".DesignSupportLibrary.TextInputLayoutDemoActivity"/>
+        <activity android:name=".Intent.ImplicitIntentDemoActivity"/>
+        <activity android:name=".DesignSupportLibrary.FloatingActionBarDemoActivity"/>
+        <activity android:name=".DesignSupportLibrary.CoornaditorLayout.CoornaditorLayoutAndFABActivity"/>
+        <activity android:name=".DesignSupportLibrary._ToolbarDemoActivity"/>
+        <activity android:name=".DesignSupportLibrary._DrawerLayout._DrawerLayoutDemoActivity"/>
+        <activity android:name=".DesignSupportLibrary._DrawerLayout._DrawerLayoutWithToolBarActivity"/>
+        <activity android:name=".ViewPager.Demo1.ViewPagerDemo1SimpleActivity"/>
+        <activity android:name=".ViewPager.Demo2FragmentPagerAdapter.ViewPager_FragmentPagerAdapter_Activity"/>
+        <activity android:name=".ViewPager.Demo4ViewPagerSpecial.ViewPagerSpeicalActivity"/>
+        <activity android:name=".UI.ClipToPaddingDemoActivity"/>
+        <activity android:name=".launchmode.FlagActivityNewTask.ActivityStart"/>
+        <activity android:name=".launchmode.FlagActivityNewTask.ActivityB"/>
+        <activity android:name=".launchmode.FlagActivityNewTask.ActivityC"/>
+        <activity android:name=".Drawable.BitmapMemorySizeTestActivity"/>
+        <activity android:name=".Parcel.ParcelSaveToDBActivity"/>
+        <activity android:name=".Parcel.ParcelNullUnmashall.ActivityFirst"/>
+        <activity android:name=".Parcel.ParcelNullUnmashall.ActivitySecond"/>
         <activity
             android:name=".Camera.CameraSimpleActivity"
-            android:screenOrientation="landscape" />
-        <activity android:name=".Messenger.MessengerDemoActivity" />
+            android:screenOrientation="landscape"/>
+        <activity android:name=".Messenger.MessengerDemoActivity"/>
 
         <service
             android:name=".Messenger.ServiceInOtherProcess"
             android:exported="true"
-            android:process=":AndroidDemoProcess2" />
+            android:process=":AndroidDemoProcess2"/>
 
-        <activity android:name=".UI.TextViewMaxLines" />
-        <activity android:name=".UI.View.TestViewGroupLayoutParamsActivity" />
-        <activity android:name=".Fragment.RetainInstance.Fragment_RetainInstance_Activity" />
-        <activity android:name=".UI.Measure.CustomViewMeasureDemoActivity" />
+        <activity android:name=".UI.TextViewMaxLines"/>
+        <activity android:name=".UI.View.TestViewGroupLayoutParamsActivity"/>
+        <activity android:name=".Fragment.RetainInstance.Fragment_RetainInstance_Activity"/>
+        <activity android:name=".UI.Measure.CustomViewMeasureDemoActivity"/>
+        <activity android:name=".Log.LogReaderActivity"/>
+        <activity android:name=".Activity.ActivityAbsPosition"/>
+        <activity android:name=".Animator.ActivityAnimateRotate"/>
+        <activity android:name=".samsung.AActivity" />
+        <activity android:name=".samsung.BActivity" />
+        <activity android:name=".Event.Intercept.demo1.InterceptDemoActivity" />
     </application>
 
 </manifest>

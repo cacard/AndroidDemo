@@ -3,15 +3,20 @@ package com.cacard.demo;
 import android.app.Activity;
 import android.app.Application;
 import android.content.ComponentName;
+import android.content.Context;
 import android.content.Intent;
 import android.content.ServiceConnection;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.IBinder;
+import android.telephony.TelephonyManager;
 import android.util.Log;
 
 import com.cacard.demo.FloatWindow.FloatWindowManager;
 import com.cacard.demo.Service.AfterAppKilledWillReStartService;
 import com.cacard.demo.Service.BoundAndStartService;
+
+import java.util.Random;
 //import com.facebook.drawee.backends.pipeline.Fresco;
 
 /**
@@ -33,7 +38,7 @@ public class MyApplication extends com.reginald.tasklogger.TaskLoggerApplication
         frescoInit();
         testAfterAppKilledWillReStartService();
 
-        allActivityCallback();
+        //allActivityCallback();
     }
 
     private void frescoInit() {
@@ -128,5 +133,29 @@ public class MyApplication extends com.reginald.tasklogger.TaskLoggerApplication
     @Override
     public void onLowMemory() {
         super.onLowMemory();
+    }
+
+
+    public static synchronized String getImei() {
+
+
+        String imei = "";
+
+
+            if (Build.VERSION.SDK_INT < 23 ) {
+                TelephonyManager tm = (TelephonyManager) MyApplication.instance
+                        .getSystemService(Context.TELEPHONY_SERVICE);
+                try {
+                    imei = tm.getDeviceId();
+                } catch (SecurityException e) {
+                    throw e;
+                }
+
+            }
+
+            // 6.0以上系统(SDK_INT>=23)且targetSdkVersion>=23时,
+            // 直接使用Android_ID作为IMEI, 不获取 拨打电话 权限了
+
+        return imei;
     }
 }

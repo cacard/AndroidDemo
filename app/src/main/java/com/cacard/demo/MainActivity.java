@@ -9,11 +9,13 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 
+import com.cacard.demo.Activity.ActivityAbsPosition;
 import com.cacard.demo.Activity.ActivityInfo;
 import com.cacard.demo.Activity.ActivityScreenSize;
 import com.cacard.demo.Activity.ActivitySpIODemo;
 import com.cacard.demo.Activity.ActivitySpIODemo2;
 import com.cacard.demo.Animator.ActivityAnimateLayoutChanges;
+import com.cacard.demo.Animator.ActivityAnimateRotate;
 import com.cacard.demo.Animator.ActivityScrollerDemo;
 import com.cacard.demo.Animator.ActivityValueAnimator;
 import com.cacard.demo.Broadcast.ActivityRegReceiverManyTimes;
@@ -32,6 +34,7 @@ import com.cacard.demo.Drawable.ClipDrawableActivity;
 import com.cacard.demo.Drawable.DrawingCacheCaptureActivity;
 import com.cacard.demo.Drawable.ShapeDrawableActivity;
 import com.cacard.demo.Drawable.TransitionDrawableActivity;
+import com.cacard.demo.Event.Intercept.demo1.InterceptDemoActivity;
 import com.cacard.demo.FloatWindow.ActivityFloatWindow;
 import com.cacard.demo.Fragment.A_SimpleDemo.A_FragmentStaticActivity;
 import com.cacard.demo.Fragment.A_SimpleDemo.B_FragmentDynamicActivity;
@@ -41,6 +44,7 @@ import com.cacard.demo.GestureDetectorDemo.GestureDetectorDemoActivity;
 import com.cacard.demo.Graphic.Martix.MartixDemoActivity;
 import com.cacard.demo.IO.ActivityDirInfo;
 import com.cacard.demo.Intent.ImplicitIntentDemoActivity;
+import com.cacard.demo.Log.LogReaderActivity;
 import com.cacard.demo.Media.ActivityAudioPlayer;
 import com.cacard.demo.Media.ActivityAudioPlayerUsingService;
 import com.cacard.demo.Messenger.MessengerDemoActivity;
@@ -61,6 +65,7 @@ import com.cacard.demo.ViewPager.Demo2FragmentPagerAdapter.ViewPager_FragmentPag
 import com.cacard.demo.ViewPager.Demo4ViewPagerSpecial.ViewPagerSpeicalActivity;
 import com.cacard.demo.launchmode.FlagActivityNewTask.ActivityStart;
 import com.cacard.demo.launchmode.SingleInstance.Activity0;
+import com.cacard.demo.samsung.AActivity;
 
 public class MainActivity extends Activity {
 
@@ -100,6 +105,10 @@ public class MainActivity extends Activity {
         addButton("UI/TextView Maxlines", TextViewMaxLines.class);
         addButton("UI/addView", TestViewGroupLayoutParamsActivity.class);
         addButton("UI/Measure/demo", CustomViewMeasureDemoActivity.class);
+        addButton("UI/AbsPosition", ActivityAbsPosition.class);
+
+        // Event
+        addButton("Event/Intercept", InterceptDemoActivity.class);
 
         // Fragment
         addButton("UI/Fragment/StaticDemo", A_FragmentStaticActivity.class);
@@ -167,6 +176,15 @@ public class MainActivity extends Activity {
         addButton("Parcel null test", ActivityFirst.class);
 
         addButton("Camera/SimpleDemo", CameraSimpleActivity.class);
+
+        addButton("Log/ReadLogUsingCmd", LogReaderActivity.class);
+
+
+        // Animator
+        addButton("Animator/Rotate", ActivityAnimateRotate.class);
+
+        //
+        addButton("Samsung", AActivity.class);
 
         ScrollView sv = new ScrollView(this);
         sv.addView(root);
