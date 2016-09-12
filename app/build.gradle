@@ -1,13 +1,16 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 23
-    buildToolsVersion "23.0.0"
+    compileSdkVersion 23 //模拟器上Debug时行号对齐
+    buildToolsVersion "24.0.1"
 
     defaultConfig {
         applicationId "com.cacard.demo"
         minSdkVersion 9
         targetSdkVersion 23
+
+        // Enabling multidex support.
+        multiDexEnabled true
     }
 
     buildTypes {
@@ -21,15 +24,11 @@ android {
 }
 
 dependencies {
-    compile 'com.android.support:recyclerview-v7:+'
-    // contains v4 and v7
-    compile files('libs/ormlite-android-4.48.jar')
-    compile files('libs/ormlite-core-4.48.jar')
+    //compile 'com.android.support:recyclerview-v7:+'
 
     // see:https://github.com/xyxyLiu/TaskLogger
-    compile files('libs/android-tasklogger-1.0.jar')
+    //compile files('libs/android-tasklogger-1.0.jar')
 
-    compile 'com.android.support:appcompat-v7:23.0.1'
     compile 'com.android.support:design:23.0.1'
     compile 'com.jakewharton:butterknife:7.0.1'
     compile 'com.google.code.gson:gson:2.2.4'

@@ -14,11 +14,13 @@ import com.cacard.demo.Activity.ActivityInfo;
 import com.cacard.demo.Activity.ActivityScreenSize;
 import com.cacard.demo.Activity.ActivitySpIODemo;
 import com.cacard.demo.Activity.ActivitySpIODemo2;
+import com.cacard.demo.AndroidN.Notification.AndroidNNotificationActivity;
 import com.cacard.demo.Animator.ActivityAnimateLayoutChanges;
 import com.cacard.demo.Animator.ActivityAnimateRotate;
 import com.cacard.demo.Animator.ActivityScrollerDemo;
 import com.cacard.demo.Animator.ActivityValueAnimator;
 import com.cacard.demo.Broadcast.ActivityRegReceiverManyTimes;
+import com.cacard.demo.Bug.ListViewNotifyBugActivity;
 import com.cacard.demo.Camera.CameraSimpleActivity;
 import com.cacard.demo.Canvas.EntryActivity;
 import com.cacard.demo.CustomControl.PullHeader.PullHeader1Activity;
@@ -51,10 +53,11 @@ import com.cacard.demo.Messenger.MessengerDemoActivity;
 import com.cacard.demo.Notification.MIUIDeskIconNotificationDemoActivity;
 import com.cacard.demo.Parcel.ParcelNullUnmashall.ActivityFirst;
 import com.cacard.demo.Parcel.ParcelSaveToDBActivity;
-import com.cacard.demo.RecyclerView.RecyclerViewSimpleActivity;
 import com.cacard.demo.Service.BindOnCreate.BindOnCreateActivity;
 import com.cacard.demo.Service.Sticky.StickyActivity;
+import com.cacard.demo.System.ActivityCpuInfo;
 import com.cacard.demo.System.ActivityCreatePackageContext;
+import com.cacard.demo.Trackball.TrackballDemoActivity;
 import com.cacard.demo.UI.ClipToPaddingDemoActivity;
 import com.cacard.demo.UI.Measure.CustomViewMeasureDemoActivity;
 import com.cacard.demo.UI.TextViewMaxLines;
@@ -64,7 +67,7 @@ import com.cacard.demo.ViewPager.Demo1.ViewPagerDemo1SimpleActivity;
 import com.cacard.demo.ViewPager.Demo2FragmentPagerAdapter.ViewPager_FragmentPagerAdapter_Activity;
 import com.cacard.demo.ViewPager.Demo4ViewPagerSpecial.ViewPagerSpeicalActivity;
 import com.cacard.demo.launchmode.FlagActivityNewTask.ActivityStart;
-import com.cacard.demo.launchmode.SingleInstance.Activity0;
+import com.cacard.demo.launchmode.SingleTask.Activity1SingleTask;
 import com.cacard.demo.samsung.AActivity;
 
 public class MainActivity extends Activity {
@@ -91,6 +94,7 @@ public class MainActivity extends Activity {
         addButton(root, "ScreenInfomation", ActivityScreenSize.class);
         addButton(root, "Info", ActivityInfo.class);
         addButton(root, "DirInfo", ActivityDirInfo.class);
+        addButton("CpuCores", ActivityCpuInfo.class);
         addButton("ImplicitIntent", ImplicitIntentDemoActivity.class);
 
 
@@ -98,7 +102,9 @@ public class MainActivity extends Activity {
         addButton("MessengerDemo", MessengerDemoActivity.class);
 
         // launch mode
-        addButton("【LaunchMode】FlagActivityNewTask", ActivityStart.class);
+        addButton("LaunchMode/FlagActivityNewTask", ActivityStart.class);
+        addButton(root, "LaunchMode/SingleInstance", Activity1SingleTask.class);
+
 
         // UI Relate
         addButton("UI/clipToPadding Demo", ClipToPaddingDemoActivity.class);
@@ -130,7 +136,6 @@ public class MainActivity extends Activity {
         addButton(root, "ViewDragHelper", VDHActivity.class);
         addButton(root, "GestureDetectory", GestureDetectorDemoActivity.class);
 
-        addButton(root, "LaunchMode-SingleInstance", Activity0.class);
 
         addButton(root, "【Canvas】", EntryActivity.class);
 
@@ -151,7 +156,7 @@ public class MainActivity extends Activity {
         addButton(root, "Martix", MartixDemoActivity.class);
         addButton(root, "PullHeader #1", PullHeader1Activity.class);
 
-        addButton(root, "RecyclerView/SimpleDemo", RecyclerViewSimpleActivity.class);
+        //addButton(root, "RecyclerView/SimpleDemo", RecyclerViewSimpleActivity.class);
 
         addButton(root, "Broadcast/RegManyTimes", ActivityRegReceiverManyTimes.class);
 
@@ -185,6 +190,15 @@ public class MainActivity extends Activity {
 
         //
         addButton("Samsung", AActivity.class);
+
+
+        // Android N
+        addButton("N/Notification", AndroidNNotificationActivity.class);
+
+
+        // bug
+        addButton("bug/ListViewNotifyBugActivity", ListViewNotifyBugActivity.class);
+        addButton("bug/ListViewTrackball", TrackballDemoActivity.class);
 
         ScrollView sv = new ScrollView(this);
         sv.addView(root);

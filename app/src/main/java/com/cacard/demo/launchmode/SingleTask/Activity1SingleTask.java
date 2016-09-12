@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 
+import com.cacard.demo.R;
+
 /**
  * Created by cunqingli on 2015/8/21.
  */
@@ -23,6 +25,7 @@ public class Activity1SingleTask extends Activity {
             @Override
             public void onClick(View v) {
                 Activity1SingleTask.this.startActivity(new Intent(Activity1SingleTask.this, Activity2Normal.class));
+
             }
         });
 

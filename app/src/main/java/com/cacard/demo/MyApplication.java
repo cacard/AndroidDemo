@@ -24,7 +24,7 @@ import java.util.Random;
  *
  * Created by cunqingli on 2015/5/7.
  */
-public class MyApplication extends com.reginald.tasklogger.TaskLoggerApplication {
+public class MyApplication extends Application {
     private static final String TAG = MyApplication.class.getSimpleName();
     public static boolean isAudioPlayerServiceRunning;
     public FloatWindowManager floatWindowManager = new FloatWindowManager();
@@ -45,45 +45,6 @@ public class MyApplication extends com.reginald.tasklogger.TaskLoggerApplication
         //Fresco.initialize(this);
     }
 
-    private void allActivityCallback() {
-        final String tag = "activitylife";
-        this.registerActivityLifecycleCallbacks(new ActivityLifecycleCallbacks() {
-            @Override
-            public void onActivityCreated(Activity activity, Bundle savedInstanceState) {
-                Log.i(tag,"onActivityCreated->"+activity.toString());
-            }
-
-            @Override
-            public void onActivityStarted(Activity activity) {
-                Log.i(tag,"onActivityStarted->"+activity.toString());
-            }
-
-            @Override
-            public void onActivityResumed(Activity activity) {
-                Log.i(tag,"onActivityResumed->"+activity.toString());
-            }
-
-            @Override
-            public void onActivityPaused(Activity activity) {
-                Log.i(tag,"onActivityPaused->"+activity.toString());
-            }
-
-            @Override
-            public void onActivityStopped(Activity activity) {
-                Log.i(tag,"onActivityStopped->"+activity.toString());
-            }
-
-            @Override
-            public void onActivitySaveInstanceState(Activity activity, Bundle outState) {
-
-            }
-
-            @Override
-            public void onActivityDestroyed(Activity activity) {
-                Log.i(tag,"onActivityDestroyed->"+activity.toString());
-            }
-        });
-    }
 
     /**
      * App被杀死后，该Service会自动重启
