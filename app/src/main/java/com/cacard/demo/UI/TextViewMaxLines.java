@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.widget.TextView;
+import android.widget.Toast;
 
 /**
  * Created by cunqingli on 2016/2/25.
@@ -22,5 +23,19 @@ public class TextViewMaxLines extends Activity {
         tv.setEllipsize(TextUtils.TruncateAt.END);
 
         this.setContentView(tv);
+
+        // 判断是否有超出文字
+        final TextView tvP = tv;
+        tv.post(new Runnable() {
+            @Override
+            public void run() {
+                // 方法1
+                int count = tvP.getLayout().getLineCount();
+                int c = tvP.getLayout().getEllipsisCount(count - 1);
+                // 方法2
+                boolean b = tvP.getLayout().getText().equals(tvP.getText());
+                Toast.makeText(TextViewMaxLines.this, "" + c + "/" + b, Toast.LENGTH_LONG).show();
+            }
+        });
     }
 }

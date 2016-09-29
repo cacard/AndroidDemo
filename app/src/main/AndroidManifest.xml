@@ -233,6 +233,10 @@
         <activity android:name=".Event.Intercept.demo1.InterceptDemoActivity"/>
         <activity android:name=".AndroidN.Notification.AndroidNNotificationActivity"/>
         <activity android:name=".Trackball.TrackballDemoActivity" />
+        <activity android:name=".DynamicLoad.SimpleActivity" />
+        <activity android:name=".ConstraintLayout.ConstranitLayoutDemoActivity" />
+        <activity android:name=".ConstraintLayout.profile.CLayoutProfileActivity" />
+        <activity android:name=".ConstraintLayout.CLayoutChainActivity" />
 
 
         <!-- 通知栏快捷方式添加 for Android N -->

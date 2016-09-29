@@ -30,7 +30,11 @@ dependencies {
     //compile files('libs/android-tasklogger-1.0.jar')
 
     compile 'com.android.support:design:23.0.1'
-    compile 'com.jakewharton:butterknife:7.0.1'
+    //compile 'com.jakewharton:butterknife:7.0.1'
     compile 'com.google.code.gson:gson:2.2.4'
-    compile 'com.squareup.okhttp:okhttp:2.0.0'
+    //compile 'com.squareup.okhttp:okhttp:2.0.0'
+
+    // sdk is alpha8
+    // @9/29 aplha9
+    compile 'com.android.support.constraint:constraint-layout:1.0.0-alpha9'
 }

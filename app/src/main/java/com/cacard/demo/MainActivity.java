@@ -23,19 +23,19 @@ import com.cacard.demo.Broadcast.ActivityRegReceiverManyTimes;
 import com.cacard.demo.Bug.ListViewNotifyBugActivity;
 import com.cacard.demo.Camera.CameraSimpleActivity;
 import com.cacard.demo.Canvas.EntryActivity;
+import com.cacard.demo.ConstraintLayout.CLayoutChainActivity;
+import com.cacard.demo.ConstraintLayout.ConstranitLayoutDemoActivity;
+import com.cacard.demo.ConstraintLayout.profile.CLayoutProfileActivity;
 import com.cacard.demo.CustomControl.PullHeader.PullHeader1Activity;
-import com.cacard.demo.DesignSupportLibrary.CoornaditorLayout.CoornaditorLayoutAndFABActivity;
 import com.cacard.demo.DesignSupportLibrary.FloatingActionBarDemoActivity;
 import com.cacard.demo.DesignSupportLibrary.SnackBarDemoActivity;
 import com.cacard.demo.DesignSupportLibrary.TextInputLayoutDemoActivity;
-import com.cacard.demo.DesignSupportLibrary._DrawerLayout._DrawerLayoutDemoActivity;
-import com.cacard.demo.DesignSupportLibrary._DrawerLayout._DrawerLayoutWithToolBarActivity;
-import com.cacard.demo.DesignSupportLibrary._ToolbarDemoActivity;
 import com.cacard.demo.Drawable.BitmapMemorySizeTestActivity;
 import com.cacard.demo.Drawable.ClipDrawableActivity;
 import com.cacard.demo.Drawable.DrawingCacheCaptureActivity;
 import com.cacard.demo.Drawable.ShapeDrawableActivity;
 import com.cacard.demo.Drawable.TransitionDrawableActivity;
+import com.cacard.demo.DynamicLoad.SimpleActivity;
 import com.cacard.demo.Event.Intercept.demo1.InterceptDemoActivity;
 import com.cacard.demo.FloatWindow.ActivityFloatWindow;
 import com.cacard.demo.Fragment.A_SimpleDemo.A_FragmentStaticActivity;
@@ -63,7 +63,6 @@ import com.cacard.demo.UI.Measure.CustomViewMeasureDemoActivity;
 import com.cacard.demo.UI.TextViewMaxLines;
 import com.cacard.demo.UI.View.TestViewGroupLayoutParamsActivity;
 import com.cacard.demo.ViewDragHelperDemo.VDHActivity;
-import com.cacard.demo.ViewPager.Demo1.ViewPagerDemo1SimpleActivity;
 import com.cacard.demo.ViewPager.Demo2FragmentPagerAdapter.ViewPager_FragmentPagerAdapter_Activity;
 import com.cacard.demo.ViewPager.Demo4ViewPagerSpecial.ViewPagerSpeicalActivity;
 import com.cacard.demo.launchmode.FlagActivityNewTask.ActivityStart;
@@ -163,7 +162,7 @@ public class MainActivity extends Activity {
         addButton(root, "System/createPackageContext", ActivityCreatePackageContext.class);
 
         // ViewPager Demo
-        addButton("ViewPager/SimpleDemo", ViewPagerDemo1SimpleActivity.class);
+        //addButton("ViewPager/SimpleDemo", ViewPagerDemo1SimpleActivity.class);
         addButton("ViewPager/FragmentPagerAdapter", ViewPager_FragmentPagerAdapter_Activity.class);
         addButton("ViewPager/ViewPagerSpeical", ViewPagerSpeicalActivity.class);
 
@@ -171,10 +170,10 @@ public class MainActivity extends Activity {
         addButton("DSL/SnackBar", SnackBarDemoActivity.class);
         addButton("DSL/TextInputLayout", TextInputLayoutDemoActivity.class);
         addButton("DSL/FloatingActionBarDemoActivity", FloatingActionBarDemoActivity.class);
-        addButton("DSL/CoorditorLayoutAndFab", CoornaditorLayoutAndFABActivity.class);
-        addButton("DSL/_Toolbar", _ToolbarDemoActivity.class);
-        addButton("DSL/_DrawerLayout", _DrawerLayoutDemoActivity.class);
-        addButton("DSL/_DrawerLayoutWithToolBar", _DrawerLayoutWithToolBarActivity.class);
+//        addButton("DSL/CoorditorLayoutAndFab", CoornaditorLayoutAndFABActivity.class);
+//        addButton("DSL/_Toolbar", _ToolbarDemoActivity.class);
+//        addButton("DSL/_DrawerLayout", _DrawerLayoutDemoActivity.class);
+//        addButton("DSL/_DrawerLayoutWithToolBar", _DrawerLayoutWithToolBarActivity.class);
 
         addButton("----------", MainActivity.class);
         addButton("Parcel save to db", ParcelSaveToDBActivity.class);
@@ -199,6 +198,13 @@ public class MainActivity extends Activity {
         // bug
         addButton("bug/ListViewNotifyBugActivity", ListViewNotifyBugActivity.class);
         addButton("bug/ListViewTrackball", TrackballDemoActivity.class);
+
+        addButton("dynamic/SimpleActivity", SimpleActivity.class);
+
+        // ConstranitLayout
+        addButton("ConstranitLayout", ConstranitLayoutDemoActivity.class);
+        addButton("ConstraintLayout/Profile", CLayoutProfileActivity.class);
+        addButton("CL/Chain", CLayoutChainActivity.class);
 
         ScrollView sv = new ScrollView(this);
         sv.addView(root);

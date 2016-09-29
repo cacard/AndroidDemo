@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                             xmlns:app="http://schemas.android.com/apk/res-auto"
+                                             xmlns:tools="http://schemas.android.com/tools"
+                                             android:layout_width="match_parent"
+                                             android:layout_height="match_parent"
+                                             android:orientation="vertical">
+
+
+    <TextView
+        android:id="@+id/tv0"
+        android:text="tv 0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+
+    <TextView
+        android:id="@+id/tv1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:text="TextView1"
+        app:layout_constraintLeft_toRightOf="@id/tv0"
+        app:layout_constraintTop_toTopOf="parent"
+        android:visibility="gone"
+        />
+
+    <TextView
+        android:id="@+id/tv2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        
+        android:text="TextView2"
+        app:layout_constraintLeft_toRightOf="@id/tv1"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    
+    <TextView
+        android:id="@+id/tv5"
+        app:layout_constraintTop_toBottomOf="@id/tv2"
+
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginLeft="30dp"
+
+        android:background="#ff00ff00"
+
+        android:text="TV__________测试。测试。测试。测试。测试。测试。测试。测试。测试。测试。测试。测试。测试。测试。测试。测试。测试。测试。测试。测试。测试。测试。测试。测试。测试。"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+
+    <!-- ratio -->
+    <TextView
+        app:layout_constraintTop_toBottomOf="@id/tv5"
+        android:background="#ffffff00"
+        android:text="ratio"
+        android:id="@+id/tvRatio"
+        android:layout_width="0dp"
+        app:layout_constraintDimensionRatio="1:1"
+        android:layout_height="0dp"/>
+
+
+    <Button android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="#ff0000ff"
+            app:layout_constraintDimensionRatio="H,2:1"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+</android.support.constraint.ConstraintLayout>

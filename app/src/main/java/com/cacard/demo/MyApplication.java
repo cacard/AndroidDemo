@@ -1,13 +1,11 @@
 package com.cacard.demo;
 
-import android.app.Activity;
 import android.app.Application;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.ServiceConnection;
 import android.os.Build;
-import android.os.Bundle;
 import android.os.IBinder;
 import android.telephony.TelephonyManager;
 import android.util.Log;
@@ -15,8 +13,6 @@ import android.util.Log;
 import com.cacard.demo.FloatWindow.FloatWindowManager;
 import com.cacard.demo.Service.AfterAppKilledWillReStartService;
 import com.cacard.demo.Service.BoundAndStartService;
-
-import java.util.Random;
 //import com.facebook.drawee.backends.pipeline.Fresco;
 
 /**
@@ -38,7 +34,18 @@ public class MyApplication extends Application {
         frescoInit();
         testAfterAppKilledWillReStartService();
 
+        testBug();
+
         //allActivityCallback();
+    }
+
+    private void testBug() {
+        Thread.currentThread().setUncaughtExceptionHandler(new MyUncaughtExceptionHandler());
+
+//        int i = 0;
+//        int m = 1;
+//        int x = m/i;
+
     }
 
     private void frescoInit() {

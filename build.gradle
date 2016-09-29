@@ -1,37 +1,16 @@
 buildscript {
-    def url1 = "http://10.231.132.140:8081/nexus/content/repositories/android//" // 内网
-    def url2 = "http://maven.oschina.net/content/groups/public" // oschina提供的镜像
-
+    //Maven库部署在公司内部的Devnet开发机器上, 貌似说是从Maven官方同步过来的的, 可能这样速度会快点
+    def internalMavenUrl = "http://maven.oa.com/nexus/content/groups/androidbuild/"
     repositories {
-        // local file
-        flatDir { dirs 'libs' }
-        // custome url
         maven {
-            url url1;
+            url internalMavenUrl
         }
-        //mavenCentral()
+//        jcenter()
     }
 
     // 依赖的lib
     dependencies {
-        classpath 'com.android.tools.build:gradle:1.2.3'
+        classpath 'com.android.tools.build:gradle:2.2.0'
         //compile files('libs/ormlite-android-4.48.jar')
-    }
-}
-
-allprojects {
-    def url1 = "http://10.231.132.140:8081/nexus/content/repositories/android/"
-    def url2 = "http://maven.oschina.net/content/groups/public"
-    repositories {
-        all { ArtifactRepository repo ->
-            println repo.url.toString()
-            if ((repo instanceof MavenArtifactRepository) && repo.url.toString().startsWith("https://repo1.maven.org/maven2")) {
-                project.logger.warn "Repository ${repo.url} removed. Only $coporateRepoUrl is allowed"
-                remove repo
-            }
-        }
-        maven {
-            url url1
-        }
     }
 }
