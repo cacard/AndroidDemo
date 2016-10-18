@@ -1,16 +1,32 @@
+
 buildscript {
-    //Maven库部署在公司内部的Devnet开发机器上, 貌似说是从Maven官方同步过来的的, 可能这样速度会快点
     def internalMavenUrl = "http://maven.oa.com/nexus/content/groups/androidbuild/"
+    def jcenterUrl = "http://maven.oa.com/nexus/content/repositories/jcenter/"
+
     repositories {
+
+        // 优先加载本地包，有些包可以手动下载下来。
+        flatDir {
+            dirs 'libs'
+        }
+
+        mavenLocal()
         maven {
             url internalMavenUrl
         }
-//        jcenter()
+        jcenter() {
+            url jcenterUrl
+        }
+
+        // 代理连接不上啊.
+        //mavenCentral()
     }
 
-    // 依赖的lib
     dependencies {
         classpath 'com.android.tools.build:gradle:2.2.0'
-        //compile files('libs/ormlite-android-4.48.jar')
+
+        // for butterKnife
+        //classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'
     }
 }
+

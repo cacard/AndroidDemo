@@ -1,5 +1,8 @@
 apply plugin: 'com.android.application'
 
+// as 2.2 不需要这个了？
+//apply plugin: 'com.neenbedankt.android-apt' // for butterKnife
+
 android {
     compileSdkVersion 23 //模拟器上Debug时行号对齐
     buildToolsVersion "24.0.1"
@@ -23,18 +26,37 @@ android {
     }
 }
 
-dependencies {
-    //compile 'com.android.support:recyclerview-v7:+'
+//repositories {
+//
+//    // 优先加载本地包，有些包可以手动下载下来。
+//    flatDir {
+//        dirs 'libs'
+//    }
+//
+//}
 
+dependencies {
+    //compile fileTree(dir: 'libs', include: '*.aar')
+    //compile 'com.android.support:recyclerview-v7:+'
     // see:https://github.com/xyxyLiu/TaskLogger
     //compile files('libs/android-tasklogger-1.0.jar')
-
     compile 'com.android.support:design:23.0.1'
     //compile 'com.jakewharton:butterknife:7.0.1'
     compile 'com.google.code.gson:gson:2.2.4'
     //compile 'com.squareup.okhttp:okhttp:2.0.0'
-
     // sdk is alpha8
     // @9/29 aplha9
     compile 'com.android.support.constraint:constraint-layout:1.0.0-alpha9'
+    // design support lib
+    compile 'com.android.support:design:22.2.1'
+    // butterKnife =====================================================================================
+    // 8.0开始都是aar啊，下载下来也无法添加依赖！只好手动下载个旧版本了！
+    compile files('libs/butterknife-7.0.1.jar')
+    // as2.2 这样使用？不work啊！
+    //annotationProcessor 'com.jakewharton:butterknife-compiler:8.4.0'
+    //compile files('libs/butterknife-compiler-8.4.0.jar') //只好手动添加本地依赖了。
+    // 发现编译不通过：javax.annotation.processing.Processor: Provider butterknife.compiler.ButterKnifeProcessor could not be instantiated:
+    // 注释掉就OK了
+    // butterKnife end ==================================================================================
+
 }

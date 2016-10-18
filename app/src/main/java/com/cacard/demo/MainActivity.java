@@ -62,6 +62,7 @@ import com.cacard.demo.UI.ClipToPaddingDemoActivity;
 import com.cacard.demo.UI.Measure.CustomViewMeasureDemoActivity;
 import com.cacard.demo.UI.TextViewMaxLines;
 import com.cacard.demo.UI.View.TestViewGroupLayoutParamsActivity;
+import com.cacard.demo.Util.AppUtil;
 import com.cacard.demo.ViewDragHelperDemo.VDHActivity;
 import com.cacard.demo.ViewPager.Demo2FragmentPagerAdapter.ViewPager_FragmentPagerAdapter_Activity;
 import com.cacard.demo.ViewPager.Demo4ViewPagerSpecial.ViewPagerSpeicalActivity;
@@ -209,7 +210,17 @@ public class MainActivity extends Activity {
         ScrollView sv = new ScrollView(this);
         sv.addView(root);
         setContentView(sv);
+
+
+//        sv.postDelayed(new Runnable() {
+//            @Override
+//            public void run() {
+//                AppUtil.startApp2(MainActivity.this, "com.cacard.demo2");
+//            }
+//        },3000);
+
     }
+
 
     private void addButton(ViewGroup root, String text, final Class<?> clazz) {
         Button btn = new Button(this);
