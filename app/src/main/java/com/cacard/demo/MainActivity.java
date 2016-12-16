@@ -1,19 +1,23 @@
 package com.cacard.demo;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 
+import com.cacard.demo.AIDL.add.MyAddServiceClientActivity;
 import com.cacard.demo.Activity.ActivityAbsPosition;
 import com.cacard.demo.Activity.ActivityInfo;
 import com.cacard.demo.Activity.ActivityScreenSize;
 import com.cacard.demo.Activity.ActivitySpIODemo;
 import com.cacard.demo.Activity.ActivitySpIODemo2;
+import com.cacard.demo.Activity.NoRegisterActivity;
 import com.cacard.demo.AndroidN.Notification.AndroidNNotificationActivity;
 import com.cacard.demo.Animator.ActivityAnimateLayoutChanges;
 import com.cacard.demo.Animator.ActivityAnimateRotate;
@@ -62,12 +66,12 @@ import com.cacard.demo.UI.ClipToPaddingDemoActivity;
 import com.cacard.demo.UI.Measure.CustomViewMeasureDemoActivity;
 import com.cacard.demo.UI.TextViewMaxLines;
 import com.cacard.demo.UI.View.TestViewGroupLayoutParamsActivity;
-import com.cacard.demo.Util.AppUtil;
 import com.cacard.demo.ViewDragHelperDemo.VDHActivity;
 import com.cacard.demo.ViewPager.Demo2FragmentPagerAdapter.ViewPager_FragmentPagerAdapter_Activity;
 import com.cacard.demo.ViewPager.Demo4ViewPagerSpecial.ViewPagerSpeicalActivity;
 import com.cacard.demo.launchmode.FlagActivityNewTask.ActivityStart;
 import com.cacard.demo.launchmode.SingleTask.Activity1SingleTask;
+import com.cacard.demo.launchmode.SingleTask.ForResult.SingleTaskForResult1;
 import com.cacard.demo.samsung.AActivity;
 
 public class MainActivity extends Activity {
@@ -83,6 +87,15 @@ public class MainActivity extends Activity {
         root.setOrientation(LinearLayout.VERTICAL);
 
         generateMenu();
+
+
+//        try {
+//            int a = 0;
+//            int b = 1 / a;
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//            Log.e("Exception", Log.getStackTraceString(e));
+//        }
     }
 
     /**
@@ -96,6 +109,15 @@ public class MainActivity extends Activity {
         addButton(root, "DirInfo", ActivityDirInfo.class);
         addButton("CpuCores", ActivityCpuInfo.class);
         addButton("ImplicitIntent", ImplicitIntentDemoActivity.class);
+
+        addButton("Crash!!!", new Runnable() {
+            @Override
+            public void run() {
+                int i = 0;
+                int m = 1;
+                int x = m / i;
+            }
+        });
 
 
         // Messenger
@@ -207,9 +229,29 @@ public class MainActivity extends Activity {
         addButton("ConstraintLayout/Profile", CLayoutProfileActivity.class);
         addButton("CL/Chain", CLayoutChainActivity.class);
 
+        addButton("NoRegisterActivity", NoRegisterActivity.class);
+
+        // Binder/Aidl
+        addButton("Binder/Aidl_simple", MyAddServiceClientActivity.class);
+
+        // Start Luncher
+        addButton("StartLuncher", new Runnable() {
+            @Override
+            public void run() {
+                Intent i = new Intent();
+                i.setAction(Intent.ACTION_MAIN);
+                i.addCategory(Intent.CATEGORY_HOME);
+                //i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                MainActivity.this.startActivity(i);
+            }
+        });
+
         ScrollView sv = new ScrollView(this);
         sv.addView(root);
         setContentView(sv);
+
+
+        addButton("SingleTask vs ForResult", SingleTaskForResult1.class);
 
 
 //        sv.postDelayed(new Runnable() {
@@ -237,5 +279,35 @@ public class MainActivity extends Activity {
 
     private void addButton(String text, final Class<?> clazz) {
         addButton(root, text, clazz);
+    }
+
+    /**
+     * Button and Click Event
+     *
+     * @param text
+     * @param runnable
+     */
+    private void addButton(String text, final Runnable runnable) {
+
+        final Button btn = new Button(this);
+        btn.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT));
+        btn.setText(text);
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                btn.post(runnable);
+            }
+        });
+        root.addView(btn);
+    }
+
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+//        Log.i(MyUncaughtExceptionHandler.TAG, "MainActivity->onDestory()");
+//        MyUncaughtExceptionHandler.bug();
+//        System.exit(0);
+
     }
 }

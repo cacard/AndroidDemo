@@ -1,0 +1,16 @@
+
+
+SingleTask/SingleInstance与StartActivityForResult之间的关系
+
+< 5.0
+
+在调用startActivityForResult时，立刻接收到CANCELLED了；就是说ForResult无效了！
+SingleTask有效；
+
+
+> 5.0
+
+在调用startActivityForResult时，没有立刻接收到CANCELLED了；
+SingelTask无效；
+但ForResult有效了！
+

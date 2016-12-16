@@ -7,6 +7,7 @@
     <uses-sdk
         android:minSdkVersion="10"
         android:targetSdkVersion="24"/>
+
     <uses-feature
         android:glEsVersion="0x00020000"
         android:required="true"/>
@@ -27,6 +28,7 @@
 
     <!-- Camera -->
     <uses-permission android:name="android.permission.CAMERA"/>
+
     <uses-feature android:name="android.hardware.Camera"/> <!-- means only the phone with camera can download on google play -->
     <uses-feature android:name="android.hardware.camera.autofocus"/>
 
@@ -39,7 +41,6 @@
         android:maxSdkVersion="18"/>
 
     <uses-permission android:name="android.permission.GET_TASKS"/>
-
 
     <!-- 定位需要 -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
@@ -67,7 +68,6 @@
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
     <uses-permission android:name="com.tencent.news.permisson.ACTION"/>
     <uses-permission android:name="android.permission.RECORD_AUDIO"/>
-
     <uses-permission android:name="android.permission.GET_TASKS"/>
     <uses-permission android:name="android.permission.REORDER_TASKS"/>
 
@@ -82,17 +82,16 @@
         android:permission="android.permission.ACCESS_COARSE_LOCATION"
         android:theme="@style/AppBaseTheme">
 
-        <!--<service-->
-        <!--android:name="com.reginald.tasklogger.TaskLoggerService"-->
-        <!--android:process=":taskLogger"/>-->
+        <!-- <service -->
+        <!-- android:name="com.reginald.tasklogger.TaskLoggerService" -->
+        <!-- android:process=":taskLogger"/> -->
 
-
-        <service android:name="com.cacard.demo.Service.StartedServiceDemo"/>
-        <service android:name="com.cacard.demo.Service.BoundServiceDemo"/>
+        <service android:name=".Service.StartedServiceDemo"/>
+        <service android:name=".Service.BoundServiceDemo"/>
         <service android:name=".Media.AudioPlayerService"/>
 
-        <receiver android:name="com.cacard.demo.Broadcast.BroadcastReceiverSimple"/>
-        <receiver android:name="com.cacard.demo.Broadcast.PackageAddRemoveReceiver">
+        <receiver android:name=".Broadcast.BroadcastReceiverSimple"/>
+        <receiver android:name=".Broadcast.PackageAddRemoveReceiver">
             <intent-filter>
                 <action android:name="android.intent.action.PACKAGE_ADDED"/>
                 <action android:name="android.intent.action.PACKAGE_REMOVED"/>
@@ -104,50 +103,54 @@
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
+
                 <category android:name="android.intent.category.LAUNCHER"/>
+
+                <!-- yes! to be launcher, 2 config -->
+                <!-- <category android:name="android.intent.category.HOME" /> -->
+                <!-- <category android:name="android.intent.category.DEFAULT" /> -->
+
             </intent-filter>
         </activity>
-
         <activity android:name=".System.ActivityCpuInfo"/>
         <activity android:name=".Bug.ListViewNotifyBugActivity"/>
-
         <activity android:name=".Activity.ActivityA"/>
         <activity android:name=".Activity.ActivityB"/>
         <activity android:name=".Activity.ActivityC"/>
         <activity android:name=".Activity.ActivityLoopDemo"/>
         <activity android:name=".Fragment.A_SimpleDemo.A_FragmentStaticActivity"/>
         <activity android:name=".Fragment.A_SimpleDemo.B_FragmentDynamicActivity"/>
-        <activity android:name="com.cacard.demo.Fragment.FragmentCommutation"/>
-        <activity android:name="com.cacard.demo.Fragment.FragmentSupportMultipleScreen"/>
-        <activity android:name="com.cacard.demo.Fragment.FragmentSupportMultipleScreen_DetailActivity"/>
+        <activity android:name=".Fragment.FragmentCommutation"/>
+        <activity android:name=".Fragment.FragmentSupportMultipleScreen"/>
+        <activity android:name=".Fragment.FragmentSupportMultipleScreen_DetailActivity"/>
         <activity android:name=".Drawable.DrawingCacheCaptureActivity"/>
-        <activity android:name="com.cacard.demo.MemoryLeak.ActivityWithThread"/>
-        <activity android:name="com.cacard.demo.MemoryLeak.ActivityUsingHandler"/>
+        <activity android:name=".MemoryLeak.ActivityWithThread"/>
+        <activity android:name=".MemoryLeak.ActivityUsingHandler"/>
         <activity android:name=".Animator.ActivityScrollerDemo"/>
-        <activity android:name="com.cacard.demo.Activity.ActivityScreenSize"/>
-        <activity android:name="com.cacard.demo.Thread.Loader_CursorLoader_SimpleCursorAdapter"/>
+        <activity android:name=".Activity.ActivityScreenSize"/>
+        <activity android:name=".Thread.Loader_CursorLoader_SimpleCursorAdapter"/>
         <activity android:name=".Activity.ActivitySpIODemo"/>
-        <activity android:name="com.cacard.demo.ViewDragHelperDemo.VDHActivity"/>
-        <activity android:name="com.cacard.demo.GestureDetectorDemo.GestureDetectorDemoActivity"/>
-        <activity android:name="com.cacard.demo.Drawable.ClipDrawableActivity"/>
-        <activity android:name="com.cacard.demo.Drawable.DrawableDemo"/>
-        <activity android:name="com.cacard.demo.Drawable.TransitionDrawableActivity"/>
-        <activity android:name="com.cacard.demo.launchmode.SingleInstance.Activity0"/>
-        <activity android:name="com.cacard.demo.Drawable.ShapeDrawableActivity"/>
-        <activity android:name="com.cacard.demo.Graphic.MySurfaceViewActivity"/>
-        <activity android:name="com.cacard.demo.Graphic.MyGLSurfaceViewActivity"/>
+        <activity android:name=".ViewDragHelperDemo.VDHActivity"/>
+        <activity android:name=".GestureDetectorDemo.GestureDetectorDemoActivity"/>
+        <activity android:name=".Drawable.ClipDrawableActivity"/>
+        <activity android:name=".Drawable.DrawableDemo"/>
+        <activity android:name=".Drawable.TransitionDrawableActivity"/>
+        <activity android:name=".launchmode.SingleInstance.Activity0"/>
+        <activity android:name=".Drawable.ShapeDrawableActivity"/>
+        <activity android:name=".Graphic.MySurfaceViewActivity"/>
+        <activity android:name=".Graphic.MyGLSurfaceViewActivity"/>
         <activity android:name=".Activity.ActivityInstrumentationTest"/>
-        <activity android:name="com.cacard.demo.Animator.ActivityValueAnimator"/>
-        <activity android:name="com.cacard.demo.Event.ActivityMotionEvent"/>
+        <activity android:name=".Animator.ActivityValueAnimator"/>
+        <activity android:name=".Event.ActivityMotionEvent"/>
         <activity android:name=".Media.ActivityAudioPlayer"/>
         <activity android:name=".Media.ActivityAudioPlayerUsingService"/>
         <activity android:name=".Media.ActivityAudioPlayerUsingService2"/>
         <activity android:name=".Activity.ActivitySpIODemo2"/>
         <activity
-            android:name="com.cacard.demo.launchmode.SingleInstance.Activity1"
+            android:name=".launchmode.SingleInstance.Activity1"
             android:launchMode="singleInstance"/>
-        <activity android:name="com.cacard.demo.launchmode.SingleInstance.Activity2"/>
-        <activity android:name="com.cacard.demo.CustomControl.PageableHorizonalScrollView.ActivityPageableHorizonalScrollView"/>
+        <activity android:name=".launchmode.SingleInstance.Activity2"/>
+        <activity android:name=".CustomControl.PageableHorizonalScrollView.ActivityPageableHorizonalScrollView"/>
         <activity android:name=".FloatWindow.ActivityFloatWindow"/>
         <activity android:name=".Canvas.CycleProgressViewActivity"/>
         <activity android:name=".IO.ActivityDirInfo"/>
@@ -174,7 +177,7 @@
 
         <service android:name=".Service.BoundAndStartService"/>
         <service android:name=".Service.Sticky.StickyService"/>
-        <service android:name="com.cacard.demo.Service.BindOnCreate.BindOnCreateService"/>
+        <service android:name=".Service.BindOnCreate.BindOnCreateService"/>
 
         <activity android:name=".Service.Sticky.StickyActivity"/>
         <activity android:name=".Service.BindOnCreate.BindOnCreateActivity"/>
@@ -184,15 +187,8 @@
         <activity android:name=".RecyclerView.RecyclerViewSimpleActivity"/>
         <activity android:name=".Animator.ActivityAnimateLayoutChanges"/>
         <activity android:name=".Broadcast.ActivityRegReceiverManyTimes"/>
-
-
-        <activity
-            android:name=".launchmode.SingleTask.Activity1SingleTask"
-            ></activity>
-
+        <activity android:name=".launchmode.SingleTask.Activity1SingleTask"/>
         <activity android:name=".launchmode.SingleTask.Activity2Normal"/>
-
-
         <activity android:name=".System.ActivityCreatePackageContext"/>
         <activity android:name=".DesignSupportLibrary.SnackBarDemoActivity"/>
         <activity android:name=".DesignSupportLibrary.TextInputLayoutDemoActivity"/>
@@ -222,7 +218,16 @@
             android:name=".Messenger.ServiceInOtherProcess"
             android:exported="true"
             android:process=":AndroidDemoProcess2"/>
+        <service
+            android:name=".AIDL.ServiceInOtherProcess"
+            android:exported="true"
+            android:process=":cacard.demo.aidl.service_in_other_process"/>
+        <service
+            android:name=".AIDL.add.MyAddService"
+            android:exported="true"
+            android:process=":addService"/>
 
+        <activity android:name=".AIDL.add.MyAddServiceClientActivity"/>
         <activity android:name=".UI.TextViewMaxLines"/>
         <activity android:name=".UI.View.TestViewGroupLayoutParamsActivity"/>
         <activity android:name=".Fragment.RetainInstance.Fragment_RetainInstance_Activity"/>
@@ -239,17 +244,15 @@
         <activity android:name=".ConstraintLayout.ConstranitLayoutDemoActivity"/>
         <activity android:name=".ConstraintLayout.profile.CLayoutProfileActivity"/>
         <activity android:name=".ConstraintLayout.CLayoutChainActivity"/>
-
-
         <activity
             android:name=".Shema.SchemaEntryActivity"
-            android:launchMode="singleInstance"
             android:configChanges="keyboardHidden|orientation|screenSize"
-            >
+            android:launchMode="singleInstance">
             <intent-filter>
                 <data
                     android:host="back"
                     android:scheme="androiddemo"/>
+
                 <action android:name="android.intent.action.VIEW"/>
 
                 <category android:name="android.intent.category.DEFAULT"/>
@@ -257,18 +260,21 @@
             </intent-filter>
         </activity>
 
-
         <!-- 通知栏快捷方式添加 for Android N -->
-        <!--<service-->
-        <!--android:name=".AndroidN.Notification.AndroidNTileService"-->
-        <!--android:icon="@drawable/ic_launcher"-->
-        <!--android:label="@string/app_name"-->
-        <!--android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">-->
-        <!--<intent-filter>-->
-        <!--<action android:name="android.service.quicksettings.action.QS_TILE"/>-->
-        <!--</intent-filter>-->
-        <!--</service>-->
+        <!-- <service -->
+        <!-- android:name=".AndroidN.Notification.AndroidNTileService" -->
+        <!-- android:icon="@drawable/ic_launcher" -->
+        <!-- android:label="@string/app_name" -->
+        <!-- android:permission="android.permission.BIND_QUICK_SETTINGS_TILE"> -->
+        <!-- <intent-filter> -->
+        <!-- <action android:name="android.service.quicksettings.action.QS_TILE"/> -->
+        <!-- </intent-filter> -->
+        <!-- </service> -->
 
+        <activity android:name=".launchmode.SingleTask.ForResult.SingleTaskForResult1">
+        </activity>
+        <activity android:name=".launchmode.SingleTask.ForResult.SingleTaskForResult2" android:launchMode="singleTask">
+        </activity>
     </application>
 
 </manifest>

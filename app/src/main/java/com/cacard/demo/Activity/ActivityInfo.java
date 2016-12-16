@@ -7,6 +7,9 @@ import android.os.Bundle;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * App和Android信息
  * <p/>
@@ -31,6 +34,18 @@ public class ActivityInfo extends Activity {
         } catch (Exception e) {
             e.printStackTrace();
         }
+
+        // system property
+        List<String> pros = new ArrayList<String>();
+        pros.add("java.class.path"); // 创建SystemClassLoader（是一个PathClassLoader）时，传递的dexPath是这个！   value=. -_-''
+        pros.add("java.library.path");
+        String msg = " ";
+        for (String s : pros) {
+            String v = System.getProperty(s);
+            msg += s + "=" + v;
+        }
+        addInfo(msg);
+
     }
 
     private void addInfo(String message) {
@@ -38,5 +53,8 @@ public class ActivityInfo extends Activity {
         tv.setText(message);
         root.addView(tv);
     }
+
+    public native final String hello(String a) throws Exception;
+
 
 }

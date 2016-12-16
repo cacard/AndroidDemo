@@ -10,14 +10,13 @@ import android.os.IBinder;
 import android.telephony.TelephonyManager;
 import android.util.Log;
 
+import com.cacard.demo.Activity.NoRegisterActivity;
 import com.cacard.demo.FloatWindow.FloatWindowManager;
 import com.cacard.demo.Service.AfterAppKilledWillReStartService;
 import com.cacard.demo.Service.BoundAndStartService;
 //import com.facebook.drawee.backends.pipeline.Fresco;
 
 /**
- *
- *
  * Created by cunqingli on 2015/5/7.
  */
 public class MyApplication extends Application {
@@ -37,15 +36,33 @@ public class MyApplication extends Application {
         testBug();
 
         //allActivityCallback();
+
+        // 注册一个关闭钩子
+        // OK!
+        Runtime.getRuntime().addShutdownHook(new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    Thread.sleep(3000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                Log.i("shutdown", "Hello, tName" + Thread.currentThread().getName());
+            }
+        }));
+
+        // 未在Manifest中注册的Activity也可以开启使用?
+        NoRegisterActivity.enable(this);
     }
 
     private void testBug() {
         Thread.currentThread().setUncaughtExceptionHandler(new MyUncaughtExceptionHandler());
+    }
 
-//        int i = 0;
-//        int m = 1;
-//        int x = m/i;
-
+    private void crash() {
+        int i = 0;
+        int m = 1;
+        int x = m / i;
     }
 
     private void frescoInit() {
@@ -110,20 +127,22 @@ public class MyApplication extends Application {
         String imei = "";
 
 
-            if (Build.VERSION.SDK_INT < 23 ) {
-                TelephonyManager tm = (TelephonyManager) MyApplication.instance
-                        .getSystemService(Context.TELEPHONY_SERVICE);
-                try {
-                    imei = tm.getDeviceId();
-                } catch (SecurityException e) {
-                    throw e;
-                }
-
+        if (Build.VERSION.SDK_INT < 23) {
+            TelephonyManager tm = (TelephonyManager) MyApplication.instance
+                    .getSystemService(Context.TELEPHONY_SERVICE);
+            try {
+                imei = tm.getDeviceId();
+            } catch (SecurityException e) {
+                throw e;
             }
 
-            // 6.0以上系统(SDK_INT>=23)且targetSdkVersion>=23时,
-            // 直接使用Android_ID作为IMEI, 不获取 拨打电话 权限了
+        }
+
+        // 6.0以上系统(SDK_INT>=23)且targetSdkVersion>=23时,
+        // 直接使用Android_ID作为IMEI, 不获取 拨打电话 权限了
 
         return imei;
     }
+
+
 }
